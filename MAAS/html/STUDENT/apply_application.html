@@ -17,7 +17,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
   <script>
+  	// Material Select Initialization
+	
     $(document).ready(function(){
+
       var date_input=$('input[name="date"]'); //our date input has the name "date"
       var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
       var options={
@@ -27,12 +30,25 @@
         autoclose: true,
       };
       date_input.datepicker(options);
+     
     })
 </script>
 
 
 </head>
 <body>
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/7.8.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/7.8.1/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
+
+
+
 <nav class="navbar navbar-inverse bg-light">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -48,7 +64,7 @@
 
     <ul class="nav navbar-nav navbar-right">
      
-      <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      <li><a href="../../index.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
     </ul>
   </div>
 </nav>
@@ -56,11 +72,7 @@
   
 <div class="container">
   <h2>Fill Up All The Details For Application</h2>
-  <form class="form-horizontal" action="/action_page.php">
-
-    
-
-
+  <form class="form-horizontal" action="apply_application_add.html">
     <div class="form-group">
       <label class="control-label col-sm-2" for="email">Select Date:</label>
       <div class="col-sm-8">
@@ -72,18 +84,81 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="pwd">Select Course:</label>
       <div class="col-sm-8">          
-        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+       
+		
+		<select class="mdb-select md-form form-control">
+		  <option value="" disabled selected>Choose your option</option>
+		  <option value="1">Option 1</option>
+		  <option value="2">Option 2</option>
+		  <option value="3">Option 3</option>
+		</select>
+		<!-- <select class="browser-default custom-select">
+  <option selected>Open this select menu</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select> -->
       </div>
     </div>
+
+      <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Select Faculty:</label>
+      <div class="col-sm-8">          
+       
+		
+		<select class="mdb-select md-form form-control">
+		  <option value="" disabled selected>Choose your option</option>
+		  <option value="1">Option 1</option>
+		  <option value="2">Option 2</option>
+		  <option value="3">Option 3</option>
+		</select>
+		<!-- <select class="browser-default custom-select">
+  <option selected>Open this select menu</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select> -->
+      </div>
+    </div>
+
+      <div class="form-group">
+      <label class="control-label col-sm-2" for="Reason">Reason:</label>
+      <div class="col-sm-8">          
+       
+		
+		<textarea class="form-control" rows="8" columns="10" id="Reason" placeholder="Write The Reason For Being Absent"></textarea>
+		<!-- <select class="browser-default custom-select">
+  <option selected>Open this select menu</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select> -->
+      </div>
+    </div>
+
+	    <div class="form-group">
+	  <div class="input-group-prepend">
+	    <label class="control-label col-sm-2" for="Reason">Add Document:</label>
+	  </div>
+	  <div class="custom-file col-sm-8">
+	    <input class="form-control" type="file" class="custom-file-input" id="inputGroupFile01"
+	      aria-describedby="inputGroupFileAddon01">
+	   
+	  </div>
+	</div>
+
+
+
 
 
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-        <div class="checkbox">
-          <label><input type="checkbox" name="remember"> Remember me</label>
-        </div>
+        
       </div>
     </div>
+
+
+
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
         <button type="submit" class="btn btn-default">Submit</button>

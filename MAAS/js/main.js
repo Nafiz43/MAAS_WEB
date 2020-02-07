@@ -8,6 +8,9 @@
     var input = $('.validate-input .input100');
 
     $('.validate-form').on('submit',function(){
+        //direct();
+        
+
         var check = true;
 
         for(var i=0; i<input.length; i++) {
@@ -16,9 +19,47 @@
                 check=false;
             }
         }
+       // alert($(input[1]).val());
+        //$(location).attr('href', 'http://stackoverflow.com')
+        if($(input[0]).val()=='admin' && $(input[1]).val()=='1234')
+        {
+          //alert('Comig There');
+           
+
+            direct1();
+        }
+        else if($(input[0]).val()=='student' && $(input[1]).val()=='1234'){
+            direct2();
+
+        }
+        else if($(input[0]).val()=='teacher' && $(input[1]).val()=='1234'){
+              
+              direct3();
+        }
+        else
+        {
+            alert('Cannot redirect');
+        }
+        //$(location).attr('href', 'http://stackoverflow.com');
 
         return check;
     });
+
+    function direct1(){
+        $(location).attr('href', 'About.html');
+        
+         alert('Hello');
+    }
+      function direct2(){
+        $(location).attr('href', 'student_main.html');
+        
+         alert('Hello');
+    }
+      function direct3(){
+        $(location).attr('href', 'teacher.html');
+        
+         alert('Hello');
+    }
 
 
     $('.validate-form .input100').each(function(){
