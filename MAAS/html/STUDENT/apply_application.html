@@ -16,9 +16,50 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCNM0HlObFHsCwM3iZhV8i0Qxwn3mmTYJg",
+    authDomain: "maas-fb909.firebaseapp.com",
+    databaseURL: "https://maas-fb909.firebaseio.com",
+    projectId: "maas-fb909",
+    storageBucket: "maas-fb909.appspot.com",
+    messagingSenderId: "147741298520",
+    appId: "1:147741298520:web:500360dba2aa5dd2d91f2d",
+    measurementId: "G-ZFZHDL8MDG"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
   <script>
   	// Material Select Initialization
-	
+
+	function writeData() {
+		// var p=document.getElementById("test1").value;
+		// var q=document.getElementById("test2").value;
+
+		
+			alert(p);
+			firebase.database().ref('users').set({
+		    username: 'Nafi',
+		    email: '018',
+		    
+			 });
+			alert('Successful');
+
+		// body...
+	}
+
     $(document).ready(function(){
 
       var date_input=$('input[name="date"]'); //our date input has the name "date"
@@ -37,15 +78,6 @@
 
 </head>
 <body>
-	<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="/__/firebase/7.8.1/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="/__/firebase/7.8.1/firebase-analytics.js"></script>
-
-<!-- Initialize Firebase -->
-<script src="/__/firebase/init.js"></script>
 
 
 
@@ -70,6 +102,12 @@
 </nav>
 
   
+  <div>
+  		<input id="test1" type="text" placeholder="Enter Name">
+  		<input id="test2" type="text" placeholder="Enter phn">
+    	<button onclick="writeData()">database</button>
+    </div>
+
 <div class="container">
   <h2>Fill Up All The Details For Application</h2>
   <form class="form-horizontal" action="apply_application_add.html">
@@ -126,7 +164,7 @@
       <div class="col-sm-8">          
        
 		
-		<textarea class="form-control" rows="8" columns="10" id="Reason" placeholder="Write The Reason For Being Absent"></textarea>
+		<textarea id="rsn" class="form-control" rows="8" columns="10" id="Reason" placeholder="Write The Reason For Being Absent"></textarea>
 		<!-- <select class="browser-default custom-select">
   <option selected>Open this select menu</option>
   <option value="1">One</option>
@@ -156,6 +194,8 @@
         
       </div>
     </div>
+    
+    
 
 
 

@@ -1,0 +1,1 @@
+apply_application.js
