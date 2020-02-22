@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Sidebar 07</title>
+  	<title>Student</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -24,31 +24,45 @@
 		
 		<div class="wrapper d-flex align-items-stretch">
 			<nav id="sidebar" class="active">
-				<h3>MAAS</h3>
+        <!-- <img class="img-fluid" src="final.png" alt="..." class="img-thumbnail"> -->
+ <div class="container-fluid">
+
+           <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            <!--  <i class="fa fa-bars"></i> 
+             <span class="sr-only">Toggle Menu</span>-->
+             <span class="glyphicon glyphicon-circle-arrow-right"></span>
+            </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+
+
+        <h3>MAAS</h3>
         <ul class="list-unstyled components mb-5">
           <li class="active">
             <a href="student_main.html"><span class="fa fa-home"></span> Home</a>
           </li>
           <li>
-              <a href="attendance.html"><span class="fa fa-user"></span> Attendance</a>
+              <a href="attendance.html"><span class="fa fa-address-card-o"></span> Attendance</a>
           </li>
           <li>
-            <a href="eligibility.html"><span class="fa fa-sticky-note"></span> Eligibility</a>
+            <a href="eligibility.html"><span class="fa fa-table"></span> Eligibility</a>
           </li>
           <li>
-            <a href="fine.html"><span class="fa fa-cogs"></span> Fine</a>
+            <a href="fine.html"><span class="fa fa-money"></span> Fine</a>
           </li>
           <li>
-            <a href="apply_application.html"><span class="fa fa-paper-plane"></span> Application</a>
+            <a href="apply_application.html"><span class="fa fa-file-text-o"></span> Application</a>
           </li>
         </ul>
 
         <div class="footer">
-        	<p>
-					  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This Web Application is made by MIST CSE-17
-					</p>
+          <p>
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This Web Application is made by MIST CSE-17
+          </p>
         </div>
-    	</nav>
+      </nav>
 
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5">
@@ -56,15 +70,9 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="container-fluid">
 
-            <button type="button" id="sidebarCollapse" class="btn btn-primary">
-              <i class="fa fa-bars"></i>
-              <span class="sr-only">Toggle Menu</span>
-            </button>
-            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa fa-bars"></i>
-            </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
               <!-- Adding LOGO THERE -->
               <ul class="nav navbar-nav">
 
@@ -75,39 +83,40 @@
                 <li class="nav-item">
                    <h3>MIST AUTOMATED ATTENDANCE SYSTEM</h3>
                 </li>
-
-                
                 
               
               </ul>
 
             <!-- Adding LOGO DONE -->
-            	
+
 
               <ul class="nav navbar-nav navbar-right">
-                
+
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a href="student_main.html"><h4><span class="fa fa-user-circle"></span> Ms. Y</h4></a>
                 </li>
-               
+
+
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                   <!-- <a class="nav-link" href="Teacher_home.html"><h4><span class="fa fa-phone">Contact</h4></a>-->
+                    <a href="student_main.html"><h4><span class="fa fa-phone">Contact</h4></a>
                 </li>
-                <li><a href="../../index.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                <li><a href="../../index.html"><h4><span class="glyphicon glyphicon-log-out"></span> Logout</h4></a></li>
               </ul>
+
             </div>
           </div>
         </nav>
 
         <div>
         	<div class="jumbotron">
-        		<h1><center>Attendance Sheet!</center></h1>
+        		<h2><center>Attendance Sheet!</center></h2>
         		<!-- <h2 class="mb-4">Sidebar #07</h2> -->
         	</div>
 
 
 
-        <h2>Fill Up The Following to View Attendance</h2>
+        <h2>Fill Up The Followings</h2>
 
    <form class="form-horizontal" >
     

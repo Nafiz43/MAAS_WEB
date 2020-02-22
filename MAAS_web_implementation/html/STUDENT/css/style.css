@@ -6,7 +6,9 @@
  */
 
   .jumbotron{
-      background-color: #3B5998;
+	  height : auto;
+	  padding :5px !important;
+      background-color: #760738 !important;
       color: white
     }
 :root {

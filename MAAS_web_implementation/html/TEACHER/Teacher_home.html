@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Sidebar 07</title>
+    <title>Teacher</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -22,25 +22,39 @@
       background-color: #3B5998;
       color: white
     }
+    
   </style>
   <body>
     
     <div class="wrapper d-flex align-items-stretch">
       <nav id="sidebar" class="active">
+
+       <div class="container-fluid">
+
+           <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            <!--  <i class="fa fa-bars"></i> 
+             <span class="sr-only">Toggle Menu</span>-->
+             <span class="glyphicon glyphicon-circle-arrow-right"></span>
+            </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+
         <h3><a href="index.html" class="logo">MAAS</a></h3>
         <ul class="list-unstyled components mb-5">
           <li class="active">
             <a href="Teacher_home.html"><span class="fa fa-home"></span> Home</a>
           </li>
           <li>
-              <a href="attendance.html"><span class="fa fa-user"></span> Attendance</a>
+              <a href="attendance.html"><span class="fa fa-address-card-o"></span> Attendance</a>
           </li>
           <li>
-            <a href="collegiate.html"><span class="fa fa-sticky-note"></span> Eligibility</a>
+            <a href="collegiate.html"><span class="fa fa-table"></span> Eligibility</a>
           </li>
           
           <li>
-            <a href="application.html"><span class="fa fa-paper-plane"></span> Application</a>
+            <a href="application.html"><span class="fa fa-file-text-o"></span> Application</a>
           </li>
         </ul>
 
@@ -57,14 +71,14 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="container-fluid">
 
-            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+           <!-- <button type="button" id="sidebarCollapse" class="btn btn-primary">
               <i class="fa fa-bars"></i>
               <span class="sr-only">Toggle Menu</span>
             </button>
             <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa fa-bars"></i>
             </button>
-
+           -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               
               <!-- Adding LOGO THERE -->
@@ -86,33 +100,37 @@
             <!-- Adding LOGO DONE -->
 
               <ul class="nav navbar-nav navbar-right">
-                
+
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a href="Teacher_home.html"><h4><span class="fa fa-user-circle"></span> Mr. X</h4></a>
                 </li>
-               
+
+
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                   <!-- <a class="nav-link" href="Teacher_home.html"><h4><span class="fa fa-phone">Contact</h4></a>-->
+                    <a href="Teacher_home.html"><h4><span class="fa fa-phone">Contact</h4></a>
                 </li>
-                <li><a href="../../index.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                <li><a href="../../index.html"><h4><span class="glyphicon glyphicon-log-out"></span> Logout</h4></a></li>
               </ul>
             </div>
           </div>
         </nav>
 
+
         <div>
-          <div class="jumbotron">
-            <h1><center>Teacher Dashboard!!!</center></h1>
+          <div class="jumbotron jumbotron-fluid">
+
+            <h2><center>Teacher Dashboard!!!</center></h2>
+
+
+
             <!-- <h2 class="mb-4">Sidebar #07</h2> -->
           </div>
+          <h1><center><span class="fa fa-user-circle fa-4x" style="color: #5F1947;"></span></center></h1>
 
+          <h2><center>Good Morning!!! Mr. X<br>Hope you are enjoying your day!!<i class="fa fa-smile-o" aria-hidden="true"></i></center></h2>
 
-
-          <h2>Welcome To Student Dashboard of MIST Automated Attendance System</h2>
-       
-
-
-
+         
         </div>
 
         

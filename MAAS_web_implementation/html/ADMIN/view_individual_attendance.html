@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Sidebar 07</title>
+    <title>Admin</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -28,6 +28,18 @@
     <div class="wrapper d-flex align-items-stretch">
       <nav id="sidebar" class="active">
         <!-- <img class="img-fluid" src="final.png" alt="..." class="img-thumbnail"> -->
+        <div class="container-fluid">
+
+           <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            <!--  <i class="fa fa-bars"></i> 
+             <span class="sr-only">Toggle Menu</span>-->
+             <span class="glyphicon glyphicon-circle-arrow-right"></span>
+            </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+
         <h3>MAAS</h3>
         <ul class="list-unstyled components mb-5">
           <li class="active">
@@ -51,7 +63,7 @@
 
 
           <li>
-             <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span class="fa fa-clipboard"></span> User</a>
+             <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span class="fa fa-users"></span> User</a>
               <ul class="collapse list-unstyled" id="pageSubmenu">
                 <li>
                     <a href="add_new_add.html">ADD</a>
@@ -67,7 +79,7 @@
 
 
               <li>
-             <a href="#pageSub" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span class="fa fa-cogs"></span> Routine</a>
+             <a href="#pageSub" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span class="fa fa-columns"></span> Routine</a>
               <ul class="collapse list-unstyled" id="pageSub">
                 <li>
                     <a href="routine_add.html">ADD</a>
@@ -98,15 +110,6 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="container-fluid">
 
-            <button type="button" id="sidebarCollapse" class="btn btn-primary">
-              <i class="fa fa-bars"></i>
-              <span class="sr-only">Toggle Menu</span>
-            </button>
-            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa fa-bars"></i>
-            </button>
-
-
             
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -129,36 +132,34 @@
 
             <!-- Adding LOGO DONE -->
 
-
-
-              
-
               <ul class="nav navbar-nav navbar-right">
-                
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-               
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-                <li><a href="../../index.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-              </ul>
 
+                <li class="nav-item">
+                    <a href="Admin_Home.html"><h4><span class="fa fa-user-circle"></span> Mr. X</h4></a>
+                </li>
+
+
+                <li class="nav-item">
+                   <!-- <a class="nav-link" href="Teacher_home.html"><h4><span class="fa fa-phone">Contact</h4></a>-->
+                    <a href="Admin_Home.html"><h4><span class="fa fa-phone">Contact</h4></a>
+                </li>
+                <li><a href="../../index.html"><h4><span class="glyphicon glyphicon-log-out"></span> Logout</h4></a></li>
+              </ul>
 
             </div>
           </div>
         </nav>
 
+
         <div>
           <div class="jumbotron">
-            <h1><center>Individual Attendance!!</center></h1>
+            <h2><center>Individual Attendance!!</center></h2>
             <!-- <h2 class="mb-4">Sidebar #07</h2> -->
           </div>
 
 
 
-          <h2>Please Fill Up the Following to View Individual Attendance</h2>
+          <h2>Fill up the followings:</h2>
 
            <form class="form-horizontal" >
     
