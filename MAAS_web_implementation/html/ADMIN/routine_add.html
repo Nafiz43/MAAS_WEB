@@ -22,6 +22,9 @@
       background-color: #3B5998;
       color: white
     }
+    .pt-3-half {
+padding-top: 1.4rem;
+}
   </style>
   <body>
 		
@@ -42,7 +45,7 @@
 
         <h3>MAAS</h3>
         <ul class="list-unstyled components mb-5">
-          <li class="active">
+          <li  class="active cl_hover_btn">
             <a href="Admin_Home.html"><span class="fa fa-home"></span> Home</a>
           </li>
 
@@ -50,10 +53,10 @@
          <li>
              <a href="#page" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span class="fa fa-list-alt"></span> Attendance</a>
               <ul class="collapse list-unstyled" id="page">
-                <li>
+                <li class="active cl_hover_btn">
                     <a href="view_individual_attendance.html">PERSON</a>
                 </li>
-                <li>
+                <li class="active cl_hover_btn">
                     <a href="view_classwise_attendance.html">CLASS</a>
                 </li>
               
@@ -65,13 +68,13 @@
           <li>
              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span class="fa fa-users"></span> User</a>
               <ul class="collapse list-unstyled" id="pageSubmenu">
-                <li>
+                <li class="active cl_hover_btn">
                     <a href="add_new_add.html">ADD</a>
                 </li>
-                <li>
+                <li class="active cl_hover_btn">
                     <a href="add_new_update.html">UPDATE</a>
                 </li>
-                <li>
+                <li class="active cl_hover_btn">
                     <a href="add_new_delete.html">DELETE</a>
                 </li>
               </ul>
@@ -81,13 +84,13 @@
               <li>
              <a href="#pageSub" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span class="fa fa-columns"></span> Routine</a>
               <ul class="collapse list-unstyled" id="pageSub">
-                <li>
+                <li class="active cl_hover_btn active_btn">
                     <a href="routine_add.html">ADD</a>
                 </li>
-                <li>
+                <li class="active cl_hover_btn">
                     <a href="routine_update.html">UPDATE</a>
                 </li>
-                <li>
+                <li class="active cl_hover_btn">
                     <a href="routine_delete.html">DELETE</a>
                 </li>
               </ul>
@@ -162,60 +165,127 @@
 
         </div>
 
-<div class="form-group">
+  <form class="form-horizontal" action="apply_application_add.html">
+       <div class="form-group">
       <label class="control-label col-sm-2" for="pwd">Select Course:</label>
       <div class="col-sm-8">          
        
     
     <select class="mdb-select md-form form-control">
-      <option value="1">CSE-17</option>
-      <option value="2">ME-14</option>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="1">CSE-17A</option>
+      <option value="2">CSE-17B</option>
       <option value="3">CE-19</option>
       <option value="4">CE-20</option>
       <option value="5">CSE-19</option>
       <option value="6">NAME-4</option>
-      <option value="7">AE-5</option>
     </select>
-    <!-- <select class="browser-default custom-select">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select> -->
       </div>
     </div>
 
-<table class="table table-striped" border="2">
-  <br>
-  <br>
-  <br>
-  <br>
-  <thead class="thead-light">
-    <tr>
-      <th scope="col">08:00-08:55 am</th>
-      <th scope="col">09:00-09:55 am</th>
-      <th scope="col">10:00-10:55 am</th>
-      <th scope="col">11:45 am-12:40 pm</th>
-      <th scope="col">12:45-1:40 pm</th>
-      <th scope="col">1:45-2:40 pm</th>
-      
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>CSE 400</td> 
-      <td>CSE 403</td>
-      <td>CSE 401</td>
-      <td>CSE 405</td>
-      <td>CSE 427/CSE 429</td>
-      <td>HUM 415</td>
-      
-      
-
-    </tr>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Select Classroom:</label>
+      <div class="col-sm-8">          
+       
     
-  </tbody>
-</table>
+    <select class="mdb-select md-form form-control">
+      <option value="" disabled selected>Choose your option</option>
+      <option value="1">501</option>
+      <option value="2">502</option>
+      <option value="3">503</option>
+      <option value="4">504</option>
+      <option value="5">601</option>
+      <option value="6">602</option>
+    </select>
+      </div>
+    </div>
+  </form>
+
+
+   
+
+
+    <br>
+   
+    <table class="table table-bordered table-responsive-md table-striped text-center">
+        <thead>
+          <tr>
+            <th class="text-center">Day/Time </th>
+            <th class="text-center">1st <br> 0800-0855</th>
+            <th class="text-center">2nd <br> 0900-0955</th>
+            <th class="text-center">3rd <br> 1000-1055</th>
+            <th class="text-center">1055-1145 <br>  </th>
+            <th class="text-center">4th <br> 1145-1240  </th>
+            <th class="text-center">5th <br> 1245-1340 </th>
+            <th class="text-center">6th <br> 1345-1440 </th>
+            <th class="text-center">6th <br> 1445-1550 </th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr>
+            <td class="pt-3-half" contenteditable="false"> <b>Sun</b> </td>
+            <td class="pt-3-half" contenteditable="true"> </td>
+            <td class="pt-3-half" contenteditable="true">  </td>
+            <td class="pt-3-half" contenteditable="true"> </td>
+            <td class="pt-3-half" contenteditable="false"> <b>B</b> </td>
+             <td class="pt-3-half" contenteditable="true">  </td>
+            <td class="pt-3-half" contenteditable="true">  </td>
+            <td class="pt-3-half" contenteditable="true"> </td>
+             <td class="pt-3-half" contenteditable="true">  </td>
+          </tr>
+           <tr>
+            <td class="pt-3-half" contenteditable="false"> <b>Mon</b> </td>
+            <td class="pt-3-half" contenteditable="true"> </td>
+            <td class="pt-3-half" contenteditable="true">  </td>
+            <td class="pt-3-half" contenteditable="true"> </td>
+            <td class="pt-3-half" contenteditable="false"> <b>R</b> </td>
+             <td class="pt-3-half" contenteditable="true">  </td>
+            <td class="pt-3-half" contenteditable="true">  </td>
+            <td class="pt-3-half" contenteditable="true"> </td>
+             <td class="pt-3-half" contenteditable="true">  </td>
+          </tr>
+           <tr>
+            <td class="pt-3-half" contenteditable="false"> <b>Tue</b> </td>
+            <td class="pt-3-half" contenteditable="true"> </td>
+            <td class="pt-3-half" contenteditable="true">  </td>
+            <td class="pt-3-half" contenteditable="true"> </td>
+            <td class="pt-3-half" contenteditable="false"> <b>E</b> </td>
+             <td class="pt-3-half" contenteditable="true">  </td>
+            <td class="pt-3-half" contenteditable="true">  </td>
+            <td class="pt-3-half" contenteditable="true"> </td>
+             <td class="pt-3-half" contenteditable="true">  </td>
+          </tr>
+           <tr>
+            <td class="pt-3-half" contenteditable="false"> <b>Wed</b> </td>
+            <td class="pt-3-half" contenteditable="true"> </td>
+            <td class="pt-3-half" contenteditable="true">  </td>
+            <td class="pt-3-half" contenteditable="true"> </td>
+            <td class="pt-3-half" contenteditable="false">  <b>A</b> </td>
+             <td class="pt-3-half" contenteditable="true">  </td>
+            <td class="pt-3-half" contenteditable="true">  </td>
+            <td class="pt-3-half" contenteditable="true"> </td>
+             <td class="pt-3-half" contenteditable="true">  </td>
+          </tr>
+           <tr>
+            <td class="pt-3-half" contenteditable="false"> <b>Thu</b> </td>
+            <td class="pt-3-half" contenteditable="true"> </td>
+            <td class="pt-3-half" contenteditable="true">  </td>
+            <td class="pt-3-half" contenteditable="true"> </td>
+            <td class="pt-3-half" contenteditable="false"> <b>K</b> </td>
+             <td class="pt-3-half" contenteditable="true">  </td>
+            <td class="pt-3-half" contenteditable="true">  </td>
+            <td class="pt-3-half" contenteditable="true"> </td>
+             <td class="pt-3-half" contenteditable="true">  </td>
+          </tr>
+
+
+          
+         
+        </tbody>
+      </table>
+
+
 
 
 

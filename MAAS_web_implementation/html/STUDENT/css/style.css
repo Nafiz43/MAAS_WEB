@@ -8336,3 +8336,12 @@ a[data-toggle="collapse"] {
   .btn.btn-primary:hover, .btn.btn-primary:focus {
     background: #3e64ff !important;
     border-color: #3e64ff !important; }
+.cl_hover_btn:hover{
+opacity: .7;
+background: #546F44;
+color:#000000;
+}
+.active_btn{
+  opacity: 1.0;
+  background: #30501D;
+}

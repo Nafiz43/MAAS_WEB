@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
     <title>Student</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,6 +13,56 @@
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    
+
+
+
+
+	<script>
+	  // Your web app's Firebase configuration
+	  var firebaseConfig = {
+	    apiKey: "AIzaSyCNM0HlObFHsCwM3iZhV8i0Qxwn3mmTYJg",
+	    authDomain: "maas-fb909.firebaseapp.com",
+	    databaseURL: "https://maas-fb909.firebaseio.com",
+	    projectId: "maas-fb909",
+	    storageBucket: "maas-fb909.appspot.com",
+	    messagingSenderId: "147741298520",
+	    appId: "1:147741298520:web:500360dba2aa5dd2d91f2d",
+	    measurementId: "G-ZFZHDL8MDG"
+	  };
+	  // Initialize Firebase
+	  firebase.initializeApp(firebaseConfig);
+	  //firebase.analytics();
+	</script>
+	  <script>
+	  	// Material Select Initialization
+
+		function writeData() {
+			// var p=document.getElementById("test1").value;
+			// var q=document.getElementById("test2").value;
+
+				alert("calling");
+				//alert(p);
+				firebase.database().ref('UUU').set({
+			    username: 'Nafi',
+			    email: '018',
+			    
+				 });
+				alert('Successful');
+
+			// body...
+		}
+
+	</script>
+
+
+
+      <!-- Bootstrap Date-Picker Plugin -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+      <script src="js/apply_application.js"></script>
   </head>
 
      <style>
@@ -21,22 +72,15 @@
     }
   </style>
   
-  <script>
-  
-    $(document).ready(function(){
 
-      var date_input=$('input[name="date"]'); //our date input has the name "date"
-      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-      var options={
-        format: 'mm/dd/yyyy',
-        container: container,
-        todayHighlight: true,
-        autoclose: true,
-      };
-      date_input.datepicker(options);
-     
-    })
-</script>
+  
+    <script type="text/javascript">
+            $(function () {
+                $('#date').datetimepicker();
+            });
+        </script>
+
+
   <body>
     
     <div class="wrapper d-flex align-items-stretch">
@@ -57,19 +101,19 @@
 
         <h3>MAAS</h3>
         <ul class="list-unstyled components mb-5">
-          <li class="active">
+          <li class="active cl_hover_btn">
             <a href="student_main.html"><span class="fa fa-home"></span> Home</a>
           </li>
-          <li>
+          <li class="active cl_hover_btn">
               <a href="attendance.html"><span class="fa fa-address-card-o"></span> Attendance</a>
           </li>
-          <li>
+          <li class="active cl_hover_btn">
             <a href="eligibility.html"><span class="fa fa-table"></span> Eligibility</a>
           </li>
-          <li>
+          <li class="active cl_hover_btn">
             <a href="fine.html"><span class="fa fa-money"></span> Fine</a>
           </li>
-          <li>
+          <li class="active cl_hover_btn active_btn">
             <a href="apply_application.html"><span class="fa fa-file-text-o"></span> Application</a>
           </li>
         </ul>
@@ -125,6 +169,16 @@
           </div>
         </nav>
 
+        <!-- Main Code Starts There
+        Main Code Starts There
+        Main Code Starts There -->
+
+
+
+
+
+
+
         <div class="jumbotron">
             <h2><center>Application Page!</center></h2>
             <!-- <h2 class="mb-4">Sidebar #07</h2> -->
@@ -132,11 +186,11 @@
 
    <div class="container-fluid">
   <h2>Fill up the details for application</h2>
-  <form class="form-horizontal" action="apply_application_add.html">
+  <form class="form-horizontal" action="apply_application_add.html" method="post" enctype="multipart/form-data">
     <div class="form-group">
       <label class="control-label col-sm-2" for="email">Select Date:</label>
       <div class="col-sm-8">
-        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
       </div>
     </div>
 
@@ -146,11 +200,11 @@
       <div class="col-sm-8">          
        
     
-    <select class="mdb-select md-form form-control">
+    <select id=course class="mdb-select md-form form-control">
       <option value="" disabled selected>Choose your option</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
+      <option value="1">CSE-401</option>
+      <option value="2">CSE-402</option>
+      <option value="3">CSE-460</option>
     </select>
     <!-- <select class="browser-default custom-select">
   <option selected>Open this select menu</option>
@@ -166,11 +220,11 @@
       <div class="col-sm-8">          
        
     
-    <select class="mdb-select md-form form-control">
+    <select  id="faculty" class="mdb-select md-form form-control">
       <option value="" disabled selected>Choose your option</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
+      <option value="1">Lt Col Nazrul Islam</option>
+      <option value="2">Lt Cdr Anisur Rahman</option>
+      <!-- <option value="3">Option 3</option> -->
     </select>
     <!-- <select class="browser-default custom-select">
   <option selected>Open this select menu</option>
@@ -182,11 +236,11 @@
     </div>
 
       <div class="form-group">
-      <label class="control-label col-sm-2" for="Reason">Reason:</label>
+      <label class="control-label col-sm-2" for="rsn">Reason:</label>
       <div class="col-sm-8">          
        
     
-    <textarea id="rsn" class="form-control" rows="8" columns="10" id="Reason" placeholder="Write The Reason For Being Absent"></textarea>
+    <textarea id="rsn" class="form-control" rows="8" columns="10" placeholder="Write The Reason For Being Absent"></textarea>
     <!-- <select class="browser-default custom-select">
   <option selected>Open this select menu</option>
   <option value="1">One</option>
@@ -198,27 +252,34 @@
 
       <div class="form-group">
     <div class="input-group-prepend">
-      <label class="control-label col-sm-2" for="Reason">Add Document:</label>
+      <label class="control-label col-sm-2" for="dcm">Document Link:</label>
+       <div class="col-sm-8">
+         <textarea id="dcm" class="form-control" rows="2" columns="10" placeholder="Paste The Document Link Here"></textarea>
+      </div>
     </div>
 
+    
 
-    <div class="custom-file col-sm-8 " >
+
+    <!-- <div class="custom-file col-sm-8 " >
       <input class="form-control" type="file" class="custom-file-input" id="inputGroupFile01"
         aria-describedby="inputGroupFileAddon01">
      
-    </div>
+    </div> -->
 
 
   </div>
 
 
-    <div class="form-group">        
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default">Submit</button>
-      </div>
-    </div>
+    
 
  </form>
+
+
+  <div class="col-sm-offset-2 col-sm-12">
+       <button class="btn btn-default" onclick="apply_application()"> Submit </button>
+      </div>
+ 
 </div>
 
     <script src="js/jquery.min.js"></script>
