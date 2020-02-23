@@ -7,6 +7,7 @@ function apply_application() {
 
 	//alert("hello world");
 	var date =document.getElementById("date").value;
+	
 	var course =document.getElementById("course");
 	var course_text=course.options[course.selectedIndex].text;
 	// alert(course_text);
@@ -52,6 +53,7 @@ function apply_application() {
 			App_link : document_text,
 		    App_status: 'Pending'
 			 });
+		
 		setTimeout(function(){
 		 alert("Successful");
 		 location.reload();

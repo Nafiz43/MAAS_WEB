@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+     <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
   	<title>Admin</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -23,22 +24,27 @@
       color: white
     }
   </style>
-  <script>
-  
-    $(document).ready(function(){
 
-      var date_input=$('input[name="date"]'); //our date input has the name "date"
-      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-      var options={
-        format: 'mm/dd/yyyy',
-        container: container,
-        todayHighlight: true,
-        autoclose: true,
-      };
-      date_input.datepicker(options);
-     
-    })
-</script>
+  <script src="js/routine_delete.js"></script>
+
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCNM0HlObFHsCwM3iZhV8i0Qxwn3mmTYJg",
+      authDomain: "maas-fb909.firebaseapp.com",
+      databaseURL: "https://maas-fb909.firebaseio.com",
+      projectId: "maas-fb909",
+      storageBucket: "maas-fb909.appspot.com",
+      messagingSenderId: "147741298520",
+      appId: "1:147741298520:web:500360dba2aa5dd2d91f2d",
+      measurementId: "G-ZFZHDL8MDG"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    //firebase.analytics();
+  </script>
+
+ 
   <body>
 		
 		<div class="wrapper d-flex align-items-stretch">
@@ -173,67 +179,62 @@
         		<!-- <h2 class="mb-4">Sidebar #07</h2> -->
         	</div>
 
-           <form class="form-horizontal" action="apply_application_add.html">
+
+
+
+
+
+
+
+<form class="form-horizontal" action="apply_application_add.html">
             <div class="form-group">
       <label class="control-label col-sm-2" for="pwd">Select Course:</label>
       <div class="col-sm-8">          
        
-    
-    <select class="mdb-select md-form form-control">
+     <select id="course" class="mdb-select md-form form-control">
       <option value="" disabled selected>Choose your option</option>
-      <option value="1">CSE-401</option>
-      <option value="2">CSE-402</option>
-      <option value="3">CSE-460</option>
+      <option value="1">CSE-17A</option>
+      <option value="2">CSE-17B</option>
+      <option value="3">CE-19</option>
+      <option value="4">CE-20</option>
+      <option value="5">CSE-19</option>
+      <option value="6">NAME-4</option>
     </select>
   
       </div>
     </div>
 
     <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Select Class:</label>
+      <label class="control-label col-sm-2" for="pwd">Select Classroom:</label>
       <div class="col-sm-8">          
        
     
-    <select class="mdb-select md-form form-control">
+   <select id="classroom" class="mdb-select md-form form-control">
       <option value="" disabled selected>Choose your option</option>
-      <option value="1">CSE-17</option>
-      <option value="2">CSE-18</option>
-      <option value="3">CSE-19</option>
-      <option value="4">CSE-20</option>
+      <option value="1">501</option>
+      <option value="2">502</option>
+      <option value="3">503</option>
+      <option value="4">504</option>
+      <option value="5">601</option>
+      <option value="6">602</option>
     </select>
   
       </div>
     </div>
+  </form>
+  <div class="col-sm-offset-2 col-sm-10">
+     <button id="delete" onclick="delete_routine()" class="btn btn-default">Delete</button>
+  </div>
 
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Select Time:</label>
-      <div class="col-sm-8">          
-       
-    
-    <select class="mdb-select md-form form-control">
-      <option value="" disabled selected>Choose your option</option>
-      <option value="1">8:00-8.55 am</option>
-      <option value="2">9:00-9.55 am</option>
-      <option value="3">10:00-10.55 am</option>
-    </select>
-  
-      </div>
-    </div>
 
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="email">Select Date:</label>
-      <div class="col-sm-8">
-        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
-      </div>
-      </div>
 
-      <div class="container">
-      <br><br><br>
-      <div class="text-right">
-          <a href="#" alignment="right"><button class="btn btn-primary">Delete</button></a>
-      </div>
-      <br><br>
-      </div>
+
+
+
+
+
+
+           
 
       
 

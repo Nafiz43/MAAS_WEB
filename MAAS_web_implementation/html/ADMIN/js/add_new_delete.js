@@ -1,6 +1,6 @@
 
 function delete_user() {
-	alert("Hello");
+	//alert("Hello");
 	var id=document.getElementById("id").value;
 	let userRef = firebase.database().ref('User/' + id);
     userRef.remove();
