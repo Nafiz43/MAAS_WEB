@@ -10,23 +10,37 @@ function push_user() {
 	var category=document.getElementById("category");
 	var category_text=category.options[category.selectedIndex].text;
 
+	var content='<br>';
+    content=content+'<div class="alert alert-danger alert-dismissible fade in">';
+    content=content+'<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>'
+    // <strong>Info!</strong> This alert box could indicate a neutral informative change or action.
+
 	
 
 	if (name=='') {
-		alert("Enter a Name");
+		//alert("Enter a Name");
 		document.getElementById("name").style.borderColor = "red";
+		 content=content+'Empty <strong>Name</strong> not allowed! </div> ';
+         document.getElementById("alert_there").innerHTML=content;
 	}
 	else if (id=='') {
-		alert("Enter an ID");
+		//alert("Enter an ID");
 		document.getElementById("id").style.borderColor = "red";
+		//document.getElementById("name").style.borderColor = "red";
+		 content=content+'Empty <strong>UserID</strong> not allowed! </div> ';
+         document.getElementById("alert_there").innerHTML=content;
 	}
 	else if (pass=='') {
-		alert("Enter a Password");
+		//alert("Enter a Password");
 		document.getElementById("pass").style.borderColor = "red";
+		 content=content+'Empty User <strong>Password</strong>  not allowed! </div> ';
+         document.getElementById("alert_there").innerHTML=content;
 	}
 	else if (category_text=="Choose your option") {
-		alert("Select Category");
+		//alert("Empty category of user not allowed");
 		document.getElementById("category").style.borderColor = "red";
+		 content=content+'Empty <strong>Category</strong>  of user not allowed! </div> ';
+         document.getElementById("alert_there").innerHTML=content;
 	}
 	else
 	{
