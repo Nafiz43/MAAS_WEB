@@ -3,6 +3,7 @@
    function check(form) {
                     var content='<br>';
                     content=content+'<div class="alert alert-danger" role="alert">';
+                    var input = $('.validate-input .input100');
         // 
         // content=content+'';
         //           
@@ -17,6 +18,8 @@
                   localStorage.setItem("value",userid);
 
                   if (userid=='' && password=='') {
+                  	var thisAlert = $(input).parent();
+       				$(thisAlert).addClass('alert-validate');
                     content=content+'Empty UserID and Password! </div> ';
                     document.getElementById("alert_there").innerHTML=content;
                     document.getElementById("userid").style.borderColor = "red";
@@ -24,11 +27,15 @@
 
                   }
                   else if (userid=='') {
+                  	var thisAlert = $(input[0]).parent();
+       				$(thisAlert).addClass('alert-validate');
                      content=content+'Empty UserID not allowed! </div> ';
                     document.getElementById("alert_there").innerHTML=content;
                     document.getElementById("userid").style.borderColor = "red";
                   }
                   else if (password=='') {
+                  	var thisAlert = $(input[1]).parent();
+       				$(thisAlert).addClass('alert-validate');
                      content=content+'Empty Password not allowed! </div> ';
                     document.getElementById("alert_there").innerHTML=content;
                     document.getElementById("password").style.borderColor = "red";
@@ -68,7 +75,7 @@
                      
                       
                   }).catch(function(error) {
-                    content=content+'Invalid Username!! </div> ';
+                    content=content+'Invalid UserID!! </div> ';
                     document.getElementById("alert_there").innerHTML=content;
                     document.getElementById("userid").style.borderColor = "red";
   // Uh-oh, an error occurred!
