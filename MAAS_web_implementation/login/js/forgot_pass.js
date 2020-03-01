@@ -71,16 +71,16 @@ function check(form) {
 						From : "mist.attendance.system@gmail.com",
 						Subject : "Recovery Password",
 						Body : m_body ,
-						}).then(
-							
-							message => alert("mail sent successfully")
-							
-						);
+						}).then(function(message){
+				            alert("mail sent successfully");
+				            window.close();
+							window.open('forgot_password_confirm.html');
+
+			});
 						//setTimeout(function(){
 
                       		//location.reload();
-                      		window.close();
-							window.open('forgot_password_confirm.html');
+                      		
 						//	 }, 3000);
 
 							
