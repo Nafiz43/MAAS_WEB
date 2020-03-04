@@ -51,10 +51,17 @@ function add_routine() {
 	
 
 	if (course_text=="Choose your option") {
-		alert('Enter Course Name');
+			//alert('Enter Course Name');
+			content='';
+	   		content=content+'<div style="font-size: 16pt" class="alert alert-danger" role="alert">';
+	   		content=content+'Select <strong> Course!</strong> </div> ';
+	   		document.getElementById("alert_there").innerHTML=content;
 	}
 	else if (classroom_text == "Choose your option" ) {
-		alert('Enter Room Number');
+			content='';
+	   		content=content+'<div style="font-size: 16pt" class="alert alert-danger" role="alert">';
+	   		content=content+'Select <strong> classroom </strong> </div> ';
+	   		document.getElementById("alert_there").innerHTML=content;
 	}
 	else {
 		   firebase.database().ref('Routine/' + classroom_text).set({
@@ -104,8 +111,55 @@ function add_routine() {
 		    	alert("Failed to Save data");
 		      // The write failed...
 		    } else {
-		    	alert("Successfully Saved");
-		    	location.reload();
+		    	content='';
+	   		content=content+'<div style="font-size: 16pt" class="alert alert-success" role="alert">';
+	   		content=content+' Data <strong> saved </strong> successfully! </div> ';
+	   		document.getElementById("alert_there").innerHTML=content;
+	   		document.getElementById("course").innerHTML='';
+	   		document.getElementById("classroom").innerHTML='';
+	   		
+	   		document.getElementById("sun_1st").innerHTML='';
+	   		document.getElementById("sun_2nd").innerHTML='';
+			document.getElementById("sun_3rd").innerHTML='';
+			document.getElementById("sun_4th").innerHTML='';
+			document.getElementById("sun_5th").innerHTML='';
+			document.getElementById("sun_6th").innerHTML='';
+			document.getElementById("sun_7th").innerHTML='';
+
+			document.getElementById("mon_1st").innerHTML='';
+			document.getElementById("mon_2nd").innerHTML='';
+			document.getElementById("mon_3rd").innerHTML='';
+			document.getElementById("mon_4th").innerHTML='';
+			document.getElementById("mon_5th").innerHTML='';
+			document.getElementById("mon_6th").innerHTML='';
+			document.getElementById("mon_7th").innerHTML='';
+
+			document.getElementById("tue_1st").innerHTML='';
+			document.getElementById("tue_2nd").innerHTML='';
+			document.getElementById("tue_3rd").innerHTML='';
+			document.getElementById("tue_4th").innerHTML='';
+			document.getElementById("tue_5th").innerHTML='';
+			document.getElementById("tue_6th").innerHTML='';
+			document.getElementById("tue_7th").innerHTML='';
+
+			document.getElementById("wed_1st").innerHTML='';
+			document.getElementById("wed_2nd").innerHTML='';
+			document.getElementById("wed_3rd").innerHTML='';
+			document.getElementById("wed_4th").innerHTML='';
+			document.getElementById("wed_5th").innerHTML='';
+			document.getElementById("wed_6th").innerHTML='';
+			document.getElementById("wed_7th").innerHTML='';
+
+			document.getElementById("thu_1st").innerHTML='';
+			document.getElementById("thu_2nd").innerHTML='';
+			document.getElementById("thu_3rd").innerHTML='';
+			document.getElementById("thu_4th").innerHTML='';
+			document.getElementById("thu_5th").innerHTML='';
+			document.getElementById("thu_6th").innerHTML='';
+			document.getElementById("thu_7th").innerHTML='';
+
+		    	//alert("Successfully Saved");
+		    	//location.reload();
 		      // Data saved successfully!
 		    }
 		  });

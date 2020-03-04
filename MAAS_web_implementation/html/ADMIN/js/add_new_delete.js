@@ -2,7 +2,7 @@
 function delete_user() {
 	
 	var id=document.getElementById("id").value;
-	alert(id);
+	//alert(id);
 
 	if (id=='') {
 		content='';

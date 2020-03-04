@@ -1,6 +1,7 @@
    
   
 function check(form) { 
+		var s_mail;
 	    var s_username;
 	   	var s_userpass;
 	   	var m_body='Hello ';
@@ -47,16 +48,19 @@ function check(form) {
                      //alert("hello");
                      s_username = snapshot.val().username;
                       s_userpass = snapshot.val().userpass;
+                      s_mail = snapshot.val().useremail;
 
                       //alert("in here"+s_userpass);
                       //alert("in here"+s_username);
                       //alert("out here"+s_username);
 
 		                 // alert(s_userpass);
+		                 if (s_mail==mail) {
+
 		                  m_body=m_body+s_username;
-					   			m_body=m_body+"!! Your Password is : ";
-					   			m_body=m_body+s_userpass;
-					   			m_body=m_body+"  (Change the Password after log in!)";
+					   	  m_body=m_body+"!! Your Password is : ";
+					   	  m_body=m_body+s_userpass;
+					   	  m_body=m_body+"  (Change the Password after log in!)";
 
 			   
 			   			
@@ -77,17 +81,17 @@ function check(form) {
 							// window.open('forgot_password_confirm.html');
 							window.location.replace("forgot_password_confirm.html");
 
-			});
-						//setTimeout(function(){
+						});
 
-                      		//location.reload();
-                      		
-						//	 }, 3000);
+		                 }
+		                 else
+		                 {
+		                 	content=content+' <strong> Email </strong> did not matched! </div> ';
+      				      document.getElementById("alert_there").innerHTML=content;
 
-							
-                      //alert('hello');
-                     //alert(s_userpass);
-                   
+		                 }
+		                
+						
 
                       
                      
