@@ -16,6 +16,7 @@
                   userid=document.getElementById("userid").value;
                   var password=document.getElementById("password").value;
                   localStorage.setItem("value",userid);
+                //  localStorage.setItem("value_username",username);
 
                   if (userid=='' && password=='') {
                   	var thisAlert = $(input).parent();
@@ -47,22 +48,33 @@
                      //alert("hello");
 
                       var s_userpass = snapshot.val().userpass;
+                      var s_username = snapshot.val().username;
                       //alert('hello');
 
                       if(s_userpass==password){
                         var s_category=snapshot.val().usercategory;
                         if (s_category=="Admin") {
-                             window.close()
-                             window.open('../html/ADMIN/Admin_Home.html')
+                             // window.close()
+                             // window.open('../html/ADMIN/Admin_Home.html')
+                             localStorage.setItem("value_username",s_username);
+                             window.location.replace("../html/ADMIN/Admin_Home.html");
+
 
                         }
                         else if(s_category=="Student"){
-                            window.close()
-                            window.open('../html/STUDENT/student_main.html')
+                            // window.close()
+                            // window.open('../html/STUDENT/student_main.html')
+                            alert(s_username);
+                            localStorage.setItem("value_username",s_username);
+                            window.location.replace("../html/STUDENT/student_main.html");
+
                         }
                         else if(s_category=="Teacher"){
-                            window.close()
-                            window.open('../html/TEACHER/Teacher_home.html')
+                            // window.close()
+                            // window.open('../html/TEACHER/Teacher_home.html')
+                            localStorage.setItem("value_username",s_username);
+                            window.location.replace("../html/TEACHER/Teacher_home.html");
+
                         }
 
                       }

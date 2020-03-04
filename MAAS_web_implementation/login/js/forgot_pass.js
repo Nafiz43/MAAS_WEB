@@ -73,8 +73,9 @@ function check(form) {
 						Body : m_body ,
 						}).then(function(message){
 				            alert("mail sent successfully");
-				            window.close();
-							window.open('forgot_password_confirm.html');
+				   //          window.close();
+							// window.open('forgot_password_confirm.html');
+							window.location.replace("forgot_password_confirm.html");
 
 			});
 						//setTimeout(function(){

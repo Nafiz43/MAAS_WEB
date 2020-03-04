@@ -14,6 +14,25 @@
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
+  <script src="js/add_new_add.js"></script>
+
+<script>
+	  // Your web app's Firebase configuration
+	  var firebaseConfig = {
+	    apiKey: "AIzaSyCNM0HlObFHsCwM3iZhV8i0Qxwn3mmTYJg",
+	    authDomain: "maas-fb909.firebaseapp.com",
+	    databaseURL: "https://maas-fb909.firebaseio.com",
+	    projectId: "maas-fb909",
+	    storageBucket: "maas-fb909.appspot.com",
+	    messagingSenderId: "147741298520",
+	    appId: "1:147741298520:web:500360dba2aa5dd2d91f2d",
+	    measurementId: "G-ZFZHDL8MDG"
+	  };
+	  // Initialize Firebase
+	  firebase.initializeApp(firebaseConfig);
+	  //firebase.analytics();
+	</script>
+  <script src="js/application.js"></script>
 
      <style>
       .body{
@@ -100,17 +119,18 @@
             <!-- Adding LOGO DONE -->
 
               <ul class="nav navbar-nav navbar-right">
-
-                <li class="nav-item">
-                    <a href="Teacher_home.html"><h4><span class="fa fa-user-circle"></span> Mr. X</h4></a>
-                </li>
-
-
-                <li class="nav-item">
+              	<li class="nav-item">
                    <!-- <a class="nav-link" href="Teacher_home.html"><h4><span class="fa fa-phone">Contact</h4></a>-->
                     <a href="../../login/change_password.html"><h4><span class="fa fa-key">Password</h4></a>
                 </li>
-                <li><a href="../../index.html"><h4><span class="glyphicon glyphicon-log-out"></span> Logout</h4></a></li>
+                 <li class="nav-item">
+                    <a href="student_main.html"><h4><div id="kickoff1"> </div> </h4></a>
+                </li>
+                <li>
+                	<a href="../../index.html"><h4><span class="glyphicon glyphicon-log-out"></span> Logout</h4></a>
+                </li>
+
+               
               </ul>
             </div>
           </div>
@@ -129,7 +149,7 @@
 
 <div class="container-fluid">
   <h2>Fill up the followings:</h2>
-  <form class="form-horizontal" action="apply_application_add.html">
+  <form class="form-horizontal" >
     <div class="form-group">
       <label class="control-label col-sm-2" for="email">Select Course:</label>
       <div class="col-sm-8">
@@ -141,8 +161,9 @@
     </select>
       </div>
     </div>
+     
 
-
+<!-- 
     <div class="form-group">
       <label class="control-label col-sm-2" for="pwd">Select Section:</label>
       <div class="col-sm-8">          
@@ -154,23 +175,25 @@
       <option value="2">Option 2</option>
       <option value="3">Option 3</option>
     </select>
-    <!-- <select class="browser-default custom-select">
+     <select class="browser-default custom-select">
   <option selected>Open this select menu</option>
   <option value="1">One</option>
   <option value="2">Two</option>
   <option value="3">Three</option>
 </select> -->
-      </div>
-    </div>
+   <!--    </div>
+    </div> --> 
 </form>
+<div class="col-sm-offset-2 col-sm-12">
+       <button class="btn btn-default" onclick="application_list()"> Submit </button>
+      </div>
 </div>
 
-<div class="container">
- <br><br><br>
+<div  class="container">
 
  <div class="row">
         <div class='col-sm-6'>
-            <h4><center>Application list :</center></h4>
+            <h3><center> <strong>Application list :</strong> </center></h3>
         </div>
         <br><br><br>
   </div>
@@ -182,26 +205,21 @@
 
         <div class='col-sm-6'>
 
-              <table class="table" border="2">
-                
-                
-                <tbody>
-                  <tr>
-                    <td><a href="application_view.html">201714001</a></td>
-                  </tr>
-
-                  <tr>
-                    <td><a href="application_view.html">201714002</a></td>
-                  </tr>
-
-                </tbody>
-              </table>
+        <div  class="list-group">
+		
+		<div id="application_li">
+			
+		</div>
+<!-- 		  <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
+		  <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button> -->
+		 
+		</div>
             
         </div>
         
   </div>
 
-<br><br><br><br><br><br>
+<br>
 
   <div class="row">
         <div class='col-sm-2'>
@@ -209,11 +227,12 @@
         </div>
 
         <div class='col-sm-3'>
-            <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="1" ></textarea>
+            <input class="form-control rounded-0" id="total_application">
         </div>
   </div>
 
  <br><br><br><br><br><br>
+
 </div>
 
 
@@ -228,7 +247,7 @@
 
 
 
-
+<script src="../../js/basic.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>

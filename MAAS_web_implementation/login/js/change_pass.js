@@ -96,8 +96,9 @@ function check(form) {
 					      // The write failed...
 					    } else {
 					    	
-		                      		window.close()
-                           			window.open('change_password_confirm.html')
+		                      		// window.close()
+                          //  			window.open('change_password_confirm.html')
+                           			window.location.replace("change_password_confirm.html");
 
 		                      
 					    }
@@ -107,7 +108,7 @@ function check(form) {
                       }
                       else{
 
-                      	location.reload("../html/STUDENT/student_main.html");
+                      	//location.reload("../html/STUDENT/student_main.html");
                         content=content+'<strong>Current Password </strong> did not matched!! </div> ';
                         document.getElementById("alert_there").innerHTML=content;
                         document.getElementById("userid").style.borderColor = "red";
@@ -116,9 +117,9 @@ function check(form) {
                      
                       
                   }).catch(function(error) {
-                    content=content+'Unknown Error occurred!! </div> ';
-                    document.getElementById("alert_there").innerHTML=content;
-                    document.getElementById("userid").style.borderColor = "red";
+                   // content=content+'Unknown Error occurred!! </div> ';
+                 //   document.getElementById("alert_there").innerHTML=content;
+                    //document.getElementById("userid").style.borderColor = "red";
   // Uh-oh, an error occurred!
                 });
 	   	
