@@ -64,7 +64,7 @@
                         else if(s_category=="Student"){
                             // window.close()
                             // window.open('../html/STUDENT/student_main.html')
-                            alert(s_username);
+                           // alert(s_username);
                             localStorage.setItem("value_username",s_username);
                             window.location.replace("../html/STUDENT/student_main.html");
 

@@ -121,7 +121,7 @@
 
 
 <div class="jumbotron">
-  <h3><center>Welcome to Application View Page</center></h3>
+  <h3><center>Application View</center></h3>
 </div>
 
 <div class="container">
@@ -129,15 +129,23 @@
 
  <div class="row">
         <div class='col-sm-7'>
-            <h4><center><b>Applicant's Roll : 2017140xx</b></center></h4>
+          <h4 style="font-size: 16pt"> <u>Application Date :</u>  <b><div id="App_date">  </div></b>  </h4>
+            <h4 style="font-size: 16pt"> <u>Applicant's Roll :</u>  <b><div id="App_id">  </div></b>  </h4>
+            <h4 style="font-size: 16pt"> <u>Applicant's Name :</u>   <b><div id="App_name" >  </div></b>   </h4>
+            
+            <h4 style="font-size: 16pt"> <u>Course Name :</u>   <b><div id="App_course">  </div></b>  </h4>
+            <h4 style="font-size: 16pt"> <u>Reason For Absence :</u>  </h4>
+            
+         <textarea style="font-size: 16pt" cols="70" rows="8" id="rsn"></textarea>
+         <div class="text-right"><a id="anch" href="#" target="_blank"> <h4>Attachments(prescription)</h4> </a></div>
         </div>
-        <div class='col-sm-1'>
+       <!--  <div class='col-sm-1'>
             <h4><center><b>Date</b></center></h4>
-        </div>
-        <div class='col-sm-2'>
+        </div> -->
+      <!--   <div class='col-sm-2'>
             <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="1" ></textarea>
-        </div>
-        <br><br><br>
+        </div> -->
+       
   </div>
 
 <div class="row">
@@ -148,16 +156,7 @@
 
         <div class='col-sm-8'>
 
-              <table class="table" border="2">
-                
-                
-                <tbody>
-                  <tr>
-                    <td><p>reasons of absence</p><br><div class="text-right"><a href="application_view.html">Attachments(prescription)</a></div></td>
-                  </tr>
-
-                </tbody>
-              </table>
+             
             
         </div>
         
@@ -166,21 +165,23 @@
 <br><br><br>
 
         <div class="row">
-          <div class='col-sm-8'>
+          <div class='col-sm-6'>
             
           </div>
           <div class='col-sm-1'>
-            <a href="#"> <button class="btn btn-primary">Accept</button></a>
+             <button onclick="accept()" style="font-size: 14pt" class="btn btn-primary">Accept</button>
             
           </div>
-          <div class='col-sm-2'>
+          &nbsp
+          <div class='col-sm-4'>
             
-            <a href="#"><button class="btn btn-primary">Reject</button></a>
+            <button onclick="reject()" style="font-size: 14pt" class="btn btn-danger">Reject</button>
 
           </div>
           <br><br>
         </div>
 </div>
+<script src="js/application_view.js"></script>
 <script src="../../js/basic.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>

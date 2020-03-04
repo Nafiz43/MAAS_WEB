@@ -1,19 +1,5 @@
 
-
-//var s_id=document.getElementById("s_id").value;
-
-// var name=document.getElementById("name").value;
-// 	var id=document.getElementById("id").value;
-// 	var pass=document.getElementById("pass").value;
-
-// 	var category=document.getElementById("category");
-// 	var category_text=category.options[category.selectedIndex].text;
-
-
 function user_search() {
-	// document.getElementById("foo").value ="43572";
-
-	 // document.getElementById("foo").style.borderColor = "red";
 
 
 
@@ -22,37 +8,80 @@ function user_search() {
   var s_username;
   var s_userpass;
   var s_category;
+  var s_mail;
+  	if (s_id=='') {
+  		content='';
+		content=content+'<div style="font-size: 16pt" class="alert alert-danger" role="alert">';
+       
+        content=content+'Enter <strong> ID </strong> ! </div>';
+
+         document.getElementById("alert_there").innerHTML=content;
+
+  	}
+  	else
+  	{
+  			firebase.database().ref('User/'+s_id).once('value').then(function(snapshot) {
+  				if (snapshot.exists()) {
+  					 s_username = snapshot.val().username;
+				      s_userpass = snapshot.val().userpass;
+				      s_category = snapshot.val().usercategory;
+				      s_mail     = snapshot.val().useremail;
+
+				      document.getElementById("id").value = s_id;
+					  document.getElementById("name").value = s_username;
+					  document.getElementById("pass").value =  s_userpass;
+					  document.getElementById("email").value= s_mail;
+					  
+					  if (s_category=="Student") {
+					//  	alert("Student");
+					  	document.getElementById("category").selectedIndex = 1;
+					  }
+					  else if (s_category=="Teacher") {
+					  	document.getElementById("category").selectedIndex = 2;
+					  }
+					   else if (s_category=="Admin") {
+					  	document.getElementById("category").selectedIndex = 3;
+				  	}
+				  	content='<br>';
+	   				content=content+'<div style="font-size: 16pt" class="alert alert-success" role="alert">';
+	   				content=content+'<strong>Data </strong> found! </div> ';
+	   				 document.getElementById("alert_there").innerHTML=content;
+  				}
+  				else
+  				{
+  					content='<br>';
+	   				content=content+'<div style="font-size: 16pt" class="alert alert-danger" role="alert">';
+	   				content=content+'<strong>No data </strong>found! </div> ';
+   				 	document.getElementById("alert_there").innerHTML=content;
+  				}
+		     
+		  
+		}, function(error) {
+		    if (error) {
+		    	alert("asasasas");
+		    	content='<br>';
+   				content=content+'<div style="font-size: 16pt" class="alert alert-danger" role="alert">';
+   				content=content+'<strong>No data </strong>found! </div> ';
+   				 document.getElementById("alert_there").innerHTML=content;
+		      // The write failed...
+		    } else {
+		    	alert('asasas');
+		    	content='<br>';
+   				content=content+'<div style="font-size: 16pt" class="alert alert-success" role="alert">';
+   				content=content+'<strong>Data </strong> found! </div> ';
+   				 document.getElementById("alert_there").innerHTML=content;
+		   
+		    }
+		  });
+  			
+  	}
 
 	//alert(s_id);
 
-	firebase.database().ref('User/'+s_id).once('value').then(function(snapshot) {
-      s_username = snapshot.val().username;
-      s_userpass = snapshot.val().userpass;
-      s_category = snapshot.val().usercategory;
-      
-
-      document.getElementById("id").value = s_id;
-	  document.getElementById("name").value = s_username;
-	  document.getElementById("pass").value =  s_userpass;
-	  if (s_category=="Student") {
-	//  	alert("Student");
-	  	document.getElementById("category").selectedIndex = 1;
-	  }
-	  else if (s_category=="Teacher") {
-	  	document.getElementById("category").selectedIndex = 2;
-	  }
-	   else if (s_category=="Admin") {
-	  	document.getElementById("category").selectedIndex = 3;
-  	}
-  
-
-  //var all=snapshot.val();
-  //(s_username);
-  // ...
-});
 
 
-	// body...
+
+	
 }
 
 function update_user() {

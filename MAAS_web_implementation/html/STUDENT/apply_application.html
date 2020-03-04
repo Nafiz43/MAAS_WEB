@@ -187,11 +187,26 @@
           </div>
 
    <div class="container-fluid">
+    <div id="alert_there">
+      
+    </div>
+    <!-- <div style="font-size: 16pt" class="alert alert-danger" role="alert">
+       
+       This is a danger alert—check it out!
+
+    </div> -->
   <h2>Fill up the details for application</h2>
+
+  
+    <br>
+
   <form class="form-horizontal" action="apply_application_add.html" method="post" enctype="multipart/form-data">
     <div class="form-group">
+
+
+
       <label class="control-label col-sm-2" for="email">Select Date:</label>
-      <div class="col-sm-8">
+      <div class="col-sm-4">
         <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
       </div>
     </div>
@@ -199,7 +214,7 @@
 
     <div class="form-group">
       <label class="control-label col-sm-2" for="pwd">Select Course:</label>
-      <div class="col-sm-8">          
+      <div class="col-sm-4">          
        
     
     <select id=course class="mdb-select md-form form-control">
@@ -219,8 +234,8 @@
     </div>
 
       <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Select Faculty:</label>
-      <div class="col-sm-8">          
+      <label class="control-label col-sm-2" for="faculty">Select Faculty:</label>
+      <div class="col-sm-4">          
        
     
     <select  id="faculty" class="mdb-select md-form form-control">
@@ -240,10 +255,10 @@
 
       <div class="form-group">
       <label class="control-label col-sm-2" for="rsn">Reason:</label>
-      <div class="col-sm-8">          
+      <div class="col-sm-6">          
        
     
-    <textarea id="rsn" class="form-control" rows="8" columns="10" placeholder="Write The Reason For Being Absent"></textarea>
+    <textarea style="font-size: 16pt" id="rsn" class="form-control" rows="8" columns="10" placeholder="Write The Reason For Being Absent"></textarea>
     <!-- <select class="browser-default custom-select">
   <option selected>Open this select menu</option>
   <option value="1">One</option>
@@ -256,8 +271,8 @@
       <div class="form-group">
     <div class="input-group-prepend">
       <label class="control-label col-sm-2" for="dcm">Document Link:</label>
-       <div class="col-sm-8">
-         <textarea id="dcm" class="form-control" rows="2" columns="10" placeholder="Paste The Document Link Here"></textarea>
+       <div class="col-sm-6">
+         <textarea style="font-size: 14pt" id="dcm" class="form-control" rows="2" columns="10" placeholder="Paste The Document Link Here"></textarea>
       </div>
     </div>
 

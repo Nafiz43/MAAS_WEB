@@ -1,10 +1,9 @@
 
 function apply_application() {
+
+	var userId=localStorage.getItem("value");
+	var username=localStorage.getItem("value_username");
 	
-
-
-
-
 	//alert("hello world");
 	var date =document.getElementById("date").value;
 	
@@ -21,56 +20,104 @@ function apply_application() {
 	var reason=document.getElementById("rsn").value;
 	var document_text =document.getElementById("dcm").value;
 
+	//document.getElementById("al").innerHTML=this;
+	var content='<div style="font-size: 16pt" class="alert alert-danger" role="alert">';
 	// alert(reason);
 	// alert(document_text);
-
-	if (date=='') {
+	if (date=='' && course_text=='Choose your option' && faculty_text=='Choose your option' && reason=='') {
 		document.getElementById("date").style.borderColor = "red";
-		alert("Enter Date");
+		document.getElementById("course").style.borderColor = "red";
+		document.getElementById("faculty").style.borderColor = "red";
+		document.getElementById("rsn").style.borderColor = "red";
+		content=content+' <strong> Fill Out </strong> All The Fields! </div>';
+		document.getElementById("alert_there").innerHTML=content;
+
+	}
+	else if(course_text=='Choose your option' && faculty_text=='Choose your option' && reason==''){
+		document.getElementById("course").style.borderColor = "red";
+		document.getElementById("faculty").style.borderColor = "red";
+		document.getElementById("rsn").style.borderColor = "red";
+		content=content+' <strong> Fill Out </strong> All The Fields! </div>';
+		document.getElementById("alert_there").innerHTML=content;
+
+	}
+	else if(faculty_text=='Choose your option' && reason==''){
+		
+		document.getElementById("faculty").style.borderColor = "red";
+		document.getElementById("rsn").style.borderColor = "red";
+		content=content+' <strong> Fill Out </strong> All The Fields! </div>';
+		document.getElementById("alert_there").innerHTML=content;
+
+	}
+	// alert(document_text);
+	else if (date=='' && course_text=='Choose your option' && faculty_text=='Choose your option') {
+		document.getElementById("date").style.borderColor = "red";
+		document.getElementById("course").style.borderColor = "red";
+		document.getElementById("faculty").style.borderColor = "red";
+		content=content+' <strong> Fill Out </strong> All The Fields! </div>';
+		document.getElementById("alert_there").innerHTML=content;
+
+	}
+	else if (date=='' && course_text=='Choose your option') {
+		document.getElementById("date").style.borderColor = "red";
+		document.getElementById("course").style.borderColor = "red";
+		content=content+' <strong> Fill Out </strong> All The Fields! </div>';
+		document.getElementById("alert_there").innerHTML=content;
+		
+
+	}
+	else if (date=='') {
+		document.getElementById("date").style.borderColor = "red";
+		content=content+' Enter <strong>Date!  </strong>  </div>';
+		document.getElementById("alert_there").innerHTML=content;
+		
+		//alert("Enter Date");
 	}
 	else if(course_text=="Choose your option"){
-		alert("Enter Course Name");
+		//alert("");
 		document.getElementById("course").style.borderColor = "red";
+		content=content+'Enter <strong>Course  </strong>   Name! </div>';
+		document.getElementById("alert_there").innerHTML=content;
 	}
 	else if (faculty_text=="Choose your option") {
-		alert("Enter Faculty Name");
+		//alert("Enter Faculty Name");
 		document.getElementById("faculty").style.borderColor = "red";
+		content=content+'Enter <strong>Faculty</strong>   Name! </div>';
+		document.getElementById("alert_there").innerHTML=content;
 	}
 	else if(reason==''){
-		alert("Enter a Reason");
+		//alert("Enter a Reason");
 		document.getElementById("rsn").style.borderColor = "red";
+		content=content+'Enter <strong>Reason!</strong>   </div>';
+		document.getElementById("alert_there").innerHTML=content;
 	
 	}
 	else{
-		alert("hello");
+		//alert("hello");
 
-		firebase.database().ref('application/'+faculty_text).push({
-			App_ID : '201714043'
+		firebase.database().ref('application/'+faculty_text + '/' +course_text ).push({
+			App_ID : userId,
+			App_name : username,
 			App_date : date,
 			App_course : course_text,
 			App_faculty : faculty_text,
 			App_reason : reason,
 			App_link : document_text,
 		    App_status: 'Pending'
-			 });
+			 }, function(error) {
+		    if (error) {
+		    	alert("Failed to Save data");
+		      // The write failed...
+		    } else {
+		    	window.location.href = "apply_application_add.html";
+		    	//alert("Successfully Saved");
+		      // Data saved successfully!
+		    }
+		  });
 		
-		setTimeout(function(){
-		 alert("Successful");
-		 location.reload();
-		 
-		 }, 2000);
+		
 
-			//alert('Successful');
 
-			//
 	}
-	//alert(date);
-
-	
-
-	
-
-	// //alert(date + course_text + faculty_text + reason + document_text);
-	// // // body...
 	
 }
