@@ -53,36 +53,36 @@ function process(m) {
 	alert(m);
 
 	var rootRef = firebase.database().ref();
-	var urlRef = rootRef.child('application/'+username+'/'+course_text);
-	urlRef.once("value", function(snapshot) {
+  var urlRef = rootRef.child('application/'+username+'/'+course_text);
+  urlRef.once("value", function(snapshot) {
     snapshot.forEach(function(child) {
-  	//m=child.val().App_ID;
-  	//n=child.val().App_date;
-  	if (child.val().App_ID==m) {
-  		//alert('found');
-  		var username=child.val().App_name;
-      	var date=child.val().App_date;
-      	var reason=child.val().App_reason;
-      	var link = child.val().App_link;
-      	var course = child.val().App_course;
-      	var id=m;
-      	//localStorage.setItem()
-      //	alert(username);
-      //	alert('from process');
-      	localStorage.setItem("app_username", username);
-      	localStorage.setItem("app_date", date);
-      	localStorage.setItem("app_reason", reason);
-      	localStorage.setItem("app_link", link);
-      	localStorage.setItem("app_course", course);
-      	localStorage.setItem("app_id", id);
-      	window.location.replace("application_view.html");
+    //m=child.val().App_ID;
+    //n=child.val().App_date;
+    if (child.val().App_ID==m) {
+      //alert('found');
+      var username=child.val().App_name;
+        var date=child.val().App_date;
+        var reason=child.val().App_reason;
+        var link = child.val().App_link;
+        var course = child.val().App_course;
+        var id=m;
+        //localStorage.setItem()
+      //  alert(username);
+      //  alert('from process');
+        localStorage.setItem("app_username", username);
+        localStorage.setItem("app_date", date);
+        localStorage.setItem("app_reason", reason);
+        localStorage.setItem("app_link", link);
+        localStorage.setItem("app_course", course);
+        localStorage.setItem("app_id", id);
+        window.location.replace("application_view.html");
 
-  	}
-  	else
-  	{
-  		//alert('error occured');
-  	}
-  	
+    }
+    else
+    {
+      //alert('error occured');
+    }
+    
   });
 });
 

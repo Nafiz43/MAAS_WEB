@@ -14,6 +14,23 @@
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
+  <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCNM0HlObFHsCwM3iZhV8i0Qxwn3mmTYJg",
+      authDomain: "maas-fb909.firebaseapp.com",
+      databaseURL: "https://maas-fb909.firebaseio.com",
+      projectId: "maas-fb909",
+      storageBucket: "maas-fb909.appspot.com",
+      messagingSenderId: "147741298520",
+      appId: "1:147741298520:web:500360dba2aa5dd2d91f2d",
+      measurementId: "G-ZFZHDL8MDG"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    //firebase.analytics();
+  </script>
 
      <style>
       .body{
@@ -145,6 +162,9 @@
   <h2><center>Attendance Sheet!!</center></h2>
  </div>
  <div class="container-fluid">
+  <div id="alert_there">
+      
+  </div>
  	  <h2>Choose your options</h2>
   <form class="form-horizontal" action="apply_application_add.html">
     <div class="form-group">
@@ -154,13 +174,27 @@
       </div>
     </div>
 
+     <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Select Batch:</label>
+      <div class="col-sm-8">          
+       
+    
+    <select id="batch" class="mdb-select md-form form-control">
+      <option value="" disabled selected>Choose your option</option>
+      <option value="1">CSE-17A</option>
+      <option value="2">CSE-17B</option>
+      
+    </select>
+  
+      </div>
+    </div>
 
     <div class="form-group">
       <label class="control-label col-sm-2" for="pwd">Select Course:</label>
       <div class="col-sm-8">          
        
     
-    <select class="mdb-select md-form form-control">
+    <select id="course" class="mdb-select md-form form-control">
       <option value="" disabled selected>Choose your option</option>
       <option value="1">CSE-401</option>
       <option value="2">CSE-402</option>
@@ -183,7 +217,7 @@
       <div class="col-sm-8">          
        
     
-    <select class="mdb-select md-form form-control">
+    <select id="slot" class="mdb-select md-form form-control">
       <option value="" disabled selected>Choose your option</option>
       <option value="1">08:00-08:55</option>
       <option value="2">09:00-09:55</option>
@@ -207,7 +241,11 @@
 
 
 
-<table class="table table-striped" border="2">
+<div id="table_content">
+  
+</div>
+
+<!-- <table class="table table-striped" border="2">
   <br>
   <br>
   <br>
@@ -219,7 +257,7 @@
       <th scope="col">Name</th>
       <th scope="col">Present</th>
       <th scope="col">Absent</th>
-      <th scope="col">Permitted time</th>
+    
       <th scope="col">Excused</th>
     </tr>
   </thead>
@@ -238,7 +276,7 @@
       </div>
       </td>
 
-      <td>@mdo</td>
+   
       
       <td><div class="checkbox">
         <label><input type="checkbox" value=""></label>
@@ -249,12 +287,14 @@
     
   </tbody>
 </table>
+ -->
+
 
 
 
 </div>
 
-<div class="container">
+<div class="container" id="detailed_content">
  
  
   <div class="row">
@@ -262,8 +302,8 @@
             <h4>Total Present :</h4>
         </div>
 
-        <div class='col-sm-3'>
-            <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="1" ></textarea>
+        <div id="present" class='col-sm-3'>
+          
         </div>
   </div>
 
@@ -274,8 +314,8 @@
             <h4>Total Absent :</h4>
         </div>
 
-        <div class='col-sm-3'>
-            <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="1" ></textarea>
+        <div id="absent" class='col-sm-3'>
+           <!--  <input type="password" class="form-control" id="pwd"> -->
         </div>
   </div>
 
@@ -284,9 +324,9 @@
         <div class='col-sm-2'>
              <h4>Percentage :</h4>
         </div>
-
-        <div class='col-sm-3'>
-            <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="1" ></textarea>
+        
+        <div id="percentage" class='col-sm-3'>
+           <!--  <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="1" ></textarea> -->
         </div>
   </div>
   <br>
