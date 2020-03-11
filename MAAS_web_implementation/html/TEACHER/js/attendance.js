@@ -172,13 +172,18 @@ function attendance() {
 
     	
     	var s_id=child.val().ID;
-    	alert(s_id);
+    	//alert(s_id);
 
     	var s_present;
     	var s_absent;
     	var s_name;
+
+    	
+
     	//for getting the name
+
     	firebase.database().ref('User/'+s_id).once('value').then(function(snapshot) {
+
     		s_name=snapshot.val().username;
   				
 		 // alert(s_name);
@@ -193,10 +198,40 @@ function attendance() {
 		  });
     	//name fetched
 
+    	firebase.database().ref('attendance/'+batch_text+'/'+course_text+'/'+teacher+'/'+date+'/'+slot_text+'/'+s_id).once('value').then(function(snapshot) {
+  				if (snapshot.exists()) {
+  					
+					 
+				  	
+  				}
+  				else
+  				{
+  					firebase.database().ref('attendance/'+batch_text+'/'+course_text+'/'+teacher+'/'+date+'/'+slot_text+'/'+s_id).set({
+		   
+					    p_status : 0
+					    
+					  }, function(error) {
+					    if (error) {
+					    	
+					     //  // The write failed...
+					    } else {
+					    	
+					    }
+					  });
+  				}
+  				
+		     
+		  
+		});
+
     	//check whether enlisted student is present or not
     	
 		//content=content+'<th scope="row">1</th>';
 		//alert(batch_text+course_text+teacher+date+slot_text+s_id);
+		setTimeout(function(){
+
+
+ 
     firebase.database().ref('attendance/'+batch_text+'/'+course_text+'/'+teacher+'/'+date+'/'+slot_text+'/'+s_id).once('value').then(function(snapshot) {
   				if (snapshot.exists()) {
   					//alert('hello');
@@ -266,7 +301,8 @@ function attendance() {
   				
 		     
 		  
-		});
+		});//asas
+    }, 500);
   
   	
   });
