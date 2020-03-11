@@ -130,6 +130,7 @@ function push_user() {
 		// 	    });
 		
 		// setTimeout(function(){ alert("Successful"); }, 1000);
+            pass= CryptoJS.AES.encrypt(pass, "CIPHERKEY").toString();
 
 			firebase.database().ref('User/' + id).set({
 		    username: name,

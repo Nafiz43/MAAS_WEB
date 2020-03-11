@@ -172,7 +172,7 @@ function attendance() {
 
     	
     	var s_id=child.val().ID;
-
+    	alert(s_id);
 
     	var s_present;
     	var s_absent;

@@ -74,7 +74,8 @@ function check(form) {
             document.getElementById("alert_there").innerHTML=content;
 	   }
 	   else{
-
+      new_pass = CryptoJS.AES.encrypt(new_pass, "CIPHERKEY").toString();
+     //alert(new_pass);
 	   	firebase.database().ref('User/' + userid).once('value').then(function(snapshot) {
                      //alert("hello");
 

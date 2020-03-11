@@ -205,7 +205,7 @@
 
 
 
-      <label class="control-label col-sm-2" for="email">Select Date:</label>
+      <label class="control-label col-sm-2" for="email">Application Date:</label>
       <div class="col-sm-4">
         <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
       </div>
@@ -253,25 +253,62 @@
       </div>
     </div>
 
-      <div class="form-group">
-      <label class="control-label col-sm-2" for="rsn">Reason:</label>
-      <div class="col-sm-6">          
+
+        <div class="form-group">
+      <label class="control-label col-sm-2" for="rsn">Duration :</label>
+      <div class="col-sm-4">          
        
     
-    <textarea style="font-size: 16pt" id="rsn" class="form-control" rows="8" columns="10" placeholder="Write The Reason For Being Absent"></textarea>
-    <!-- <select class="browser-default custom-select">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select> -->
+    <input id="duration" class="form-control" id="date" name="date" placeholder="Day/Days you were absent" type="text"/>
+
+
       </div>
     </div>
 
+       <div class="form-group">
+      <label class="control-label col-sm-2" for="rsn">Absent From :</label>
+      <div class="col-sm-4">          
+       
+    
+    <input id="absent_from" class="form-control" id="date" name="date" placeholder="DD/MM/YYYY" type="text"/>
+
+
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label  class="control-label col-sm-2" for="rsn">Absent Till :</label>
+      <div class="col-sm-4">          
+       
+    
+    <input id="absent_till" class="form-control" id="date" name="date" placeholder="DD/MM/YYYY" type="text"/>
+
+
+      </div>
+    </div>
+
+     <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Select Reason:</label>
+      <div class="col-sm-4">          
+       
+    
+    <select id=reason class="mdb-select md-form form-control">
+      <option value="" disabled selected>Choose your option</option>
+      <option value="1">fever</option>
+      <option value="2">dengue</option>
+      <option value="3">diarrhoea</option>
+      <option value="4">chikungunya</option>
+      <option value="5">virus infection</option>
+    </select>
+  </div>
+</div>
+
+
+  
       <div class="form-group">
     <div class="input-group-prepend">
       <label class="control-label col-sm-2" for="dcm">Document Link:</label>
-       <div class="col-sm-6">
+       <div class="col-sm-4">
          <textarea style="font-size: 14pt" id="dcm" class="form-control" rows="2" columns="10" placeholder="Paste The Document Link Here"></textarea>
       </div>
     </div>

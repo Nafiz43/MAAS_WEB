@@ -66,6 +66,11 @@ function process(m) {
         var link = child.val().App_link;
         var course = child.val().App_course;
         var id=m;
+        var absent_from = child.val().App_absent_from;
+        var absent_till = child.val().App_absent_till;
+        var duration = child.val().App_duration;
+
+
         //localStorage.setItem()
       //  alert(username);
       //  alert('from process');
@@ -75,6 +80,10 @@ function process(m) {
         localStorage.setItem("app_link", link);
         localStorage.setItem("app_course", course);
         localStorage.setItem("app_id", id);
+        localStorage.setItem("app_absent_from", absent_from);
+        localStorage.setItem("app_absent_till", absent_till);
+        localStorage.setItem("app_duration", duration);
+        
         window.location.replace("application_view.html");
 
     }

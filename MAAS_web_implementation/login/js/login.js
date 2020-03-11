@@ -49,7 +49,12 @@
 
                       var s_userpass = snapshot.val().userpass;
                       var s_username = snapshot.val().username;
-                      //alert('hello');
+
+                     //here to have a soft eye
+                      s_userpass = CryptoJS.AES.decrypt(s_userpass, "CIPHERKEY");
+                      s_userpass = s_userpass.toString(CryptoJS.enc.Utf8);
+
+                      //alert(s_userpass);
 
                       if(s_userpass==password){
                         var s_category=snapshot.val().usercategory;
@@ -79,7 +84,7 @@
 
                       }
                       else{
-                        content=content+'Invalid Password!! </div> ';
+                        content=content+'Invalid UserID or Password!! </div> ';
                         document.getElementById("alert_there").innerHTML=content;
                         document.getElementById("userid").style.borderColor = "red";
                         //alert("Error Password or Username")
@@ -87,7 +92,7 @@
                      
                       
                   }).catch(function(error) {
-                    content=content+'Invalid UserID!! </div> ';
+                    content=content+'Invalid UserID or Password!! </div> ';
                     document.getElementById("alert_there").innerHTML=content;
                     document.getElementById("userid").style.borderColor = "red";
   // Uh-oh, an error occurred!

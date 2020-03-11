@@ -4,10 +4,10 @@ function check(form) {
 		var s_mail;
 	    var s_username;
 	   	var s_userpass;
-	   	var m_body='Hello ';
+	   	var m_body='imtiznafiz@gmail.com';
 		//var userid=localStorage.getItem("value");
 	   var userid=document.getElementById("userid").value;
-	   var mail=document.getElementById("mail").value;
+	   var mail='asassa';
 	  // var retype_pass=document.getElementById("retype_pass").value;
 	   var content='';
         content=content+'<div class="alert alert-danger" role="alert">';
@@ -34,13 +34,13 @@ function check(form) {
        			content=content+'E-mail cannot be empty! </div> ';
             	document.getElementById("alert_there").innerHTML=content;	   		
 	   }
-	   else if($(input[1]).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null)
-	  {
-	  		var thisAlert = $(input[1]).parent();
-       		$(thisAlert).addClass('alert-validate');
-	  		content=content+'Invalid Email! </div> ';
-            document.getElementById("alert_there").innerHTML=content;
-	  }
+	  //  else if($(input[1]).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null)
+	  // {
+	  // 		var thisAlert = $(input[1]).parent();
+   //     		$(thisAlert).addClass('alert-validate');
+	  // 		content=content+'Invalid Email! </div> ';
+   //          document.getElementById("alert_there").innerHTML=content;
+	  // }
 	   else{
 	   		//if(true)
 	   		 
@@ -55,7 +55,7 @@ function check(form) {
                       //alert("out here"+s_username);
 
 		                 // alert(s_userpass);
-		                 if (s_mail==mail) {
+		                 if (s_mail==s_mail) {
 
 		                  m_body=m_body+s_username;
 					   	  m_body=m_body+"!! Your Password is : ";
@@ -65,13 +65,13 @@ function check(form) {
 			   
 			   			
 			   			
-
+					   	  alert(s_mail);
 					 
 						Email.send({
 						Host: "smtp.gmail.com",
 						Username : "mist.attendance.system@gmail.com",
 						Password : "01534313504",
-						To : mail,
+						To : s_mail,
 						From : "mist.attendance.system@gmail.com",
 						Subject : "Recovery Password",
 						Body : m_body ,
