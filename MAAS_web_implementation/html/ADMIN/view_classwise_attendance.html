@@ -157,6 +157,11 @@
             <h2><center>Classwise Attendance!!!</center></h2>
             <!-- <h2 class="mb-4">Sidebar #07</h2> -->
           </div>
+<div class="container-fluid">
+	    <div id="alert_there">
+      
+        </div>
+	
 
 
 
@@ -164,22 +169,28 @@
            <h2>Fill up the followings:</h2>
   <form class="form-horizontal" action="apply_application_add.html">
     <div class="form-group">
-      <label class="control-label col-sm-2" for="email">Select Date:</label>
-      <div class="col-sm-8">
+      <label class="control-label col-sm-2" for="date">Select Date:</label>
+      <div class="col-sm-4">
         <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
       </div>
     </div>
 
       <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Select Time:</label>
-      <div class="col-sm-8">          
+      <label class="control-label col-sm-2" for="time">Select Time:</label>
+      <div class="col-sm-4">          
        
     
-    <select class="mdb-select md-form form-control">
+    <select id="time" class="mdb-select md-form form-control">
       <option value="" disabled selected>Choose your option</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
+      <option value="1">08:00 am - 08:55 am</option>
+      <option value="2">09:00 am - 09:55 am</option>
+      <option value="3">10:00 am - 10:55 am</option>
+      <option value="4">11:45 am - 12:40 pm</option>
+      <option value="5">12:45 pm - 01:40 pm</option>
+      <option value="6">01:45 pm - 02:40 pm</option>
+      <option value="7">08:00 am - 10:55 am</option>
+      <option value="8">11:45 am - 02:40 pm</option>
+
     </select>
     <!-- <select class="browser-default custom-select">
   <option selected>Open this select menu</option>
@@ -192,15 +203,15 @@
 
 
     <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Select Course:</label>
-      <div class="col-sm-8">          
+      <label class="control-label col-sm-2" for="batch">Select Batch:</label>
+      <div class="col-sm-4">          
        
     
-    <select class="mdb-select md-form form-control">
+    <select id="batch" class="mdb-select md-form form-control">
       <option value="" disabled selected>Choose your option</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
+      <option value="1">CSE-17A</option>
+      <option value="2">CSE-17B</option>
+     
     </select>
     <!-- <select class="browser-default custom-select">
   <option selected>Open this select menu</option>
@@ -212,15 +223,15 @@
     </div>
 
       <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Select Faculty:</label>
-      <div class="col-sm-8">          
+      <label class="control-label col-sm-2" for="course"> Select Course:</label>
+      <div class="col-sm-4">          
        
     
-    <select class="mdb-select md-form form-control">
+    <select id="course" class="mdb-select md-form form-control">
       <option value="" disabled selected>Choose your option</option>
-      <option value="1">Option 1</option>
-      <option value="2">Option 2</option>
-      <option value="3">Option 3</option>
+      <option value="1">CSE-460(SW)</option>
+      <option value="2">CSE-460(HW)</option>
+      <option value="3">CSE-401</option>
     </select>
     <!-- <select class="browser-default custom-select">
   <option selected>Open this select menu</option>
@@ -237,15 +248,18 @@
  
     
 
+ </form>
 
 
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button onclick="classwise_attendance()" type="submit" class="btn btn-default">Submit</button>
       </div>
     </div>
 
- </form>
+<br>
+<br>
+<br>
 
        </div>
 
@@ -297,6 +311,9 @@
 
       </div>
     </div>
+
+    </div>
+<script src="js/classwise_attendance.js"></script>
 <script src="../../js/basic.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>

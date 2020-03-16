@@ -1,17 +1,19 @@
-document.getElementById("detailed_content").style.visibility = "hidden";
+
+	 document.getElementById("detailed_content").style.visibility = "hidden";
 function attendance() {
-	// firebase.database().ref('Enrolled/CSE-17A/CSE-402').push({
+
+		// firebase.database().ref('Course_Teacher/CSE-17A/CSE-460(HW)').push({
 		   
-	//    		 ID:201714023,
+	 //   		 Name:'8320-06',
 	   		 
 
-	// 	  }, function(error) {
-	// 	    if (error) {
-	// 	    	alert("failed to save data");
-	// 	    } else {
-	// 	    	alert("successfully saved data");
-	// 	    }
-	// 	  });
+		//   }, function(error) {
+		//     if (error) {
+		//     	alert("failed to save data");
+		//     } else {
+		//     	alert("successfully saved data");
+		//     }
+		//   });
 
 	// firebase.database().ref('attendance/CSE-17A/CSE-402/Lt Col Nazrul Islam/11-03-2020/08:00-08:55/201714023').set({
 		   
@@ -31,7 +33,6 @@ function attendance() {
 	// firebase.database().ref('Enrolled/CSE-17A/CSE-460').push({
 		   
 	//    		 ID:201714023,
-	   		 
 
 	// 	  }, function(error) {
 	// 	    if (error) {
@@ -40,102 +41,59 @@ function attendance() {
 	// 	    	alert("successfully saved data");
 	// 	    }
 	// 	  });
-	var teacher=localStorage.getItem("value_username");
-	var flag=0;
 
-	var date=document.getElementById("date").value;
 
 	var course=document.getElementById("course");
 	var course_text=course.options[course.selectedIndex].text;
 
-	var slot=document.getElementById("slot");
-	var slot_text=slot.options[slot.selectedIndex].text;
+	var level_term=document.getElementById("level_term");
+	var level_term_text=level_term.options[level_term.selectedIndex].text;
+	//alert(course_text+level_term_text);
 
-	var batch=document.getElementById("batch");
-	var batch_text=batch.options[batch.selectedIndex].text;
+	
+
+	// var teacher=localStorage.getItem("value_username");
+	// var flag=0;
+
+	// var date=document.getElementById("date").value;
+
+	// var course=document.getElementById("course");
+	// var course_text=course.options[course.selectedIndex].text;
+
+	// var slot=document.getElementById("slot");
+	// var slot_text=slot.options[slot.selectedIndex].text;
+
+	// var batch=document.getElementById("batch");
+	// var batch_text=batch.options[batch.selectedIndex].text;
 
     var basic_content=''
     var final_content='';
 	var table_content='';
 	var content='';
+
+
+	
+
     content=content+'<div style="font-size: 16pt" class="alert alert-danger" role="alert">';
 	 
-	if (date=='' && course_text=='Choose your option' && slot_text=='Choose your option' && batch_text=='Choose your option') {
-		document.getElementById("date").style.borderColor = "red";
+	if (course_text=='Choose your option' && level_term_text=='Choose your option') {
 		document.getElementById("course").style.borderColor = "red";
-		document.getElementById("slot").style.borderColor = "red";
-		document.getElementById("batch").style.borderColor = "red";
+		document.getElementById("level_term").style.borderColor = "red";
 		content=content+'<strong>Fill Out </strong>The Fields! </div> ';
-       document.getElementById("alert_there").innerHTML=content;
-	}
-	else if(course_text=='Choose your option' && date=='' && batch_text=='Choose your option')
-	{
-		document.getElementById("date").style.borderColor = "red";
-		document.getElementById("course").style.borderColor = "red";
-		document.getElementById("batch").style.borderColor = "red";
-		content=content+'<strong>Fill Out </strong>The Fields! </div> ';
-       document.getElementById("alert_there").innerHTML=content;
-	}
-	else if(course_text=='Choose your option' && slot_text=='Choose your option' && batch_text=='Choose your option')
-	{
-		document.getElementById("course").style.borderColor = "red";
-		document.getElementById("slot").style.borderColor = "red";
-		document.getElementById("batch").style.borderColor = "red";
-		content=content+'<strong>Fill Out </strong>The Fields! </div> ';
-       document.getElementById("alert_there").innerHTML=content;
-	}
-	else if(slot_text=='Choose your option' && date=='' && batch_text=='Choose your option')
-	{
-		document.getElementById("date").style.borderColor = "red";
-		document.getElementById("slot").style.borderColor = "red";
-		document.getElementById("batch").style.borderColor = "red";
-		content=content+'<strong>Fill Out </strong>The Fields! </div> ';
-       document.getElementById("alert_there").innerHTML=content;
-	}
-	else if(date=='' && course_text=='Choose your option')
-	{
-		document.getElementById("course").style.borderColor = "red";
-		document.getElementById("date").style.borderColor = "red";
-		content=content+'<strong>Fill Out </strong>The Fields! </div> ';
-       document.getElementById("alert_there").innerHTML=content;
-	}
-	else if(slot_text=='Choose your option' && batch_text=='Choose your option')
-	{
-		document.getElementById("slot").style.borderColor = "red";
-		document.getElementById("batch").style.borderColor = "red";
-		content=content+'<strong>Fill Out </strong>The Fields! </div> ';
-       document.getElementById("alert_there").innerHTML=content;
-	}
-	else if(course_text=='Choose your option' && batch_text=='Choose your option')
-	{
-		document.getElementById("course").style.borderColor = "red";
-		document.getElementById("batch").style.borderColor = "red";
-		content=content+'<strong>Fill Out </strong>The Fields! </div> ';
-       document.getElementById("alert_there").innerHTML=content;
-	}
-	else if(date=='')
-	{
-		document.getElementById("date").style.borderColor = "red";
-		content=content+'<strong>Select </strong>Date! </div> ';
-       document.getElementById("alert_there").innerHTML=content;
+        document.getElementById("alert_there").innerHTML=content;
+		
 	}
 	else if(course_text=='Choose your option')
 	{
 		document.getElementById("course").style.borderColor = "red";
-		content=content+'<strong>Select </strong>Course! </div> ';
-       document.getElementById("alert_there").innerHTML=content;
+		content=content+'Select <strong> Course </strong></div> ';
+        document.getElementById("alert_there").innerHTML=content;
 	}
-	else if(slot_text=='Choose your option')
+	else if(level_term_text=='Choose your option')
 	{
-		document.getElementById("slot").style.borderColor = "red";
-		content=content+'<strong>Select </strong>Slot! </div> ';
-       document.getElementById("alert_there").innerHTML=content;
-	}
-	else if(batch_text=='Choose your option')
-	{
-		document.getElementById("batch").style.borderColor = "red";
-		content=content+'<strong>Select </strong>Batch! </div> ';
-       document.getElementById("alert_there").innerHTML=content;
+		document.getElementById("level_term").style.borderColor = "red";
+		content=content+'Select <strong> Level/Term </strong></div> ';
+        document.getElementById("alert_there").innerHTML=content;
 	}
 	else
 	{
@@ -148,10 +106,11 @@ function attendance() {
 		basic_content=basic_content+'<thead class="thead-light">';
 		basic_content=basic_content+'<tr>';
 		basic_content=basic_content+'<th scope="col">Ser No.</th>';
-		basic_content=basic_content+'<th scope="col">Roll No.</th>';
-		basic_content=basic_content+'<th scope="col">Name</th>';
+		basic_content=basic_content+'<th scope="col">Course Name</th>';
+		basic_content=basic_content+'<th scope="col">Course Code</th>';
 		basic_content=basic_content+'<th scope="col">Present</th>';
 		basic_content=basic_content+'<th scope="col">Absent</th>';
+		basic_content=basic_content+'<th scope="col">Excused</th>';
 		//content=content+'<th scope="col">Excused</th>';
 		basic_content=basic_content+'  </tr>';
 		basic_content=basic_content+' </thead>';
@@ -313,9 +272,7 @@ function attendance() {
 
 	}
 
-	//alert('Hello From attendance page ');
-	// body...
-	
+
 
 	
 }

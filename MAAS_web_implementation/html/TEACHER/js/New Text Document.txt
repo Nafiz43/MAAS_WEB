@@ -1,4 +1,6 @@
-document.getElementById("detailed_content").style.visibility = "hidden";
+
+	 document.getElementById("detailed_content").style.visibility = "hidden";
+
 function attendance() {
 	// firebase.database().ref('Enrolled/CSE-17A/CSE-402').push({
 		   
@@ -244,12 +246,12 @@ function attendance() {
   					table_content=table_content+'<td>'+s_name+'</td>';
   					table_content=table_content+'<td><div class="checkbox">';
   					if (s_present==1) {
-  						table_content=table_content+'<label><input type="checkbox" checked></label>';
+  						table_content=table_content+'<label><input id='+s_id+' onclick="radio(this.id)" type="checkbox" checked></label>';
   						present_count=present_count+1;
   					}
   					else
   					{
-  						table_content=table_content+'<label><input type="checkbox"></label>';
+  						table_content=table_content+'<label><input  id='+s_id+' onclick="radio(this.id)" type="checkbox"></label>';
   						absent_count=absent_count+1;
   					}
   					
@@ -257,11 +259,16 @@ function attendance() {
 					table_content=table_content+'</td>';
 					table_content=table_content+'<td><div class="checkbox">';
 					if (s_absent==1) {
-						table_content=table_content+'<label><input type="checkbox" checked></label>';
+						s_id=s_id+550;
+						table_content=table_content+'<label><input id='+s_id+' onclick="radio(this.id)" type="checkbox" checked></label>';
+						s_id=s_id-550;
+
 					}
 					else
 					{
-						table_content=table_content+'<label><input type="checkbox"></label>';
+						s_id=s_id+550;
+						table_content=table_content+'<label><input id='+s_id+' onclick="radio(this.id)" type="checkbox"></label>';
+						s_id=s_id-550;
 					}
 					
 					table_content=table_content+'</div>';
@@ -318,4 +325,27 @@ function attendance() {
 	
 
 	
+}
+
+function radio(s_id) {
+	// alert(s_id);
+	// var p=s_id+550;
+ //   if (document.getElementById(s_id).checked) 
+	// {
+	// 	alert("checked");
+	// 	document.getElementById(s_id).checked=false;
+	// 	document.getElementById(p).checked=true;
+
+	// }
+	// else if (document.getElementById(p).checked) 
+	// 	{
+	// 		alert("not checked");
+	// 		document.getElementById(s_id).checked=true;
+	// 	document.getElementById(p.)2.checked=false;
+	// 	}
+	// 	else
+	// 	{
+	// 		alert("doesnt matter");
+	// 	}
+	// body...
 }

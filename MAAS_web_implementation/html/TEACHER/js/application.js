@@ -50,7 +50,7 @@ function application_list() {
 
 
 function process(m) {
-	alert(m);
+	//alert(m);
 
 	var rootRef = firebase.database().ref();
   var urlRef = rootRef.child('application/'+username+'/'+course_text);

@@ -4,7 +4,7 @@ function check(form) {
 		var s_mail;
 	    var s_username;
 	   	var s_userpass;
-	   	var m_body='imtiznafiz@gmail.com';
+	   	var m_body='';
 		//var userid=localStorage.getItem("value");
 	   var userid=document.getElementById("userid").value;
 	   var mail='asassa';
@@ -43,12 +43,17 @@ function check(form) {
 	  // }
 	   else{
 	   		//if(true)
-	   		 
+	   		// alert(userid);
 	   		firebase.database().ref('User/' + userid).once('value').then(function(snapshot) {
                      //alert("hello");
+
                      s_username = snapshot.val().username;
                       s_userpass = snapshot.val().userpass;
                       s_mail = snapshot.val().useremail;
+
+                      s_userpass = CryptoJS.AES.decrypt(s_userpass, "CIPHERKEY");
+                      s_userpass = s_userpass.toString(CryptoJS.enc.Utf8);
+                     // alert(s_userpass);
 
                       //alert("in here"+s_userpass);
                       //alert("in here"+s_username);
@@ -65,7 +70,7 @@ function check(form) {
 			   
 			   			
 			   			
-					   	  alert(s_mail);
+					   	  //alert(s_mail);
 					 
 						Email.send({
 						Host: "smtp.gmail.com",
@@ -97,7 +102,7 @@ function check(form) {
                      
                       
                   }).catch(function(error) {
-                    content=content+'Invalid UserID!! </div> ';
+                    content=content+'Invalid UserID or Password!! </div> ';
                     document.getElementById("alert_there").innerHTML=content;
                     //document.getElementById("userid").style.borderColor = "red";
   // Uh-oh, an error occurred!

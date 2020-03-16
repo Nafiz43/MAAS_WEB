@@ -14,6 +14,23 @@
  		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
+  <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCNM0HlObFHsCwM3iZhV8i0Qxwn3mmTYJg",
+      authDomain: "maas-fb909.firebaseapp.com",
+      databaseURL: "https://maas-fb909.firebaseio.com",
+      projectId: "maas-fb909",
+      storageBucket: "maas-fb909.appspot.com",
+      messagingSenderId: "147741298520",
+      appId: "1:147741298520:web:500360dba2aa5dd2d91f2d",
+      measurementId: "G-ZFZHDL8MDG"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    //firebase.analytics();
+  </script>
   
   	 <style>
     .jumbotron{
@@ -115,6 +132,14 @@
         		<!-- <h2 class="mb-4">Sidebar #07</h2> -->
         	</div>
 
+        	<div class="container-fluid">
+        		
+        	
+
+        	<div id="alert_there">
+      
+  			</div>
+
 
 
         <h2>Fill Up The Followings</h2>
@@ -124,11 +149,11 @@
 
 
     <div class="form-group">
-      <label class="control-label col-sm-2" for="crs">Select Level/Term:</label>
-      <div class="col-sm-8">          
+      <label class="control-label col-sm-2" for="level_term">Select Level/Term:</label>
+      <div class="col-sm-4">          
        
     
-    <select id="crs" class="mdb-select md-form form-control">
+    <select id="level_term" class="mdb-select md-form form-control">
       <option value="" disabled selected>Choose your option</option>
       <option value="1">Level-4,Term-1</option>
       <option value="2">Level-4,Term-2</option>
@@ -144,11 +169,11 @@
     </div>
 
       <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Select Course:</label>
-      <div class="col-sm-8">          
+      <label class="control-label col-sm-2" for="course">Select Course:</label>
+      <div class="col-sm-4">          
        
     
-    <select id="pwd" class="mdb-select md-form form-control">
+    <select id="course" class="mdb-select md-form form-control">
       <option value="" disabled selected>Choose your option</option>
       <option value="1">CSE-401</option>
       <option value="2">CSE-402</option>
@@ -164,21 +189,24 @@
     </div>
 
      
-
+ </form>
 
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button onclick="attendance()" type="submit" class="btn btn-default">Submit</button>
       </div>
     </div>
-  </form>
+ 
 
 
-
+<br>
+<br>
+<br>
 
         </div>
 
-        <table class="table table-striped" border="1">
+       <div id="container" id="table_content">
+       	 <table class="table table-striped" border="1">
     <thead class="thead-light">
       <tr class="bg-success">
         <th>Course Name</th>
@@ -218,10 +246,59 @@
       </tr>
     </tbody>
   </table>
+
+       	
+ </div>
+ <div class="container" id="detailed_content">
+ 
+ 
+  <div class="row">
+        <div class='col-sm-2'>
+            <h4>Total Present :</h4>
+        </div>
+
+        <div id="present" class='col-sm-3'>
+          
+        </div>
+  </div>
+
+ 
+ <div class="row">
+
+        <div class='col-sm-2'>
+            <h4>Total Absent :</h4>
+        </div>
+
+        <div id="absent" class='col-sm-3'>
+           <!--  <input type="password" class="form-control" id="pwd"> -->
+        </div>
+  </div>
+
+ 
+  <div class="row">
+        <div class='col-sm-2'>
+             <h4>Percentage :</h4>
+        </div>
+        
+        <div id="percentage" class='col-sm-3'>
+           <!--  <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="1" ></textarea> -->
+        </div>
+  </div>
+  <br>
+ 
+ <br>
+ <br>
+</div>
+
+
+
+
       </div>
 		</div>
-
 		
+		</div>
+
+<script src="js/attendance.js"></script>
 <script src="../../js/basic.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>

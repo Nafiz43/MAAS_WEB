@@ -6,7 +6,7 @@ function apply_application() {
 	
 	//alert("hello world");
 	var date =document.getElementById("date").value;
-	alert(date);
+	//alert(date);
 	var absent_from =document.getElementById("absent_from").value;
 	var absent_till =document.getElementById("absent_till").value;
 	var duration =document.getElementById("duration").value;
@@ -27,14 +27,12 @@ function apply_application() {
 	var reason=document.getElementById("reason");
 	var reason_text=reason.options[reason.selectedIndex].text;
 
-	alert(reason_text);
 
-	//document.getElementById("al").innerHTML=this;
 	var content='<div style="font-size: 16pt" class="alert alert-danger" role="alert">';
 	// alert(reason);
 	// alert(document_text);
-	if (date=='' && course_text=='Choose your option' && faculty_text=='Choose your option' && reason_text=='' && absent_from=='' && absent_till=='' && duration=='') {
-		alert("there");
+	if (date=='' && course_text=='Choose your option' && faculty_text=='Choose your option' && reason_text=='Choose your option' && absent_from=='' && absent_till=='' && duration=='') {
+		//alert("there");
 		document.getElementById("date").style.borderColor = "red";
 		document.getElementById("course").style.borderColor = "red";
 		document.getElementById("faculty").style.borderColor = "red";
@@ -46,7 +44,7 @@ function apply_application() {
 		document.getElementById("alert_there").innerHTML=content;
 
 	}
-	else if(course_text=='Choose your option' && faculty_text=='Choose your option' && reason_text==''){
+	else if(course_text=='Choose your option' && faculty_text=='Choose your option' && reason_text=='Choose your option'){
 		document.getElementById("course").style.borderColor = "red";
 		document.getElementById("faculty").style.borderColor = "red";
 		document.getElementById("rsn").style.borderColor = "red";
@@ -54,7 +52,7 @@ function apply_application() {
 		document.getElementById("alert_there").innerHTML=content;
 
 	}
-	else if(faculty_text=='Choose your option' && reason_text==''){
+	else if(faculty_text=='Choose your option' && reason_text=='Choose your option'){
 		
 		document.getElementById("faculty").style.borderColor = "red";
 		document.getElementById("rsn").style.borderColor = "red";
@@ -98,7 +96,7 @@ function apply_application() {
 		content=content+'Enter <strong>Faculty</strong>   Name! </div>';
 		document.getElementById("alert_there").innerHTML=content;
 	}
-	else if(reason_text==''){
+	else if(reason_text=='Choose your option'){
 		//alert("Enter a Reason");
 		document.getElementById("rsn").style.borderColor = "red";
 		content=content+'Enter <strong>Reason!</strong>   </div>';
