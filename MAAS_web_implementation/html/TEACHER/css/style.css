@@ -8413,7 +8413,8 @@ a[data-toggle="collapse"] {
 
 @media (max-width: 991.98px) {
   #sidebarCollapse span {
-    display: none; } }
+    display: none;
+     } }
 
 .footer {
   padding: 0 30px; }

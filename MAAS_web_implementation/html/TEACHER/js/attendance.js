@@ -152,6 +152,7 @@ function attendance() {
 		basic_content=basic_content+'<th scope="col">Name</th>';
 		basic_content=basic_content+'<th scope="col">Present</th>';
 		basic_content=basic_content+'<th scope="col">Absent</th>';
+		basic_content=basic_content+'<th scope="col">Excused</th>';
 		//content=content+'<th scope="col">Excused</th>';
 		basic_content=basic_content+'  </tr>';
 		basic_content=basic_content+' </thead>';
@@ -176,6 +177,7 @@ function attendance() {
     	var s_present;
     	var s_absent;
     	var s_name;
+    	var s_excused;
 
     	
 
@@ -207,7 +209,8 @@ function attendance() {
   				{
   					firebase.database().ref('attendance/'+batch_text+'/'+course_text+'/'+teacher+'/'+date+'/'+slot_text+'/'+s_id).set({
 		   
-					    p_status : 0
+					    p_status : 0,
+					    p_excused  : 0
 					    
 					  }, function(error) {
 					    if (error) {
@@ -236,6 +239,7 @@ function attendance() {
   					//alert('hello');
   					s_present = snapshot.val().p_status;
   					s_absent=1- s_present;
+  					s_excused  = snapshot.val().p_excused;
   					table_content=table_content+'<tr>';
 
   					table_content=table_content+'<td>'+c+'</td>';
@@ -270,6 +274,17 @@ function attendance() {
 					// content=content+'<label><input type="checkbox" value=""></label>';
 					// content=content+'</div>';
 					// content=content+'</td>';
+					table_content=table_content+'<td><div class="checkbox">';
+					if (s_excused==1) {
+						table_content=table_content+'<label><input type="checkbox" checked></label>';
+					}
+					else
+					{
+						table_content=table_content+'<label><input type="checkbox"></label>';
+					}
+					
+					table_content=table_content+'</div>';
+					table_content=table_content+'</td>';
 					table_content=table_content+'</tr>';
   					 
 				    // alert(s_id+s_name+" "+s_present);
