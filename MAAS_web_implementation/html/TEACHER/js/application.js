@@ -1,10 +1,12 @@
+document.getElementById("detailed_content").style.visibility = "hidden";
+document.getElementById("detailed_content2").style.visibility = "hidden";
 var p;
 var m;
 var n;
 var username;
 var course_text;
 var i=0;
-
+var c=1;
 
 
 
@@ -33,12 +35,17 @@ function application_list() {
  	snapshot.forEach(function(child) {
   	m=child.val().App_ID;
   	n=child.val().App_date;
+    
   	//i++;
   	//alert(m);
   	//alert(m);
   	 content2 = content2 + '<button id='+m+' onclick=process(this.id) type="button" class="list-group-item list-group-item-action">' + '<strong>'+ m+'</strong>  '+n + '</button>';
   	 document.getElementById("application_li").innerHTML=content2;
     //console.log(child.val().App_ID);
+    document.getElementById("detailed_content").style.visibility = "visible";
+    document.getElementById("detailed_content2").style.visibility = "visible";
+    document.getElementById("total_application").innerHTML = '<h4>'+c+'</h4>';
+    c=c+1;
   });
 });
 

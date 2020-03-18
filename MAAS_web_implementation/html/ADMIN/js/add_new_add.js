@@ -145,10 +145,21 @@ function push_user() {
    				document.getElementById("alert_there").innerHTML=content;
 		      // The write failed...
 		    } else {
+                // alert('here');
+                // document.getElementById("name").innerHTML="1";
+                // document.getElementById("id").innerHTML="1";
+                // document.getElementById("pass").innerHTML="";
+                // document.getElementById("category").innerHTML="";
+                // document.getElementById("email").innerHTML="";
 		    	content='<br>';
    				content=content+'<div style="font-size: 16pt" class="alert alert-success" role="alert">';
    				content=content+'Data <strong>saved</strong> successfully! </div> ';
    				document.getElementById("alert_there").innerHTML=content;
+
+                setTimeout(function(){ 
+                    content='';
+                    document.getElementById("alert_there").innerHTML=content;
+                     }, 2000);
 		   
 		    }
 		  });

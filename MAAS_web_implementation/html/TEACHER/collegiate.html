@@ -131,7 +131,7 @@
   <form class="form-horizontal" action="apply_application_add.html">
     <div class="form-group">
       <label class="control-label col-sm-2" for="email">Select Batch:</label>
-      <div class="col-sm-8">
+      <div class="col-sm-4">
         <select id="batch" class="mdb-select md-form form-control">
       <option value="" disabled selected>Choose your option</option>
       <option value="1">CSE-17A</option>
@@ -144,7 +144,7 @@
 
     <div class="form-group">
       <label class="control-label col-sm-2" for="pwd">Select Course:</label>
-      <div class="col-sm-8">          
+      <div class="col-sm-4">          
        
     
     <select id="course" class="mdb-select md-form form-control">
@@ -168,11 +168,45 @@
     <div class="col-sm-offset-2 col-sm-12">
        <button class="btn btn-default" onclick="collegiate()"> Submit </button>
       </div>
-<div class="container">
+<div >
+
  <br>
  <br>
  <br>
-  <div class="row">
+ <div id="table_content">
+   
+ </div>
+<!--    <table class="table table-striped" border="1">
+    <thead class="thead-light">
+      <tr>
+        <th>Ser No.</th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Total Present</th>
+        <th>Total Absent</th>
+        <th>Total Excused</th>
+        <th>Percentage</th>
+        <th>Status</th>
+        
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>201714043</td>
+        <td>Nafiz Imtiaz Khan</td>
+        <td>20</td>
+        <td>30</td>
+        <td>1</td>
+        <td>10%</td>
+        <td>Collegiate</td>
+      </tr>
+    
+    </tbody>
+  </table> -->
+
+  <!-- div class="row">
         <div class='col-sm-6'>
             <h4>Discollegiate List :</h4>
         </div>
@@ -194,19 +228,28 @@
   </div>
 </div>
 
-
-
-<div class="container">
- <br>
- <br>
- <br>
+ -->
+<div class="container" id="detailed_content">
+ 
+ 
   <div class="row">
         <div class='col-sm-2'>
-            <h4>Total Discollegiate :</h4>
+            <h4>Total Collegiate:</h4>
         </div>
 
-        <div class='col-sm-3'>
-            <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="1" ></textarea>
+        <div id="collegiate" class='col-sm-3'>
+          
+        </div>
+  </div>
+
+   <div class="row">
+
+        <div class='col-sm-2'>
+            <h4>Total Noncollegiate:</h4>
+        </div>
+
+        <div id="noncollegiate" class='col-sm-3'>
+           <!--  <input type="password" class="form-control" id="pwd"> -->
         </div>
   </div>
 
@@ -214,17 +257,24 @@
  <div class="row">
 
         <div class='col-sm-2'>
-            <h4>Total Noncollegiate :</h4>
+            <h4>Total Discollegiate:</h4>
         </div>
 
-        <div class='col-sm-3'>
-            <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="1" ></textarea>
+        <div id="discollegiate" class='col-sm-3'>
+           <!--  <input type="password" class="form-control" id="pwd"> -->
         </div>
-        <br><br><br><br><br><br>
-
-        
   </div>
+
+ 
+ 
+  <br>
+ 
+ <br>
+ <br>
 </div>
+
+
+
 <script src="js/collegiate.js"></script>
 <script src="../../js/basic.js"></script>
     <script src="js/jquery.min.js"></script>

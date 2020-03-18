@@ -75,7 +75,7 @@ function check(form) {
 						Email.send({
 						Host: "smtp.gmail.com",
 						Username : "mist.attendance.system@gmail.com",
-						Password : "01534313504",
+						Password : "01534313504row",
 						To : s_mail,
 						From : "mist.attendance.system@gmail.com",
 						Subject : "Recovery Password",

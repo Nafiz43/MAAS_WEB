@@ -14,6 +14,23 @@
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
+   <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCNM0HlObFHsCwM3iZhV8i0Qxwn3mmTYJg",
+      authDomain: "maas-fb909.firebaseapp.com",
+      databaseURL: "https://maas-fb909.firebaseio.com",
+      projectId: "maas-fb909",
+      storageBucket: "maas-fb909.appspot.com",
+      messagingSenderId: "147741298520",
+      appId: "1:147741298520:web:500360dba2aa5dd2d91f2d",
+      measurementId: "G-ZFZHDL8MDG"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    //firebase.analytics();
+  </script>
 
      <style>
       .body{
@@ -189,6 +206,7 @@
       <option value="6">01:45 pm - 02:40 pm</option>
       <option value="7">08:00 am - 10:55 am</option>
       <option value="8">11:45 am - 02:40 pm</option>
+     
 
     </select>
     <!-- <select class="browser-default custom-select">
@@ -262,7 +280,12 @@
 
        </div>
 
-        <table class="table table-striped" border="1">
+       <div id="table_content">
+  
+      </div>
+
+
+        <!-- <table class="table table-striped" border="1">
     <thead class="thead-light">
       <tr class="bg-success">
         <th>Course Name</th>
@@ -273,7 +296,7 @@
         <th>Status</th>
 
       </tr>
-     <!--  <tr class="table-success">...</tr> -->
+    
     </thead>
     <tbody>
       <tr >
@@ -301,7 +324,48 @@
         <td>ABSENT</td>
       </tr>
     </tbody>
-  </table>
+  </table> -->
+
+  <div class="container" id="detailed_content">
+ 
+ 
+  <div class="row">
+        <div class='col-sm-2'>
+            <h4>Total Present :</h4>
+        </div>
+
+        <div id="present" class='col-sm-3'>
+          
+        </div>
+  </div>
+
+ 
+ <div class="row">
+
+        <div class='col-sm-2'>
+            <h4>Total Absent :</h4>
+        </div>
+
+        <div id="absent" class='col-sm-3'>
+           <!--  <input type="password" class="form-control" id="pwd"> -->
+        </div>
+  </div>
+
+ 
+  <div class="row">
+        <div class='col-sm-2'>
+             <h4>Percentage :</h4>
+        </div>
+        
+        <div id="percentage" class='col-sm-3'>
+           <!--  <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="1" ></textarea> -->
+        </div>
+  </div>
+
+
+
+
+
       </div>
 </div>
        

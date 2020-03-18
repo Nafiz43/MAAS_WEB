@@ -240,6 +240,7 @@ function attendance() {
   					s_present = snapshot.val().p_status;
   					s_absent=1- s_present;
   					s_excused  = snapshot.val().p_excused;
+  					
   					table_content=table_content+'<tr>';
 
   					table_content=table_content+'<td>'+c+'</td>';
@@ -292,11 +293,13 @@ function attendance() {
 					 // alert(content);
 					 final_content=final_content+'</tbody>';
 					final_content=final_content+'</table>';
+					
 					document.getElementById("table_content").innerHTML=basic_content+table_content+final_content;
 					final_content='';
+					document.getElementById("detailed_content").style.visibility = "visible";
 			    document.getElementById("present").innerHTML = '<h4>'+present_count+'</h4>';
 				document.getElementById("absent").innerHTML = '<h4>'+ absent_count +'</h4>';
-				document.getElementById("percentage").innerHTML = '<h4>'+ parseFloat((present_count/c)*100 )+'</h4>';
+				document.getElementById("percentage").innerHTML = '<h4>'+ parseFloat((present_count/c)*100 )+'% </h4>';
 				var content='';
 		    	content=content+'<div style="font-size: 16pt" class="alert alert-success" role="alert">';
 		 		content=content+'<strong>Data </strong>Found! </div> ';
@@ -322,7 +325,7 @@ function attendance() {
   });
 });
 		
-		document.getElementById("detailed_content").style.visibility = "visible";
+		
 		
 
 

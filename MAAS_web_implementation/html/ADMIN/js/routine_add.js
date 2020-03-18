@@ -115,8 +115,8 @@ function add_routine() {
 	   		content=content+'<div style="font-size: 16pt" class="alert alert-success" role="alert">';
 	   		content=content+' Data <strong> saved </strong> successfully! </div> ';
 	   		document.getElementById("alert_there").innerHTML=content;
-	   		document.getElementById("course").innerHTML='';
-	   		document.getElementById("classroom").innerHTML='';
+	   		//document.getElementById("course").innerHTML='';
+	   		//document.getElementById("classroom").innerHTML='';
 	   		
 	   		document.getElementById("sun_1st").innerHTML='';
 	   		document.getElementById("sun_2nd").innerHTML='';
