@@ -1,5 +1,4 @@
-		var s_id ;
-	    //var s_id = localStorage.getItem("value");
+		//var s_id = localStorage.getItem("value");
 		var absent_count=0;
 		var present_count=0;
 		var excused_count=0;
@@ -10,49 +9,15 @@
 	
 		var content='';
 		var count=0;
-		var basic_content='';
+		var basic_content=''
     	var final_content='';
 		var table_content='';
-		var initial_course='';
-		var f_course_text;
-		var promises = [];
+		var initial_id='';
+		var initial_course;
 
 
-	
-
-
-document.getElementById("detailed_content").style.visibility = "hidden";
- function process(s_id)
-{
-	
-	//alert("calling for "+s_id);
-	initial_course='';
-	present_count=0;
-	absent_count=0;
-	excused_count=0;
-
-	 promise =new Promise((resolve,reject)=>{
-    setTimeout(function() {
-				  		
-
-	   var rootRef0 = firebase.database().ref();
- 	 var urlRef0 = rootRef0.child('Enrolled/CSE-17A/');
- 	 urlRef0.once("value", function(snapshot) {
-    snapshot.forEach(function(child) {
-
-    	 //course_text=child.key;
-    	 var course_text=child.key;
-    	 //alert("all courses "+course_text);
-    	// alert(f_course_text+" "+course_text);
-    	 if (f_course_text==course_text || course_text=='CSE-499') {
-    	//alert("out loop "+course_text);
-    	 var rootRef_0 = firebase.database().ref();
- 	 var urlRef_0 = rootRef_0.child('Enrolled/CSE-17A/'+course_text+'/');
- 	 urlRef_0.once("value", function(snapshot) {
-    snapshot.forEach(function(child) {
-     					if (child.val().ID==s_id) {
-     						//alert("in loop millo");
-							{
+function process(s_id,course_text) {
+	{
 				  		//alert("start processing");
     						var rootRef = firebase.database().ref();
 						  var urlRef = rootRef.child('attendance/CSE-17A/'+course_text+'/');
@@ -61,7 +26,7 @@ document.getElementById("detailed_content").style.visibility = "hidden";
 						    	 
 						    var faculty=child.key; //teacher name
 						    
-						   	//	alert(faculty);
+						   		alert(faculty+" "+s_id);
 							    var rootRef2 = firebase.database().ref();
 							  	var urlRef2 = rootRef2.child('attendance/CSE-17A/'+course_text+'/'+faculty+'/');
 							 	urlRef2.once("value", function(snapshot) {
@@ -69,18 +34,18 @@ document.getElementById("detailed_content").style.visibility = "hidden";
 							    var m2=child.key; //date is there
 							  //date is assigned as m2=date
 
-							  //  alert(m2);
+							   // alert(m2);
 							    	var rootRef3 = firebase.database().ref();
 								  	var urlRef3 = rootRef3.child('attendance/CSE-17A/'+course_text+'/'+faculty+'/'+m2+'/');
 								 	urlRef3.once("value", function(snapshot) {
 								    snapshot.forEach(function(child) {
 								    var m3=child.key; //got the time slot
+								
 								//	alert(m3);
 								    	c=0;
-								    	//alert(course_text+" "+faculty+" "+m2+" "+m3+" "+s_id);
 									    firebase.database().ref('attendance/CSE-17A/'+course_text+'/'+faculty+'/'+m2+'/'+m3+'/'+s_id).once('value').then(function(snapshot) {
 								  				if (snapshot.exists()) {
-
+								  					alert("res :"+s_id+" "+initial_course+" "+ present_count+" "+absent_count+" "+excused_count+" "+percentage);
 								  					//alert(initial_course+" "+course_text);
 											        if (initial_course=='') {
 											        	initial_course=course_text;
@@ -93,13 +58,13 @@ document.getElementById("detailed_content").style.visibility = "hidden";
 											        else if (initial_course!=course_text)
 											        {
 											        	
-											        	//alert("here goes the resolve");
+											        //	alert("here goes the resolve");
 											        	//alert(c+" "+course_text+" "+ present_count+" "+absent_count+" "+excused_count+" "+percentage);
 											        	count=count+1;
-														//alert("res :"+initial_course+" "+ present_count+" "+absent_count+" "+excused_count+" "+percentage);
+														alert("res :"+s_id+" "+initial_course+" "+ present_count+" "+absent_count+" "+excused_count+" "+percentage);
 														table_content=table_content+'<td>'+count+'</td>';
 														  					
-														  					table_content=table_content+'<td>'+s_id+'</td>';
+														  					table_content=table_content+'<td>'+initial_course+'</td>';
 														  					table_content=table_content+'<td>'+c+'</td>';
 														  					table_content=table_content+'<td>'+present_count+'</td>';  //total present
 														  					table_content=table_content+'<td>'+absent_count+'</td>';  //absent
@@ -132,10 +97,6 @@ document.getElementById("detailed_content").style.visibility = "hidden";
 																			present_count=0;
 																			absent_count=0;
 																			excused_count=0;
-																			//if (course_text=='CSE-499') {
-																				resolve("done");
-																			//}
-
 											        }
 											        
 
@@ -184,7 +145,7 @@ document.getElementById("detailed_content").style.visibility = "hidden";
 								  				{
 								  					content='<br>';
 									   				content=content+'<div style="font-size: 16pt" class="alert alert-danger" role="alert">';
-									   				content=content+'<strong>No data as no snapshot </strong>found! </div> ';
+									   				content=content+'<strong>No data </strong>found! </div> ';
 								   				 	document.getElementById("alert_there").innerHTML=content;
 								  				}
 								  				
@@ -224,25 +185,12 @@ document.getElementById("detailed_content").style.visibility = "hidden";
 	
 
     			}
-     					}
-    		
-			    	 });
-				});
-
-			}
-    	 });
-	});
-
-		
-		}, 10);
-
-    });
-    promises.push(promise);
+	// body...
 }
-
-async function collegiate() {
+document.getElementById("detailed_content").style.visibility = "hidden";
+function collegiate() {
 	var course=document.getElementById("course");
-	f_course_text=course.options[course.selectedIndex].text;
+	var course_text=course.options[course.selectedIndex].text;
 
 	var content='';
     content=content+'<div style="font-size: 16pt" class="alert alert-danger" role="alert">';
@@ -250,14 +198,14 @@ async function collegiate() {
 	var batch=document.getElementById("batch");
 	var batch_text=course.options[batch.selectedIndex].text;
 
-	if(f_course_text=='Choose your option' && batch_text=='Choose your option')
+	if(course_text=='Choose your option' && batch_text=='Choose your option')
 	{
 		document.getElementById("course").style.borderColor = "red";
 		document.getElementById("batch").style.borderColor = "red";
 		content=content+'<strong>Fill Out </strong>The Fields! </div> ';
        document.getElementById("alert_there").innerHTML=content;
 	}
-	else if(f_course_text=='Choose your option')
+	else if(course_text=='Choose your option')
 	{
 		document.getElementById("course").style.borderColor = "red";
 		content=content+'<strong>Select </strong>Course! </div> ';
@@ -272,7 +220,6 @@ async function collegiate() {
 	}
 	else
 	{ 
-		content='';
 	 //  <table class="table table-striped" border="1">
   //   <thead class="thead-light">
   //     <tr>
@@ -302,8 +249,63 @@ async function collegiate() {
     
   //   </tbody>
   // </table>
-  		var arr=[];
-				
+
+		// var c=1;
+		// content=''
+		// var basic_content=''
+  //   	var final_content='';
+		// var table_content='';
+		// basic_content='';
+		// basic_content=basic_content+'<table class="table table-striped" border="2">';
+	
+		// basic_content=basic_content+'<thead class="thead-light">';
+		// basic_content=basic_content+'<tr>';
+		// basic_content=basic_content+'<th scope="col">Ser No.</th>';
+		// basic_content=basic_content+'<th scope="col">ID</th>';
+		// basic_content=basic_content+'<th scope="col">Name</th>';
+		// basic_content=basic_content+'<th scope="col">Total Present</th>';
+		// basic_content=basic_content+'<th scope="col">Total Absent</th>';
+		// basic_content=basic_content+'<th scope="col">Total Excused</th>';
+		// basic_content=basic_content+'<th scope="col">Percentage</th>';
+		// basic_content=basic_content+'<th scope="col">Status</th>';
+		// basic_content=basic_content+'</tr>';
+		// basic_content=basic_content+' </thead>';
+		// basic_content=basic_content+'<tbody>';
+
+		// table_content=table_content+'<tr>';
+
+  // 					table_content=table_content+'<td>'+c+'</td>';
+  					
+  // 					table_content=table_content+'<td>'+'201714043'+'</td>';
+  // 					table_content=table_content+'<td>'+'Nafiz Imtiaz Khan'+'</td>';  //total present
+  // 					table_content=table_content+'<td>'+'20'+'</td>';  //absent
+  // 					table_content=table_content+'<td>'+'10'+'</td>';  //excused
+  // 					table_content=table_content+'<td>'+'1'+'</td>'; 
+  // 					table_content=table_content+'<td>'+'10%'+'</td>'; 
+  // 					table_content=table_content+'<td>'+'Collegiate'+'</td>'; 
+  					
+		// 			table_content=table_content+'</td>';
+		// 			table_content=table_content+'</tr>';
+  					 
+		// 			 final_content=final_content+'</tbody>';
+		// 			final_content=final_content+'</table>';
+					
+		// 			document.getElementById("table_content").innerHTML=basic_content+table_content+final_content;
+		// 			final_content='';
+		// 			document.getElementById("detailed_content").style.visibility = "visible";
+		// 			document.getElementById("collegiate").innerHTML = '<h4>'+'10'+'</h4>';
+		// 			document.getElementById("noncollegiate").innerHTML = '<h4>'+ '10' +'</h4>';
+		// 			document.getElementById("discollegiate").innerHTML = '<h4>'+ '10' +'</h4>';
+
+		// 			c=c+1;
+		// content=content+'<div style="font-size: 16pt" class="alert alert-success" role="alert">';
+		// content=content+'<strong>Data </strong>Found! </div> ';
+  //       document.getElementById("alert_there").innerHTML=content;
+
+
+        ///////////////////////
+        var initial_course='';
+			
 		basic_content='';
 		basic_content=basic_content+'<table class="table table-striped" border="2">';
 	
@@ -311,7 +313,7 @@ async function collegiate() {
 		basic_content=basic_content+'<tr>';
 		basic_content=basic_content+'<th scope="col">Ser No.</th>';
 		basic_content=basic_content+'<th scope="col">ID</th>';
-		basic_content=basic_content+'<th scope="col">Total Class</th>';
+		basic_content=basic_content+'<th scope="col">Name</th>';
 		basic_content=basic_content+'<th scope="col">Total Present</th>';
 		basic_content=basic_content+'<th scope="col">Total Absent</th>';
 		basic_content=basic_content+'<th scope="col">Total Excused</th>';
@@ -324,63 +326,47 @@ async function collegiate() {
 		table_content=table_content+'<tr>';
 
   			// 		
+  		content='';
 		content=content+'<div style="font-size: 16pt" class="alert alert-success" role="alert">';
 		content=content+'<strong>Data </strong>Found! </div> ';
         document.getElementById("alert_there").innerHTML=content;
 
-      //  s_id='201714023';
-        
+   //       var rootRef0 = firebase.database().ref();
+ 	 // var urlRef0 = rootRef0.child('Enrolled/CSE-17A/');
+ 	 // urlRef0.once("value", function(snapshot) {
+   //  snapshot.forEach(function(child) {
 
-        
-        
-          
-           
-      var kk=0;
-         var rootRef_10 = firebase.database().ref();
- 	 var urlRef_10 = rootRef_10.child('Enrolled/CSE-17A/'+f_course_text+'/');
- 	 urlRef_10.once("value", function(snapshot) {
+   //  	 //course_text=child.key;
+   //  	 var course_text=child.key;
+    	// alert("out loop"+p_course_text);
+    	 var rootRef_0 = firebase.database().ref();
+ 	 var urlRef_0 = rootRef_0.child('Enrolled/CSE-17A/'+course_text+'/');
+ 	 urlRef_0.once("value", function(snapshot) {
+ 	 	setTimeout(function(){
     snapshot.forEach(function(child) {
-    	//alert(child.val().ID);
-    	arr[kk]=child.val().ID;
-    	//alert(arr[kk].toString());
-    	kk=kk+1;
-    	
-
-    	// alert("in loop");
-    	//  s_id=
-    	 // alert(s_id);
-    	  //process(s_id);
-    	  //result = await Promise.all(promises);
-
-    	 // alert("hello man");
-    	  //alert(s_id);
-    	// // s_id='201714043';
-    	// // process(s_id);
-
-
-
+    					var s_id
+    					
+    					 s_id=child.val().ID;
+    					 alert(s_id);
+    					 process(s_id,course_text);
+    					 
+    					
+    					
+     					//if (child.val().ID==s_id)
+     					 {
+     			//			alert("in loop");
+							
+     					}
+    		
+			    	 }); 
+					}, 300);
+				});
 
 
-
-
-    	});
-	});
- 	 
-setTimeout(async function(){ 
-	//alert(kk);
- 	// alert("Now here");
- 	 for (var i = 0; i < kk; i++) {
- 	 	//alert("array printing");
- 	 //	alert(arr[i]);
- 	 	process(arr[i]);
-    	 result = await Promise.all(promises);
- 	 }
-	 }, 2000);
-
-
-     
-
+ //    	 });
+	// });
 		
+	// });
 	}
 
 	
