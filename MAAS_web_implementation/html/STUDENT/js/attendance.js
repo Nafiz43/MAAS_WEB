@@ -1,4 +1,8 @@
 
+
+
+
+
 	 document.getElementById("detailed_content").style.visibility = "hidden";
 function attendance() {
 	var s_id = localStorage.getItem("value");
@@ -207,7 +211,7 @@ function attendance() {
     snapshot.forEach(function(child) {
     	 
     var faculty=child.key; //teacher name
-    
+    	//alert(faculty);
    
 	    var rootRef2 = firebase.database().ref();
 	  	var urlRef2 = rootRef2.child('attendance/CSE-17A/'+course_text+'/'+faculty+'/');

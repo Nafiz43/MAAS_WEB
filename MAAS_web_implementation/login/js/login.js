@@ -52,7 +52,7 @@
 
                      //here to have a soft eye
                       s_userpass = CryptoJS.AES.decrypt(s_userpass, "CIPHERKEY");
-                      s_userpass = s_userpass.toString(CryptoJS.enc.Utf8);
+                     s_userpass = s_userpass.toString(CryptoJS.enc.Utf8);
 
                       //alert(s_userpass);
 
