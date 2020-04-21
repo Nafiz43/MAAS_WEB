@@ -3,7 +3,7 @@ function apply_application() {
 
 	var userId=localStorage.getItem("value");
 	var username=localStorage.getItem("value_username");
-	
+	 var UR;
 	//alert("hello world");
 	var date =document.getElementById("date").value;
 	//alert(date);
@@ -22,7 +22,7 @@ function apply_application() {
 	// alert(faculty_text);
 	
 	//var reason=document.getElementById("rsn").value;
-	var document_text =document.getElementById("dcm").value;
+	//var document_text =document.getElementById("dcm").value;
 
 	var reason=document.getElementById("reason");
 	var reason_text=reason.options[reason.selectedIndex].text;
@@ -134,19 +134,41 @@ function apply_application() {
 			App_absent_from : absent_from,
 			App_absent_till : absent_till,
 			App_duration    : duration,
-			App_link : document_text,
+			App_link : 'image',
 		    App_status: 'Pending'
 			 }, function(error) {
 		    if (error) {
 		    	alert("Failed to Save data");
 		      // The write failed...
 		    } else {
-		    	window.location.href = "apply_application_add.html";
-		    	//alert("Successfully Saved");
+		    	//window.location.href = "apply_application_add.html";
+		    	alert("Successfully Saved data");
 		      // Data saved successfully!
 		    }
 		  });
 		
+       
+		const ref = firebase.storage().ref();
+        const file = document.querySelector('#dcm').files[0]
+        const name = userId + ' ' + date;
+       // const name = (+new Date()) + '-' + file.name;
+        const metadata = {
+           contentType: file.type
+        };
+        const task = ref.child(name).put(file, metadata);
+        task
+           .then(snapshot => snapshot.ref.getDownloadURL())
+           .then((url) => {
+           console.log(url);
+          // UR=url;
+           alert("image saved");
+           window.location.href = "apply_application_add.html";
+          // document.querySelector('#someImageTagID').src = url;
+        })
+        .catch(console.error);
+
+//request.auth == null
+        
 		
 
 

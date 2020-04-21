@@ -13,10 +13,28 @@
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-      <script src="js/pdf/dist/jspdf.min.js"></script>
+      <script src="js/pdf/dist/jspdf.debug.js"></script>
+    
      
   </head>
-
+<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.1.3/firebase-storage.js"></script>
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCNM0HlObFHsCwM3iZhV8i0Qxwn3mmTYJg",
+      authDomain: "maas-fb909.firebaseapp.com",
+      databaseURL: "https://maas-fb909.firebaseio.com",
+      projectId: "maas-fb909",
+      storageBucket: "maas-fb909.appspot.com",
+      messagingSenderId: "147741298520",
+      appId: "1:147741298520:web:500360dba2aa5dd2d91f2d",
+      measurementId: "G-ZFZHDL8MDG"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    //firebase.analytics();
+  </script>
      <style>
       .body{
         background-color: #D1F0CD;
@@ -130,7 +148,18 @@
 
 <div class="container">
  <br><br>
-<button onclick="genarate_pdf()" class="btn btn-primary" >view as pdf</button>
+  <div class="row">
+        <div class='col-sm-6'>
+             <button onclick="genarate_pdf()" class="btn btn-primary" >view as pdf</button>
+        </div>
+
+         <div class='col-sm-6'>
+            
+            <button onclick="forward()" style="font-size: 14pt" class="btn btn-success">Fwd to HoD</button>
+
+          </div>
+
+  </div> 
  <div class="row">
         <div class='col-sm-7'>
           <h4 style="font-size: 16pt"> <u>Application Date :</u>  <b><div id="App_date">  </div></b>  </h4>
@@ -138,15 +167,21 @@
             <h4 style="font-size: 16pt"> <u>Applicant's Name :</u>   <b><div id="App_name" >  </div></b>   </h4>
             
             <h4 style="font-size: 16pt"> <u>Course Name :</u>   <b><div id="App_course">  </div></b>  </h4>
+            <h4 style="font-size: 16pt"> <u>Faculty Name :</u>   <b><div id="app_faculty">  </div></b>  </h4>
             <h4 style="font-size: 16pt"> <u>Duration :</u>   <b><div id="App_duration">  </div></b>  </h4>
             <h4 style="font-size: 16pt"> <u>Absent From :</u>   <b><div id="App_absent_from">  </div></b>  </h4>
             <h4 style="font-size: 16pt"> <u>Absnt Till :</u>   <b><div id="App_absent_till">  </div></b>  </h4>
             <h4 style="font-size: 16pt"> <u>Reason :</u>   <b><div id="rsn">  </div></b>  </h4>
+            <h4 style="font-size: 16pt"> <u>Status :</u>   <b><div id="app_statu">  </div></b>  </h4>
 
            <!--  <h4 style="font-size: 16pt"> <u>Reason For Absence :</u>  </h4>
             
-         <textarea style="font-size: 16pt" cols="70" rows="8" id="rsn"></textarea> -->
-         <div class="text-left"><a id="anch" href="#" target="_blank"> <h4>Attachments(prescription)</h4> </a></div>
+         <textarea style="font-size: 16pt" cols="70" rows="8" id="rsn"></textarea> 
+         <div class="text-left"><a id="anch" href="#" target="_blank"> <h4>Attachments(prescription)</h4> </a></div>-->
+        <button onclick="showImage()">Attachments(prescription)</button>
+         <img id="image"/>
+
+
         </div>
        <!--  <div class='col-sm-1'>
             <h4><center><b>Date</b></center></h4>
@@ -182,11 +217,12 @@
             
           </div>
           &nbsp
-          <div class='col-sm-4'>
+          <div class='col-sm-3'>
             
             <button onclick="reject()" style="font-size: 14pt" class="btn btn-danger">Reject</button>
 
           </div>
+          
           <br><br>
         </div>
 </div>

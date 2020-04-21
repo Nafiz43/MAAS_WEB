@@ -1,0 +1,1118 @@
+{
+  "Course" : {
+    "CSE-401" : {
+      "attendance" : "Present",
+      "date" : "10-05-20",
+      "subname" : "SADD",
+      "time" : "8:00-9:00",
+      "type" : "Theory"
+    },
+    "CSE401" : {
+      "attendance" : "Present",
+      "date" : "10-05-20\"",
+      "subname" : "SADD",
+      "time" : "8:00-9:00",
+      "type" : "Theory"
+    }
+  },
+  "CourseList" : {
+    "CSE-401" : {
+      "Course Name" : "SADD",
+      "CouseTeacher" : "Lt. Col. Nazrul",
+      "Students" : {
+        "id" : 201714027
+      }
+    },
+    "CSE-402" : {
+      "Course Name" : "SADD Sessional",
+      "Course Teacher" : "Lt. col. Nazrul Islam"
+    },
+    "CSE-460" : {
+      "Course Name" : "IDP(II)",
+      "Course Teacher" : "Anisur Rahman"
+    }
+  },
+  "Course_Teacher" : {
+    "CSE-17A" : {
+      "CSE-401" : {
+        "-M2Yl4EceJb3kyJPQ_1l" : {
+          "Name" : "8320-01"
+        },
+        "-M2Yl7A3Vg2XdV_vTgZY" : {
+          "Name" : "8320-03"
+        }
+      },
+      "CSE-460" : {
+        "-M2YsJwuc7vRVl5pCykP" : {
+          "Name" : "8320-01"
+        },
+        "-M2YsWANxgqBeQO_GqbN" : {
+          "Name" : "8320-02"
+        },
+        "-M2YsY_axgMQO4JonDOp" : {
+          "Name" : "8320-03"
+        }
+      },
+      "CSE-460(HW)" : {
+        "-M2YsfmioAK_0K03uVG0" : {
+          "Name" : "8320-04"
+        },
+        "-M2Ysi9XmWI0lics5oIx" : {
+          "Name" : "8320-05"
+        },
+        "-M2Yskn8kWmBXZMoQWMU" : {
+          "Name" : "8320-06"
+        }
+      }
+    }
+  },
+  "Enrolled" : {
+    "CSE-17A" : {
+      "CSE-401" : {
+        "-M24B25K9eqS7ePx7cjF" : {
+          "ID" : 201714023
+        },
+        "-M24BLLK9Qyw1a4j31rL" : {
+          "ID" : 201714027
+        },
+        "-M24BXIj4dZZ341xpV7f" : {
+          "ID" : 201714030
+        },
+        "-M24Bgz8TBj4jirWlRTM" : {
+          "ID" : 201714043
+        }
+      },
+      "CSE-402" : {
+        "-M24BptOzAG0Xs8AJRB3" : {
+          "ID" : 201714013
+        },
+        "-M24BsR6rI8zMwSFGdHU" : {
+          "ID" : 201714023
+        },
+        "-M24BukN4JVJGt5WweCl" : {
+          "ID" : 201714059
+        }
+      },
+      "CSE-460" : {
+        "-M23du0MrV37hGW1EKxz" : {
+          "ID" : 201714023
+        },
+        "-M23e5UXnaBLqO1LLtxe" : {
+          "ID" : 201714027
+        },
+        "-M23e9-mS90grlVsIkdS" : {
+          "ID" : 201714030
+        },
+        "-M23eEWOW18XXUAUN83s" : {
+          "ID" : 201714043
+        },
+        "-M23eHlKuEc5pDSmJbNi" : {
+          "ID" : 201714059
+        }
+      },
+      "CSE-499" : {
+        "acdwedwd" : {
+          "ID" : 201714027
+        },
+        "ffghgj" : {
+          "ID" : 201714030
+        },
+        "iieieie" : {
+          "ID" : 201714059
+        },
+        "poiuytr" : {
+          "ID" : 201714043
+        },
+        "qwewew" : {
+          "ID" : 201714023
+        },
+        "tyuio" : {
+          "ID" : 201714013
+        }
+      }
+    }
+  },
+  "Fingerprintsensor" : {
+    "ID" : "ID"
+  },
+  "Routine" : {
+    "502" : {
+      "mon_1st" : "",
+      "mon_2nd" : "",
+      "mon_3rd" : "",
+      "mon_4th" : "",
+      "mon_5th" : "",
+      "mon_6th" : "",
+      "mon_7th" : "",
+      "sun_1st" : "CSE-301",
+      "sun_2nd" : "",
+      "sun_3rd" : "",
+      "sun_4th" : "",
+      "sun_5th" : "",
+      "sun_6th" : "",
+      "sun_7th" : "",
+      "thu_1st" : "",
+      "thu_2nd" : "",
+      "thu_3rd" : "",
+      "thu_4th" : "",
+      "thu_5th" : "",
+      "thu_6th" : "",
+      "thu_7th" : "",
+      "tue_1st" : "",
+      "tue_2nd" : "",
+      "tue_3rd" : "",
+      "tue_4th" : "",
+      "tue_5th" : "",
+      "tue_6th" : "",
+      "tue_7th" : "",
+      "wed_1st" : "",
+      "wed_2nd" : "",
+      "wed_3rd" : "",
+      "wed_4th" : "",
+      "wed_5th" : "",
+      "wed_6th" : "",
+      "wed_7th" : ""
+    },
+    "503" : {
+      "mon_1st" : "",
+      "mon_2nd" : "",
+      "mon_3rd" : "",
+      "mon_4th" : "",
+      "mon_5th" : "",
+      "mon_6th" : "",
+      "mon_7th" : "",
+      "sun_1st" : "512",
+      "sun_2nd" : "",
+      "sun_3rd" : "",
+      "sun_4th" : "",
+      "sun_5th" : "",
+      "sun_6th" : "",
+      "sun_7th" : "",
+      "thu_1st" : "",
+      "thu_2nd" : "",
+      "thu_3rd" : "",
+      "thu_4th" : "",
+      "thu_5th" : "",
+      "thu_6th" : "",
+      "thu_7th" : "",
+      "tue_1st" : "",
+      "tue_2nd" : "",
+      "tue_3rd" : "",
+      "tue_4th" : "",
+      "tue_5th" : "549",
+      "tue_6th" : "",
+      "tue_7th" : "",
+      "wed_1st" : "",
+      "wed_2nd" : "",
+      "wed_3rd" : "",
+      "wed_4th" : "",
+      "wed_5th" : "",
+      "wed_6th" : "",
+      "wed_7th" : ""
+    },
+    "601" : {
+      "mon_1st" : "",
+      "mon_2nd" : "",
+      "mon_3rd" : "",
+      "mon_4th" : "",
+      "mon_5th" : "",
+      "mon_6th" : "",
+      "mon_7th" : "",
+      "sun_1st" : "CSE-301",
+      "sun_2nd" : "",
+      "sun_3rd" : "",
+      "sun_4th" : "",
+      "sun_5th" : "",
+      "sun_6th" : "",
+      "sun_7th" : "",
+      "thu_1st" : "",
+      "thu_2nd" : "",
+      "thu_3rd" : "",
+      "thu_4th" : "",
+      "thu_5th" : "",
+      "thu_6th" : "CSE-310",
+      "thu_7th" : "",
+      "tue_1st" : "",
+      "tue_2nd" : "",
+      "tue_3rd" : "",
+      "tue_4th" : "",
+      "tue_5th" : "",
+      "tue_6th" : "",
+      "tue_7th" : "",
+      "wed_1st" : "",
+      "wed_2nd" : "",
+      "wed_3rd" : "",
+      "wed_4th" : "",
+      "wed_5th" : "",
+      "wed_6th" : "",
+      "wed_7th" : ""
+    },
+    "602" : {
+      "mon_1st" : "",
+      "mon_2nd" : "",
+      "mon_3rd" : "",
+      "mon_4th" : "",
+      "mon_5th" : "",
+      "mon_6th" : "",
+      "mon_7th" : "",
+      "sun_1st" : "CSE-306",
+      "sun_2nd" : "",
+      "sun_3rd" : "",
+      "sun_4th" : "",
+      "sun_5th" : "",
+      "sun_6th" : "",
+      "sun_7th" : "",
+      "thu_1st" : "",
+      "thu_2nd" : "",
+      "thu_3rd" : "",
+      "thu_4th" : "",
+      "thu_5th" : "",
+      "thu_6th" : "",
+      "thu_7th" : "",
+      "tue_1st" : "",
+      "tue_2nd" : "",
+      "tue_3rd" : "",
+      "tue_4th" : "",
+      "tue_5th" : "",
+      "tue_6th" : "",
+      "tue_7th" : "",
+      "wed_1st" : "",
+      "wed_2nd" : "",
+      "wed_3rd" : "",
+      "wed_4th" : "",
+      "wed_5th" : "",
+      "wed_6th" : "",
+      "wed_7th" : ""
+    }
+  },
+  "User" : {
+    "201714001" : {
+      "usercategory" : "Student",
+      "useremail" : "shagor57@gmail.com",
+      "username" : "S M Tamzid Islam",
+      "userpass" : "001"
+    },
+    "201714002" : {
+      "usercategory" : "Student",
+      "useremail" : " rakib.mra25@gmail.com",
+      "username" : "Rakib Ahmed",
+      "userpass" : "002"
+    },
+    "201714003" : {
+      "usercategory" : "Student",
+      "useremail" : "nafiz7731@gmail.com",
+      "username" : "Noor Nafiz Islam",
+      "userpass" : "003"
+    },
+    "201714004" : {
+      "usercategory" : "Student",
+      "username" : "Md Nuruzzaman",
+      "userpass" : "004"
+    },
+    "201714010" : {
+      "usercategory" : "Student",
+      "useremail" : "humairamahfuz0209@gmail.com ",
+      "username" : "Lt. Humaira Mahfuz",
+      "userpass" : "010"
+    },
+    "201714011" : {
+      "usercategory" : "Student",
+      "useremail" : "afrinbd9@gmail.com",
+      "username" : "Afrina Khanom",
+      "userpass" : "011"
+    },
+    "201714012" : {
+      "usercategory" : "Student",
+      "useremail" : "nshikhon@gmail.com",
+      "username" : "Nahid Iqbal Shikhon",
+      "userpass" : "012"
+    },
+    "201714013" : {
+      "usercategory" : "Admin",
+      "useremail" : "ahmzobyer@gmail.com",
+      "username" : "A.H.M. zobyer",
+      "userpass" : "013"
+    },
+    "201714014" : {
+      "usercategory" : "Student",
+      "username" : "Abdullah-al-Sheak Jaber",
+      "userpass" : "014"
+    },
+    "201714015" : {
+      "usercategory" : "Student",
+      "useremail" : "akib.mist@gmail.com",
+      "username" : "Aakib uz Zaman",
+      "userpass" : "015"
+    },
+    "201714018" : {
+      "usercategory" : "Student",
+      "useremail" : "ayonroy@gmail.com",
+      "username" : "Ayon Roy",
+      "userpass" : "018"
+    },
+    "201714019" : {
+      "usercategory" : "Student",
+      "username" : "Ayrin Anwar",
+      "userpass" : "019"
+    },
+    "201714020" : {
+      "usercategory" : "Student",
+      "useremail" : "udoy320@gmail.com",
+      "username" : "Dipan Sadekin",
+      "userpass" : "020"
+    },
+    "201714021" : {
+      "usercategory" : "Student",
+      "username" : "Dipok Sarkar Dipu",
+      "userpass" : "021"
+    },
+    "201714022" : {
+      "usercategory" : "Student",
+      "username" : "Fahmida Yesmin Rifat",
+      "userpass" : "022"
+    },
+    "201714023" : {
+      "usercategory" : "Admin",
+      "useremail" : "farzanafarukjhumu@gmail.com",
+      "username" : "Farzana Faruk Jhumu",
+      "userpass" : "023"
+    },
+    "201714024" : {
+      "usercategory" : "Student",
+      "useremail" : "aqib",
+      "username" : "Aqib Alfaz",
+      "userpass" : "024"
+    },
+    "201714025" : {
+      "usercategory" : "Student",
+      "useremail" : "mahiyahasan@gmail.com",
+      "username" : "Mahiya Hasan",
+      "userpass" : "025"
+    },
+    "201714027" : {
+      "usercategory" : "Admin",
+      "useremail" : "mahin1067@gamil.com",
+      "username" : "Masrur Hasan Mahin",
+      "userpass" : "027"
+    },
+    "201714030" : {
+      "usercategory" : "Student",
+      "useremail" : "nazrulislam@gmail.com",
+      "username" : "Lt Col Nazrul Islam",
+      "userpass" : "U2FsdGVkX1+fBsbPtoQyDR9NHC4TBTHZSgXei6x6g4A="
+    },
+    "201714031" : {
+      "usercategory" : "Student",
+      "useremail" : "ishakahmed4040@gmail.com",
+      "username" : "Md Ishak",
+      "userpass" : "031"
+    },
+    "201714032" : {
+      "usercategory" : "Student",
+      "useremail" : "mahadimunna22@gmail.com",
+      "username" : "Mahadi Hassan Munna",
+      "userpass" : "032"
+    },
+    "201714035" : {
+      "usercategory" : "Student",
+      "useremail" : "rownokrezwan@gmail.com",
+      "username" : "Md. Rezwan -A- Rownok",
+      "userpass" : "035"
+    },
+    "201714036" : {
+      "usercategory" : "Student",
+      "useremail" : "shaadjeem@gmail.com",
+      "username" : "Saad Ibne Jamal",
+      "userpass" : "036"
+    },
+    "201714041" : {
+      "usercategory" : "Student",
+      "useremail" : "mdzh1997@gmail.com",
+      "username" : "Zubair Hasan",
+      "userpass" : "041"
+    },
+    "201714043" : {
+      "usercategory" : "Student",
+      "useremail" : "imtiznafiz@gmail.com",
+      "username" : "Nafiz Imtiaz Khan",
+      "userpass" : "U2FsdGVkX1+v+uIIr/kLXvHjvkTS9MHb2eAEomdFkak="
+    },
+    "201714044" : {
+      "usercategory" : "Student",
+      "useremail" : "nhrafa.96@gmail.com",
+      "username" : "Nazifa Hamid rafa",
+      "userpass" : "044"
+    },
+    "201714046" : {
+      "usercategory" : "Student",
+      "useremail" : "nujattabassumbinty@gmail.com",
+      "username" : "Nujat Tabassum Binty",
+      "userpass" : "046"
+    },
+    "201714051" : {
+      "usercategory" : "Student",
+      "useremail" : "sabrinaonnee23@gmail.com",
+      "username" : "Sabrina Afrin Onnee",
+      "userpass" : "051"
+    },
+    "201714052" : {
+      "usercategory" : "Student",
+      "useremail" : "samiharaisa031@gnail.com",
+      "username" : "Samiha Raisa Zaman",
+      "userpass" : "052"
+    },
+    "201714055" : {
+      "usercategory" : "Student",
+      "useremail" : "shahriarkhan.ndc@gmail.com",
+      "username" : "Shahriar Rahman Khan Nehal",
+      "userpass" : "055"
+    },
+    "201714056" : {
+      "usercategory" : "Student",
+      "useremail" : "shamimazarin7@gmail.com",
+      "username" : "Shamima Nasrin Zarin",
+      "userpass" : "056"
+    },
+    "201714058" : {
+      "usercategory" : "Student",
+      "useremail" : "sumaiya.1433@gmail.com",
+      "username" : "Sumaiya Afrin",
+      "userpass" : "058"
+    },
+    "201714059" : {
+      "usercategory" : "Admin",
+      "useremail" : "sumaiyamustafina@gmail.com",
+      "username" : "Sumaiya Nuha Mustafina",
+      "userpass" : "059"
+    },
+    "201714060" : {
+      "usercategory" : "Student",
+      "useremail" : "rohitzaman00@gmail.com",
+      "username" : "Rohit Zaman Tushar",
+      "userpass" : "060"
+    },
+    "201714061" : {
+      "usercategory" : "Student",
+      "useremail" : "tahsin",
+      "username" : "tahsin Mahmud",
+      "userpass" : "U2FsdGVkX1+vn38Dl2h+sD6O38uoaEopMv4S039yzZM="
+    },
+    "201714062" : {
+      "usercategory" : "Student",
+      "useremail" : "tahmid.hasan.sakib.3@gmail.com",
+      "username" : "Tahmid Hasan Sakib",
+      "userpass" : "062"
+    },
+    "201714066" : {
+      "usercategory" : "Student",
+      "useremail" : "epty4@gmail.com",
+      "username" : "Zubair Islam  Epty",
+      "userpass" : "066"
+    },
+    "202014043" : {
+      "usercategory" : "Student",
+      "useremail" : "sabikunnahar492@gmail.com",
+      "username" : "Sabikun Nahar Zerin",
+      "userpass" : "2043"
+    },
+    "202014050" : {
+      "usercategory" : "Student",
+      "useremail" : "shejutibinteferoz@gmail.com",
+      "username" : "Shejuti Binte Feroz",
+      "userpass" : "2050"
+    },
+    "202014052" : {
+      "usercategory" : "Student",
+      "useremail" : "sinchimree@gmail.com",
+      "username" : "SINCHI MARY MREE",
+      "userpass" : "2052"
+    },
+    "202014059" : {
+      "usercategory" : "Student",
+      "useremail" : "tasfiasara1000@gmail.com",
+      "username" : "Tasfia Akter Sara",
+      "userpass" : "2059"
+    },
+    "8320-01" : {
+      "usercategory" : "Teacher",
+      "username" : "Lt Cdr Anisur Rahman",
+      "userpass" : "U2FsdGVkX1/DLfxWQtHwE1JpZqRtJp7Ft2tQ3btnO5o="
+    },
+    "8320-02" : {
+      "usercategory" : "Teacher",
+      "username" : "Lt Col Nazrul Islam",
+      "userpass" : "U2FsdGVkX19iXt9BbUUZ7BeFY3TvQnvR0O6c+mjz8TU="
+    },
+    "8320-03" : {
+      "usercategory" : "Teacher",
+      "username" : "Tarannum Zaki",
+      "userpass" : "U2FsdGVkX19CN8c/RLzRRK3T9Gz/2qN2vbAFAzZln50="
+    },
+    "8320-04" : {
+      "usercategory" : "Teacher",
+      "username" : "Raiyan Rahman",
+      "userpass" : "U2FsdGVkX19ipFUJbOeUhPPx/l8oRU8akx4tAux5n8Q="
+    },
+    "8320-05" : {
+      "usercategory" : "Teacher",
+      "username" : "Afia Anjum",
+      "userpass" : "U2FsdGVkX1/P84HdkD42s6hSDsL50QVogy6FvJyuXLk="
+    },
+    "8320-06" : {
+      "usercategory" : "Teacher",
+      "username" : "Abdus Sttar",
+      "userpass" : "U2FsdGVkX19VNom2k3MvKFmsI8moHL3v8MNxnan+iYU="
+    },
+    "8516-01" : {
+      "usercategory" : "Admin",
+      "username" : "Ajmir",
+      "userpass" : "U2FsdGVkX1+yf+intqRkRbqKrqo4RfI8+CyoXQmTFqw="
+    },
+    "8516-02" : {
+      "usercategory" : "Admin",
+      "useremail" : "farzanafarukjhumu@gmail.com",
+      "username" : "Jhumu",
+      "userpass" : "02"
+    },
+    "8516-03" : {
+      "usercategory" : "Admin",
+      "username" : "Mahin",
+      "userpass" : "U2FsdGVkX1+5BD1VwIIm2A6yi7iqo33tpl91BYIjeOo="
+    },
+    "8516-04" : {
+      "usercategory" : "Admin",
+      "username" : "Abir",
+      "userpass" : "U2FsdGVkX18/g3AkkTc6Uq4vDT+RrHMseeO49YBpr08="
+    },
+    "8516-05" : {
+      "usercategory" : "Admin",
+      "username" : "Nafiz",
+      "userpass" : "U2FsdGVkX19f0hSAzZmA1Ln1Kx9AOx44QCoHbibM8WY="
+    },
+    "8516-06" : {
+      "usercategory" : "Admin",
+      "username" : "Sumaiya",
+      "userpass" : "U2FsdGVkX1/EgJGnqjQN64jd9ztRQXfzF6aWgyDTysQ="
+    }
+  },
+  "application" : {
+    "Lt Cdr Anisur Rahman" : {
+      "CSE-460" : {
+        "-M1ZCT_FR_Wm2Zbq7UB0" : {
+          "App_ID" : "201714052",
+          "App_course" : "CSE-460",
+          "App_date" : "02/05/2020",
+          "App_faculty" : "Lt Cdr Anisur Rahman",
+          "App_link" : "654",
+          "App_name" : "Samiha",
+          "App_reason" : "123654",
+          "App_status" : "Pending"
+        },
+        "-M1ZCrQg-aJ7VwOJXUMH" : {
+          "App_ID" : "201714059",
+          "App_course" : "CSE-460",
+          "App_date" : "02/05/2020",
+          "App_faculty" : "Lt Cdr Anisur Rahman",
+          "App_link" : "9899",
+          "App_name" : "Sumaiya",
+          "App_reason" : "987",
+          "App_status" : "Pending"
+        },
+        "-M1_FbInCTKbLHnbq2nX" : {
+          "App_ID" : "201714045",
+          "App_course" : "CSE-460",
+          "App_date" : "01/05/2020",
+          "App_faculty" : "Lt Cdr Anisur Rahman",
+          "App_link" : "232332",
+          "App_name" : "Sarah",
+          "App_reason" : "22323",
+          "App_status" : "Pending"
+        },
+        "-M1_P_hF7lv0GDHsLZK3" : {
+          "App_ID" : "201714039",
+          "App_course" : "CSE-460",
+          "App_date" : "03/08/2019",
+          "App_faculty" : "Lt Cdr Anisur Rahman",
+          "App_link" : "https://drive.google.com/drive/folders/1ub8dfqpwHjcc3X-i8tvyn9I1ohQ2xqWK",
+          "App_name" : "Tasfik",
+          "App_reason" : "<Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\ntempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,\nquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo\nconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse\ncillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non\nproident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "App_status" : "Pending"
+        },
+        "-M1dV0OO0W0-LLzhpxCF" : {
+          "App_ID" : "201714043",
+          "App_course" : "CSE-460",
+          "App_date" : "02/05/2020",
+          "App_faculty" : "Lt Cdr Anisur Rahman",
+          "App_link" : "https://console.firebase.google.com/project/maas-fb909/database/maas-fb909/data",
+          "App_name" : "Nafiz Imtiaz Khan",
+          "App_reason" : "dsgsgd",
+          "App_status" : "Approved"
+        }
+      }
+    },
+    "Lt Col Nazrul Islam" : {
+      "CSE-401" : {
+        "-M29-BRFrLiDpDWhAFEp" : {
+          "App_ID" : "201714043",
+          "App_absent_from" : "05/05/2020",
+          "App_absent_till" : "07/05/2020",
+          "App_course" : "CSE-401",
+          "App_date" : "02/05/2020",
+          "App_duration" : "3",
+          "App_faculty" : "Lt Col Nazrul Islam",
+          "App_link" : "qwqw",
+          "App_name" : "Nafiz Imtiaz Khan",
+          "App_reason" : "fever",
+          "App_status" : "Pending"
+        }
+      },
+      "CSE-402" : {
+        "-M1_asswwtMKxh4fij4d" : {
+          "App_ID" : "8516-03",
+          "App_course" : "CSE-402",
+          "App_date" : "02/05/2020",
+          "App_faculty" : "Lt Col Nazrul Islam",
+          "App_link" : "6545",
+          "App_name" : "Lt Cdr Anisur Rahman",
+          "App_reason" : "25852",
+          "App_status" : "Pending"
+        },
+        "-M1_b8KJq9Eztqr8ZB7E" : {
+          "App_ID" : "8516-03",
+          "App_course" : "CSE-402",
+          "App_date" : "02/05/2020",
+          "App_faculty" : "Lt Col Nazrul Islam",
+          "App_link" : "",
+          "App_name" : "Lt Cdr Anisur Rahman",
+          "App_reason" : "25852",
+          "App_status" : "Pending"
+        },
+        "-M26XXIkmmI9GT0mc8J9" : {
+          "App_ID" : 201714043,
+          "App_course" : "CSE-402",
+          "App_date" : "11/25/11",
+          "App_faculty" : "Lt Col Nazrul Islam",
+          "App_link" : "",
+          "App_reason" : "hkj",
+          "App_status" : "Pending"
+        },
+        "-M26XXYhzXLRXIBpGHcX" : {
+          "App_ID" : 201714039,
+          "App_course" : "CSE-402",
+          "App_date" : "11/25/11",
+          "App_faculty" : "Lt Col Nazrul Islam",
+          "App_link" : "",
+          "App_reason" : "hkj",
+          "App_status" : "Pending"
+        },
+        "-M26XXqqjdLYs0-NicBF" : {
+          "App_ID" : 201714040,
+          "App_course" : "CSE-402",
+          "App_date" : "11/25/11",
+          "App_faculty" : "Lt Col Nazrul Islam",
+          "App_link" : "",
+          "App_reason" : "hkj",
+          "App_status" : "Pending"
+        },
+        "-M26XXygbP5-Idpx83oT" : {
+          "App_ID" : "Md. Ariful Islam Tarek",
+          "App_course" : "CSE-402",
+          "App_date" : "11/25/11",
+          "App_faculty" : "Lt Col Nazrul Islam",
+          "App_link" : "",
+          "App_reason" : "hkj",
+          "App_status" : "Pending"
+        }
+      }
+    }
+  },
+  "attendance" : {
+    "CSE-17A" : {
+      "CSE-401" : {
+        "Lt Cdr Anisur Rahman" : {
+          "12-3-2020" : {
+            "08:00-08:55" : {
+              "201714023" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              },
+              "201714027" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              },
+              "201714030" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              },
+              "201714043" : {
+                "p_excused" : 1,
+                "p_status" : 0
+              }
+            },
+            "09:00-09:55" : {
+              "201714023" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              },
+              "201714027" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              },
+              "201714030" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              },
+              "201714043" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              }
+            }
+          }
+        },
+        "Lt Col Nazrul Islam" : {
+          "11-3-2020" : {
+            "08:00-08:55" : {
+              "201714023" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              },
+              "201714027" : {
+                "p_excused" : 0,
+                "p_status" : 1
+              },
+              "201714030" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              },
+              "201714043" : {
+                "p_excused" : 0,
+                "p_status" : 1
+              }
+            }
+          },
+          "12-3-2020" : {
+            "08:00 am - 08:55 am" : {
+              "201714023" : {
+                "p_excused" : 0,
+                "p_status" : 1
+              },
+              "201714027" : {
+                "p_excused" : 1,
+                "p_status" : 0
+              },
+              "201714030" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              },
+              "201714043" : {
+                "p_excused" : 0,
+                "p_status" : 1
+              }
+            },
+            "08:00-08:55" : {
+              "201714023" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              },
+              "201714027" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              },
+              "201714030" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              },
+              "201714043" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              }
+            }
+          },
+          "17-3-2020" : {
+            "08:00-08:55" : {
+              "201714023" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              },
+              "201714027" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              },
+              "201714030" : {
+                "p_excused" : 0,
+                "p_status" : 1
+              },
+              "201714043" : {
+                "p_excused" : 0,
+                "p_status" : 1
+              }
+            },
+            "09:00-09:55" : {
+              "201714023" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              },
+              "201714027" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              },
+              "201714030" : {
+                "p_excused" : 0,
+                "p_status" : 1
+              },
+              "201714043" : {
+                "p_excused" : 1,
+                "p_status" : 0
+              }
+            }
+          },
+          "18-3-2020" : {
+            "08:00-08:55" : {
+              "201714023" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              },
+              "201714027" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              },
+              "201714030" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              },
+              "201714043" : {
+                "p_excused" : 1,
+                "p_status" : 0
+              }
+            }
+          },
+          "20-3-2020" : {
+            "08:00-08:55" : {
+              "201714023" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              },
+              "201714027" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              },
+              "201714030" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              },
+              "201714043" : {
+                "p_excused" : 0,
+                "p_status" : 1
+              }
+            }
+          }
+        },
+        "Tarannum Zaki" : {
+          "26-3-2020" : {
+            "08:00 am - 08:55 am" : {
+              "201714023" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              },
+              "201714027" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              },
+              "201714030" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              },
+              "201714043" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              }
+            }
+          },
+          "29-3-2020" : {
+            "10:00 am - 10:55 am" : {
+              "201714023" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              },
+              "201714027" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              },
+              "201714030" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              },
+              "201714043" : {
+                "p_excused" : 0,
+                "p_status" : 0
+              }
+            }
+          }
+        }
+      },
+      "CSE-402" : {
+        "Lt Col Nazrul Islam" : {
+          "11-03-2020" : {
+            "08:00-08:55" : {
+              "201714013" : {
+                "p_status" : 0
+              },
+              "201714023" : {
+                "p_status" : 1
+              },
+              "201714059" : {
+                "p_status" : 0
+              }
+            }
+          }
+        }
+      },
+      "CSE-460" : {
+        "Lt Cdr Anisur Rahman" : {
+          "11-3-2020" : {
+            "11:40-2:40 pm" : {
+              "201714023" : {
+                "p_status" : 0
+              },
+              "201714027" : {
+                "p_status" : 0
+              },
+              "201714030" : {
+                "p_status" : 0
+              },
+              "201714043" : {
+                "p_status" : 0
+              },
+              "201714059" : {
+                "p_status" : "1"
+              }
+            }
+          },
+          "12-3-2020" : {
+            "11:40-2:40 pm" : {
+              "201714023" : {
+                "p_status" : "1"
+              },
+              "201714027" : {
+                "p_status" : 0
+              },
+              "201714030" : {
+                "p_status" : 0
+              },
+              "201714035" : {
+                "p_status" : 0
+              },
+              "201714043" : {
+                "p_status" : 0
+              },
+              "201714059" : {
+                "p_status" : "1"
+              }
+            }
+          },
+          "22-3-2020" : {
+            "11:40-2:40 pm" : {
+              "201714023" : {
+                "p_status" : 0
+              },
+              "201714027" : {
+                "p_status" : 0
+              },
+              "201714030" : {
+                "p_status" : 0
+              },
+              "201714043" : {
+                "p_status" : 0
+              },
+              "201714059" : {
+                "p_status" : 0
+              }
+            }
+          }
+        },
+        "Lt Col Nazrul Islam" : {
+          "12-3-2020" : {
+            "11:40-2:40 pm" : {
+              "201714023" : {
+                "p_status" : 0
+              },
+              "201714027" : {
+                "p_status" : 0
+              },
+              "201714030" : {
+                "p_status" : 0
+              },
+              "201714043" : {
+                "p_status" : 1
+              },
+              "201714059" : {
+                "p_status" : 0
+              }
+            }
+          }
+        }
+      },
+      "CSE-499" : {
+        "Lt Cdr Anisur Rahman" : {
+          "12-3-2020" : {
+            "08:00-08:55" : {
+              "201714013" : {
+                "p_excused" : 0,
+                "p_status" : 1
+              },
+              "201714023" : {
+                "p_excused" : 0,
+                "p_status" : 1
+              },
+              "201714027" : {
+                "p_excused" : 1,
+                "p_status" : 1
+              },
+              "201714030" : {
+                "p_excused" : 1,
+                "p_status" : 0
+              },
+              "201714043" : {
+                "p_excused" : 0,
+                "p_status" : 1
+              },
+              "201714059" : {
+                "p_excused" : 0,
+                "p_status" : 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "CSE-400" : {
+      "Lt Col Nazrul Islam " : {
+        "11-3-2020" : {
+          "1:45-2:40 pm" : {
+            "58" : 0,
+            "201714058" : {
+              "p_status" : 0
+            },
+            "201714059" : {
+              "p_status" : "1"
+            }
+          }
+        }
+      }
+    },
+    "CSE-460" : {
+      "Lt Cdr Anisur Rahman" : {
+        "05-03-2020" : {
+          "08:00-08:55" : {
+            "ID_201714013" : 1,
+            "ID_201714023" : 1,
+            "ID_201714027" : 1,
+            "ID_201714030" : 0,
+            "ID_201714043" : 1,
+            "ID_201714059" : 0
+          }
+        }
+      }
+    }
+  }
+}

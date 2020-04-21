@@ -60,6 +60,8 @@ function fine() {
         document.getElementById("alert_there").innerHTML=content;
 
 
+        var label_course=[];
+		var label_percentage=[];
 
         var rootRef0 = firebase.database().ref();
  	 var urlRef0 = rootRef0.child('Enrolled/CSE-17A/');
@@ -127,17 +129,20 @@ function fine() {
 														  					table_content=table_content+'<td>'+absent_count+'</td>';  //absent
 														  					table_content=table_content+'<td>'+excused_count+'</td>';  //excused
 														  					table_content=table_content+'<td>'+percentage+'% </td>'; 
+														  					var r=0;
 														  					if (percentage>=89) {
 														  						table_content=table_content+'<td>'+'Collegiate'+'</td>';
 														  						table_content=table_content+'<td>'+'0'+'</td>';
 														  					}
 														  					else if(percentage>74 && percentage<89)
 														  					{
+														  						r='1500';
 														  						table_content=table_content+'<td>'+'Non-Collegiate'+'</td>';
 														  						table_content=table_content+'<td>'+'1500'+'</td>';
 														  					}
 														  					else
 														  					{
+														  						r='3000';
 														  						table_content=table_content+'<td>'+'Dis-Collegiate'+'</td>';
 														  						table_content=table_content+'<td>'+'3000'+'</td>';
 														  					}
@@ -154,6 +159,9 @@ function fine() {
 																			final_content='';
 																			c=0;
 																			//alert("issue solved");
+																			label_course[count-1]=initial_course;
+																			label_percentage[count-1]=r;
+
 																			initial_course=course_text;
 																			present_count=0;
 																			absent_count=0;
@@ -254,6 +262,80 @@ function fine() {
 
     	 });
 	});
+	setTimeout(function(){
+
+		 //alert(label_course[0]);
+		// alert(label_course[1]); 
+		 //alert()
+
+		let myChart = document.getElementById('myChart').getContext('2d');
+
+    // Global Options
+    Chart.defaults.global.defaultFontFamily = 'Lato';
+    Chart.defaults.global.defaultFontSize = 18;
+    Chart.defaults.global.defaultFontColor = '#5f5f5f';
+
+    let massPopChart = new Chart(myChart, {
+      type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      data:{
+        labels:label_course,
+        datasets:[{
+          label:'Fine',
+          data:label_percentage,
+          //backgroundColor:'green',
+          backgroundColor:[
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(54, 162, 235, 0.6)',
+            'rgba(255, 206, 86, 0.6)',
+            'rgba(75, 192, 192, 0.6)',
+            'rgba(153, 102, 255, 0.6)',
+            'rgba(255, 159, 64, 0.6)',
+            'rgba(255, 99, 132, 0.6)'
+          ],
+          borderWidth:1,
+          borderColor:'#777',
+          hoverBorderWidth:3,
+          hoverBorderColor:'#000'
+        }]
+      },
+      options:{
+      	 scales: {
+        yAxes: [{
+            ticks: {
+                max: 4500,
+                min: 0,
+                stepSize: 500
+            }
+        }]
+    },
+        title:{
+          display:true,
+          text:'Summary of Term',
+          fontSize:25
+        },
+        legend:{
+          display:true,
+          position:'right',
+          labels:{
+            fontColor:'#000'
+          }
+        },
+        layout:{
+          padding:{
+            left:50,
+            right:0,
+            bottom:0,
+            top:0
+          }
+        },
+        tooltips:{
+          enabled:true
+        }
+      }
+    });
+        
+
+    	}, 5000);
 		
         
 
