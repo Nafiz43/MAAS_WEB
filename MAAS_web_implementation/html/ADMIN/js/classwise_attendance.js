@@ -1,4 +1,10 @@
 document.getElementById("detailed_content").style.visibility = "hidden";
+var load_content='';	
+	load_content=load_content+'<div class="form-horizontal">';
+	load_content=load_content+'<div class="col-sm-offset-5 col-sm-10">';
+	load_content=load_content+'<div  class="lds-roller"><div></div><div></div><div>';
+	load_content=load_content+'</div><div></div><div></div><div></div><div></div><div></div></div></div></div>';
+
 function classwise_attendance() {
 	//var teacher=localStorage.getItem("value_username");
 
@@ -58,19 +64,20 @@ function classwise_attendance() {
 	}
 	else
 	{
+		 document.getElementById("loader").innerHTML=load_content;
 		basic_content='';
 		basic_content=basic_content+'<table class="table table-striped" border="2">';
 		basic_content=basic_content+'<br>';
 		basic_content=basic_content+'<br>';
-		basic_content=basic_content+'<thead class="thead-light">';
+		basic_content=basic_content+'<thead >';
 		basic_content=basic_content+'<tr>';
-		basic_content=basic_content+'<th scope="col">Ser No.</th>';
-		basic_content=basic_content+'<th scope="col">Roll No.</th>';
-		basic_content=basic_content+'<th scope="col">Name</th>';
-		basic_content=basic_content+'<th scope="col">Present</th>';
-		basic_content=basic_content+'<th scope="col">Absent</th>';
-		basic_content=basic_content+'<th scope="col">Excused</th>';
-		basic_content=basic_content+'<th scope="col">Faculty Name</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Ser No.</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Roll No.</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Name</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Present</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Absent</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Excused</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Faculty Name</th>';
 		//content=content+'<th scope="col">Excused</th>';
 		basic_content=basic_content+'  </tr>';
 		basic_content=basic_content+' </thead>';
@@ -144,11 +151,10 @@ function classwise_attendance() {
   					
   					table_content=table_content+'<tr>';
 
-  					table_content=table_content+'<td>'+c+'</td>';
-  					
-  					table_content=table_content+'<td>'+s_id+'</td>';
-  					table_content=table_content+'<td>'+s_name+'</td>';
-  					table_content=table_content+'<td><div class="checkbox">';
+  					table_content=table_content+'<td align="center">'+c+'</td>';	
+  					table_content=table_content+'<td align="center">'+s_id+'</td>';
+  					table_content=table_content+'<td align="center">'+s_name+'</td>';
+  					table_content=table_content+'<td align="center"><div class="checkbox">';
   					if (s_present==1) {
   						table_content=table_content+'<label><input type="checkbox" checked disabled></label>';
   						present_count=present_count+1;
@@ -161,7 +167,7 @@ function classwise_attendance() {
   					
 					table_content=table_content+'</div>';
 					table_content=table_content+'</td>';
-					table_content=table_content+'<td><div class="checkbox">';
+					table_content=table_content+'<td align="center"><div class="checkbox">';
 					if (s_absent==1) {
 						table_content=table_content+'<label><input type="checkbox" checked disabled></label>';
 					}
@@ -172,11 +178,8 @@ function classwise_attendance() {
 					
 					table_content=table_content+'</div>';
 					table_content=table_content+'</td>';
-					// content=content+'<td><div class="checkbox">';
-					// content=content+'<label><input type="checkbox" value=""></label>';
-					// content=content+'</div>';
-					// content=content+'</td>';
-					table_content=table_content+'<td><div class="checkbox">';
+					
+					table_content=table_content+'<td align="center"><div class="checkbox">';
 					if (s_excused==1) {
 						table_content=table_content+'<label><input type="checkbox" checked disabled></label>';
 					}
@@ -184,7 +187,7 @@ function classwise_attendance() {
 					{
 						table_content=table_content+'<label><input type="checkbox" disabled></label>';
 					}
-					table_content=table_content+'<td>'+teacher+'</td>';
+					table_content=table_content+'<td align="center">'+teacher+'</td>';
 
 					table_content=table_content+'</div>';
 					table_content=table_content+'</td>';
@@ -209,7 +212,7 @@ function classwise_attendance() {
 		 		content=content+'<strong>Data </strong>Found! </div> ';
 		        document.getElementById("alert_there").innerHTML=content;
 		        flag=1;
-					 
+				document.getElementById("loader").innerHTML='';
 				  	
   				}
   				else
@@ -243,15 +246,6 @@ function classwise_attendance() {
 
   });
 });
-
-	// if (flag2==1 && flag1==0) {
-					
-	// }
-    	//check whether enlisted student is present or not
-    	
-		//content=content+'<th scope="row">1</th>';
-		//alert(batch_text+course_text+teacher+date+slot_text+s_id);
-		
   
   	
   });

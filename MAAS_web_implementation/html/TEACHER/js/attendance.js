@@ -1,45 +1,12 @@
+var load_content='';	
+	load_content=load_content+'<div class="form-horizontal">';
+	load_content=load_content+'<div class="col-sm-offset-5 col-sm-10">';
+	load_content=load_content+'<div  class="lds-roller"><div></div><div></div><div>';
+	load_content=load_content+'</div><div></div><div></div><div></div><div></div><div></div></div></div></div>';
+
 document.getElementById("detailed_content").style.visibility = "hidden";
 function attendance() {
-	// firebase.database().ref('Enrolled/CSE-17A/CSE-402').push({
-		   
-	//    		 ID:201714023,
-	   		 
 
-	// 	  }, function(error) {
-	// 	    if (error) {
-	// 	    	alert("failed to save data");
-	// 	    } else {
-	// 	    	alert("successfully saved data");
-	// 	    }
-	// 	  });
-
-	// firebase.database().ref('attendance/CSE-17A/CSE-402/Lt Col Nazrul Islam/11-03-2020/08:00-08:55/201714023').set({
-		   
-	//    		 p_status:1,
-	   		 
-
-	// 	  }, function(error) {
-	// 	    if (error) {
-	// 	    	alert("failed to save data");
-	// 	    } else {
-	// 	    	alert("successfully saved data");
-	// 	    }
-	// 	  });
-
-	
-
-	// firebase.database().ref('Enrolled/CSE-17A/CSE-460').push({
-		   
-	//    		 ID:201714023,
-	   		 
-
-	// 	  }, function(error) {
-	// 	    if (error) {
-	// 	    	alert("failed to save data");
-	// 	    } else {
-	// 	    	alert("successfully saved data");
-	// 	    }
-	// 	  });
 	var teacher=localStorage.getItem("value_username");
 	var flag=0;
 
@@ -140,19 +107,19 @@ function attendance() {
 	else
 	{
 		 
-		  //document.getElementById("present").innerHTML='<h4>60</h4>';
+		 document.getElementById("loader").innerHTML=load_content;
 		basic_content='';
-		basic_content=basic_content+'<table class="table table-striped" border="2">';
+		basic_content=basic_content+'<table class="table table-striped" border="1">';
 		basic_content=basic_content+'<br>';
 		basic_content=basic_content+'<br>';
-		basic_content=basic_content+'<thead class="thead-light">';
+		basic_content=basic_content+'<thead >';
 		basic_content=basic_content+'<tr>';
-		basic_content=basic_content+'<th scope="col">Ser No.</th>';
-		basic_content=basic_content+'<th scope="col">Roll No.</th>';
-		basic_content=basic_content+'<th scope="col">Name</th>';
-		basic_content=basic_content+'<th scope="col">Present</th>';
-		basic_content=basic_content+'<th scope="col">Absent</th>';
-		basic_content=basic_content+'<th scope="col">Excused</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Ser No.</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Roll No.</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Name</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Present</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Absent</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Excused</th>';
 		//content=content+'<th scope="col">Excused</th>';
 		basic_content=basic_content+'  </tr>';
 		basic_content=basic_content+' </thead>';
@@ -243,30 +210,30 @@ function attendance() {
   					
   					table_content=table_content+'<tr>';
 
-  					table_content=table_content+'<td>'+c+'</td>';
+  					table_content=table_content+'<td align="center">'+c+'</td>';
   					c=c+1;
-  					table_content=table_content+'<td>'+s_id+'</td>';
-  					table_content=table_content+'<td>'+s_name+'</td>';
-  					table_content=table_content+'<td><div class="checkbox">';
+  					table_content=table_content+'<td align="center">'+s_id+'</td>';
+  					table_content=table_content+'<td align="center">'+s_name+'</td>';
+  					table_content=table_content+'<td align="center"><div class="checkbox">';
   					if (s_present==1) {
-  						table_content=table_content+'<label><input type="checkbox" checked></label>';
+  						table_content=table_content+'<label><input type="checkbox" disabled checked></label>';
   						present_count=present_count+1;
   					}
   					else
   					{
-  						table_content=table_content+'<label><input type="checkbox"></label>';
+  						table_content=table_content+'<label><input type="checkbox" disabled></label>';
   						absent_count=absent_count+1;
   					}
   					
 					table_content=table_content+'</div>';
 					table_content=table_content+'</td>';
-					table_content=table_content+'<td><div class="checkbox">';
+					table_content=table_content+'<td align="center"><div class="checkbox">';
 					if (s_absent==1) {
-						table_content=table_content+'<label><input type="checkbox" checked></label>';
+						table_content=table_content+'<label><input type="checkbox" disabled checked></label>';
 					}
 					else
 					{
-						table_content=table_content+'<label><input type="checkbox"></label>';
+						table_content=table_content+'<label><input type="checkbox" disabled></label>';
 					}
 					
 					table_content=table_content+'</div>';
@@ -275,13 +242,13 @@ function attendance() {
 					// content=content+'<label><input type="checkbox" value=""></label>';
 					// content=content+'</div>';
 					// content=content+'</td>';
-					table_content=table_content+'<td><div class="checkbox">';
+					table_content=table_content+'<td align="center"><div class="checkbox">';
 					if (s_excused==1) {
-						table_content=table_content+'<label><input type="checkbox" checked></label>';
+						table_content=table_content+'<label><input type="checkbox" disabled checked></label>';
 					}
 					else
 					{
-						table_content=table_content+'<label><input type="checkbox"></label>';
+						table_content=table_content+'<label><input type="checkbox" disabled ></label>';
 					}
 					
 					table_content=table_content+'</div>';
@@ -304,6 +271,7 @@ function attendance() {
 		    	content=content+'<div style="font-size: 16pt" class="alert alert-success" role="alert">';
 		 		content=content+'<strong>Data </strong>Found! </div> ';
 		        document.getElementById("alert_there").innerHTML=content;
+		        document.getElementById("loader").innerHTML='';
 		        flag=1;
 					 
 				  	

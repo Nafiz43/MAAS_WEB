@@ -1,4 +1,11 @@
 
+var load_content='';	
+	load_content=load_content+'<div class="form-horizontal">';
+	load_content=load_content+'<div class="col-sm-offset-5 col-sm-10">';
+	load_content=load_content+'<div  class="lds-roller"><div></div><div></div><div>';
+	load_content=load_content+'</div><div></div><div></div><div></div><div></div><div></div></div></div></div>';
+
+
 function user_search() {
 
 
@@ -20,6 +27,7 @@ function user_search() {
   	}
   	else
   	{
+  		 document.getElementById("loader").innerHTML=load_content;
   			firebase.database().ref('User/'+s_id).once('value').then(function(snapshot) {
   				if (snapshot.exists()) {
   					 s_username = snapshot.val().username;
@@ -46,6 +54,7 @@ function user_search() {
 	   				content=content+'<div style="font-size: 16pt" class="alert alert-success" role="alert">';
 	   				content=content+'<strong>Data </strong> found! </div> ';
 	   				 document.getElementById("alert_there").innerHTML=content;
+	   				 document.getElementById("loader").innerHTML='';
   				}
   				else
   				{

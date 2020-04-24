@@ -1,42 +1,25 @@
-
+var load_content='';	
+	load_content=load_content+'<div class="form-horizontal">';
+	load_content=load_content+'<div class="col-sm-offset-5 col-sm-10">';
+	load_content=load_content+'<div  class="lds-roller"><div></div><div></div><div>';
+	load_content=load_content+'</div><div></div><div></div><div></div><div></div><div></div></div></div></div>';
 function application_status() {
-	// <table id="table" class="table table-striped" border="1">
- //              <thead class="thead-light">
- //                <tr class="bg-success">
- //                  <th>Ser No.</th>
- //                  <th>Course Code</th>
- //                  <th>Faculty</th>
- //                  <th>Date</th>
- //                  <th>Status</th>
-                 
- //                </tr>
- //              </thead>
- //              <tbody>
- //                <tr >
- //                   <td>1</td>
- //                  <td>CSE-401</td>
- //                  <td>Lt Col Nazrul Islam</td>
- //                  <td>21/03/2020</td>
- //                  <td>Approved</td>
-                  
- //                </tr>
- //              </tbody>
- //            </table> 
-
- var c=1;
+		table_content='';
+ 		document.getElementById("loader").innerHTML=load_content;
+ 		var c=1;
 		var basic_content=''
     	var final_content='';
 		var table_content='';
 		basic_content='';
-		basic_content=basic_content+'<table class="table table-striped" border="2">';
+		basic_content=basic_content+'<table class="table table-striped" border="1">';
 	
-		basic_content=basic_content+'<thead class="thead-light">';
+		basic_content=basic_content+'<thead >';
 		basic_content=basic_content+'<tr>';
-		basic_content=basic_content+'<th scope="col">Ser No.</th>';
-		basic_content=basic_content+'<th scope="col">Course Code</th>';
-		basic_content=basic_content+'<th scope="col">Faculty</th>';
-		basic_content=basic_content+'<th scope="col">Date</th>';
-		basic_content=basic_content+'<th scope="col">Status</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Ser No.</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Course Code</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Faculty</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Date</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Status</th>';
 		basic_content=basic_content+'</tr>';
 		basic_content=basic_content+' </thead>';
 		basic_content=basic_content+'<tbody>';
@@ -71,20 +54,32 @@ function application_status() {
 		   
 
 		    if (child.val().App_ID==s_id) {
-		    	table_content=table_content+'<td>'+c+'</td>';
+		    	table_content=table_content+'<td align="center">'+c+'</td>';
   					
-  					table_content=table_content+'<td>'+child.val().App_course+'</td>';
-  					table_content=table_content+'<td>'+child.val().App_faculty+'</td>';  //total present
-  					table_content=table_content+'<td>'+child.val().App_date+'</td>';  //absent
-  					table_content=table_content+'<td>'+child.val().App_status+'</td>';  //excused
+  					table_content=table_content+'<td align="center">'+child.val().App_course+'</td>';
+  					table_content=table_content+'<td align="center">'+child.val().App_faculty+'</td>';  
+  					table_content=table_content+'<td align="center">'+child.val().App_date+'</td>';  
+
+  					if (child.val().App_status=='Approved') {
+  						table_content=table_content+'<td align="center"><b> <font color="green">'+child.val().App_status+'</font></b></td>'; 
+  					}
+  					else if(child.val().App_status=='pending' || child.val().App_status=='Pending')
+  					{
+  						table_content=table_content+'<td align="center"><b> <font color="blue">'+child.val().App_status+'</font></b></td>'; 
+  					}
+  					else
+  					{
+  						table_content=table_content+'<td align="center"><b> <font color="red">'+child.val().App_status+'</font></b></td>'; 
+  					}
+  					
   			
-  					
+  				
 					table_content=table_content+'</td>';
 					table_content=table_content+'</tr>';
   					 
 					 final_content=final_content+'</tbody>';
 					final_content=final_content+'</table>';
-					
+					document.getElementById("loader").innerHTML='';
 					document.getElementById("table_content").innerHTML=basic_content+table_content+final_content;
 					final_content='';
 					c=c+1;

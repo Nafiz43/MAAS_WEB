@@ -1,4 +1,10 @@
 document.getElementById("detailed_content").style.visibility = "hidden";
+var load_content='';	
+	load_content=load_content+'<div class="form-horizontal">';
+	load_content=load_content+'<div class="col-sm-offset-5 col-sm-10">';
+	load_content=load_content+'<div  class="lds-roller"><div></div><div></div><div>';
+	load_content=load_content+'</div><div></div><div></div><div></div><div></div><div></div></div></div></div>';
+
 function individual_attendance() {
 
 	var basic_content=''
@@ -46,21 +52,20 @@ function individual_attendance() {
 	}
 	else
 	{
-			  //document.getElementById("present").innerHTML='<h4>60</h4>';
-			  //var s_id = localStorage.getItem("value");
+		 document.getElementById("loader").innerHTML=load_content;
 		basic_content='';
-		basic_content=basic_content+'<table class="table table-striped" border="2">';
+		basic_content=basic_content+'<table class="table table-striped" border="1">';
 
-		basic_content=basic_content+'<thead class="thead-light">';
+		basic_content=basic_content+'<thead >';
 		basic_content=basic_content+'<tr class="bg-success">';
-		basic_content=basic_content+'<th scope="col">Ser No.</th>';
-		basic_content=basic_content+'<th scope="col">Course Code</th>';
-		basic_content=basic_content+'<th scope="col">Faculty</th>';
-		basic_content=basic_content+'<th scope="col">Date</th>';
-		basic_content=basic_content+'<th scope="col">Time</th>';
-		basic_content=basic_content+'<th scope="col">Present</th>';
-		basic_content=basic_content+'<th scope="col">Absent</th>';
-		basic_content=basic_content+'<th scope="col">Excused</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Ser No.</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Course Code</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Faculty</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Date</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Time</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Present</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Absent</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Excused</th>';
 		//content=content+'<th scope="col">Excused</th>';
 		basic_content=basic_content+'  </tr>';
 		basic_content=basic_content+' </thead>';
@@ -124,42 +129,42 @@ function individual_attendance() {
 		  					 s_absent  = 1- s_present;
 		  					// alert(s_present+'  '+s_excused);
 		  					 table_content=table_content+'<tr>';
-					   		 table_content=table_content+'<td>'+c+'</td>';
+					   		 table_content=table_content+'<td align="center">'+c+'</td>';
 					  		 
-					  		 table_content=table_content+'<td>'+course_text+'</td>';
-		  					  table_content=table_content+'<td>'+faculty+'</td>';
-		  					  table_content=table_content+'<td>'+m2+'</td>';
-		  					  table_content=table_content+'<td>'+m3+'</td>';
+					  		 table_content=table_content+'<td align="center">'+course_text+'</td>';
+		  					  table_content=table_content+'<td align="center">'+faculty+'</td>';
+		  					  table_content=table_content+'<td align="center">'+m2+'</td>';
+		  					  table_content=table_content+'<td align="center">'+m3+'</td>';
 		  					 if (s_present==1) {
 		  					 	present_count=present_count+1;
-		  					 	table_content=table_content+'<td><label><input type="checkbox"  disabled checked></label></td>';
+		  					 	table_content=table_content+'<td align="center"><label><input type="checkbox"  disabled checked></label></td>';
 		  					 }
 		  					 else
 		  					 {
 		  					 	absent_count=absent_count+1;
-		  					 	table_content=table_content+'<td><label><input type="checkbox" disabled></label></td>';
+		  					 	table_content=table_content+'<td align="center"><label><input type="checkbox" disabled></label></td>';
 		  					 }
 
 
 
 		  					  if (s_absent==1) {
 
-		  					 	table_content=table_content+'<td><label><input type="checkbox" onclick="return false" disabled checked></label> </td>';
+		  					 	table_content=table_content+'<td align="center"><label><input type="checkbox" onclick="return false" disabled checked></label> </td>';
 		  					 }
 		  					 else
 		  					 {
-		  					 	table_content=table_content+'<td><label><input type="checkbox" disabled></label> </td>';
+		  					 	table_content=table_content+'<td align="center"><label><input type="checkbox" disabled></label> </td>';
 		  					 }
 
 
 
 		  					  if (s_excused==1) {
 		  					  	excused_count=excused_count+1;
-		  					 	table_content=table_content+'<td><label><input type="checkbox" disabled checked></label> </td>';
+		  					 	table_content=table_content+'<td align="center"><label><input type="checkbox" disabled checked></label> </td>';
 		  					 }
 		  					 else
 		  					 {
-		  					 	table_content=table_content+'<td><label><input type="checkbox" disabled></label> </td>';
+		  					 	table_content=table_content+'<td align="center"><label><input type="checkbox" disabled></label> </td>';
 		  					 }
 		  					 table_content=table_content+'</tr>';
 		  					 final_content=final_content+'</tbody>';
@@ -177,11 +182,7 @@ function individual_attendance() {
 					 		content=content+'<strong>Data </strong>Found! </div> ';
 					        document.getElementById("alert_there").innerHTML=content;
 							c=c+1;
-
-
-
-
-		  					 
+							document.getElementById("loader").innerHTML='';				 
 		  				}
 		  				else
 		  				{

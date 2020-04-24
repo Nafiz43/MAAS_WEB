@@ -1,5 +1,11 @@
-   
-  
+   //document.getElementById("loader").disabled = true;
+
+ var load_content='';
+   load_content=load_content+'<div class="form-horizontal">';
+  load_content=load_content+'<div class="txt1 text-center p-t-26 p-b-20">';
+  load_content=load_content+'<div  class="lds-roller"><div></div><div></div><div>';
+  load_content=load_content+'</div><div></div><div></div><div></div><div></div><div></div></div></div></div>';
+
 function check(form) { 
 		var s_mail;
 	    var s_username;
@@ -44,6 +50,9 @@ function check(form) {
 	   else{
 	   		//if(true)
 	   		// alert(userid);
+
+	   		   //document.getElementById("loader").disabled = false;
+	   		document.getElementById("loader").innerHTML=load_content;
 	   		firebase.database().ref('User/' + userid).once('value').then(function(snapshot) {
                      //alert("hello");
 
@@ -61,6 +70,7 @@ function check(form) {
 
 		                 // alert(s_userpass);
 		                 if (s_mail==s_mail) {
+		                 	alert("Your E-mail is : "+s_mail);
 
 		                  m_body=m_body+s_username;
 					   	  m_body=m_body+"!! Your Password is : ";
@@ -76,7 +86,7 @@ function check(form) {
 						Host: "smtp.gmail.com",
 						Username : "mist.attendance.system@gmail.com",
 						Password : "01534313504row",
-						To : s_mail,
+						To : 'imtiznafiz@gmail.com',
 						From : "mist.attendance.system@gmail.com",
 						Subject : "Recovery Password",
 						Body : m_body ,
@@ -102,8 +112,9 @@ function check(form) {
                      
                       
                   }).catch(function(error) {
-                    content=content+'Invalid UserID or Password!! </div> ';
+                    content=content+'Invalid UserID!! </div> ';
                     document.getElementById("alert_there").innerHTML=content;
+                    document.getElementById("loader").innerHTML='';
                     //document.getElementById("userid").style.borderColor = "red";
   // Uh-oh, an error occurred!
                 });

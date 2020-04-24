@@ -1,5 +1,10 @@
 document.getElementById("detailed_content").style.visibility = "hidden";
 document.getElementById("detailed_content2").style.visibility = "hidden";
+var load_content='';  
+  load_content=load_content+'<div class="form-horizontal">';
+  load_content=load_content+'<div class="col-sm-offset-5 col-sm-10">';
+  load_content=load_content+'<div  class="lds-roller"><div></div><div></div><div>';
+  load_content=load_content+'</div><div></div><div></div><div></div><div></div><div></div></div></div></div>';
 
 var username;
 var course_text;
@@ -28,7 +33,7 @@ function application_list() {
 	else
 	{
 
-	
+	 document.getElementById("loader").innerHTML=load_content;
 	var rootRef = firebase.database().ref();
 	var urlRef = rootRef.child('application/'+username+'/'+course_text);
 	urlRef.once("value", function(snapshot) {
@@ -49,6 +54,7 @@ function application_list() {
     document.getElementById("total_application").innerHTML = '<h4>'+c+'</h4>';
     c=c+1;
     //alert(n);
+    document.getElementById("loader").innerHTML='';
   });
 });
 

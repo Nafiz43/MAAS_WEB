@@ -1,5 +1,9 @@
 
-
+var load_content='';    
+    load_content=load_content+'<div class="form-horizontal">';
+    load_content=load_content+'<div class="col-sm-offset-5 col-sm-10">';
+    load_content=load_content+'<div  class="lds-roller"><div></div><div></div><div>';
+    load_content=load_content+'</div><div></div><div></div><div></div><div></div><div></div></div></div></div>';
 
 function push_user() {
 	//alert("hello");
@@ -118,18 +122,7 @@ function push_user() {
     }
 	else
 	{
-		// alert("Hello "+name);
-		// alert(id);
-		// alert(category_text);
-		//alert("Hello");
-
-		// firebase.database().ref('User/'+id).set({
-	 //        username: name,
-	 //   		userpass : pass,
-	 //   		 usercategory: category_text
-		// 	    });
-		
-		// setTimeout(function(){ alert("Successful"); }, 1000);
+		 document.getElementById("loader").innerHTML=load_content;
             pass= CryptoJS.AES.encrypt(pass, "CIPHERKEY").toString();
 
 			firebase.database().ref('User/' + id).set({
@@ -155,11 +148,12 @@ function push_user() {
    				content=content+'<div style="font-size: 16pt" class="alert alert-success" role="alert">';
    				content=content+'Data <strong>saved</strong> successfully! </div> ';
    				document.getElementById("alert_there").innerHTML=content;
+                document.getElementById("loader").innerHTML='';
 
                 setTimeout(function(){ 
-                    content='';
-                    document.getElementById("alert_there").innerHTML=content;
-                     }, 2000);
+                   // content='';
+                  // document.getElementById("alert_there").innerHTML=content;
+                      }, 2000);
 		   
 		    }
 		  });

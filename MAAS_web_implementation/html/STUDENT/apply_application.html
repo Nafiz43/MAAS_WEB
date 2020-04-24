@@ -59,11 +59,7 @@
   
 
   
-    <script type="text/javascript">
-            $(function () {
-                $('#date').datetimepicker();
-            });
-        </script>
+  
 
 
   <body>
@@ -201,7 +197,12 @@
 
       <label class="control-label col-sm-2" for="email">Application Date:</label>
       <div class="col-sm-4">
-        <input class="form-control" id="date" name="date" placeholder="MM-DD-YYYY" type="text"/>
+       <div class="input-group date" data-date-format="dd.mm.yyyy">
+            <input id="date" type="text" class="form-control" placeholder="DD-MM-YYYY">
+            <div class="input-group-addon" >
+              <span class="glyphicon glyphicon-th"></span>
+            </div>
+          </div>
       </div>
     </div>
 
@@ -215,15 +216,11 @@
       <option value="" disabled selected>Choose your option</option>
       <option value="1">CSE-401</option>
       <option value="2">CSE-402</option>
-      <option value="3">CSE-460</option>
+      <option value="3">CSE-460(HW)</option>
+      <option value="3">CSE-460(SW)</option>
     </select>
     
-    <!-- <select class="browser-default custom-select">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select> -->
+
       </div>
     </div>
 
@@ -238,12 +235,7 @@
       <option value="2">Lt Cdr Anisur Rahman</option>
       <!-- <option value="3">Option 3</option> -->
     </select>
-    <!-- <select class="browser-default custom-select">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select> -->
+
       </div>
     </div>
 
@@ -263,8 +255,13 @@
       <label class="control-label col-sm-2" for="rsn">Absent From :</label>
       <div class="col-sm-4">          
        
-    
-    <input id="absent_from" class="form-control" id="date" name="date" placeholder="DD-MM-YYYY" type="text"/>
+    		<div class="input-group date" data-date-format="dd.mm.yyyy">
+            <input id="absent_from" type="text" class="form-control" placeholder="DD-MM-YYYY">
+            <div class="input-group-addon" >
+              <span class="glyphicon glyphicon-th"></span>
+            </div>
+          </div>
+ <!--    <input id="absent_from" class="form-control" id="date" name="date" placeholder="DD-MM-YYYY" type="text"/> -->
 
 
       </div>
@@ -274,9 +271,14 @@
       <label  class="control-label col-sm-2" for="rsn">Absent Till :</label>
       <div class="col-sm-4">          
        
-    
-    <input id="absent_till" class="form-control" id="date" name="date" placeholder="DD-MM-YYYY" type="text"/>
-
+    <div class="input-group date" data-date-format="dd.mm.yyyy">
+            <input id="absent_till" type="text" class="form-control" placeholder="DD-MM-YYYY">
+            <div class="input-group-addon" >
+              <span class="glyphicon glyphicon-th"></span>
+            </div>
+          </div>
+<!--     <input id="absent_till" class="form-control" id="date" name="date" placeholder="DD-MM-YYYY" type="text"/>
+ -->
 
       </div>
     </div>
@@ -293,7 +295,7 @@
       <option value="3">diarrhoea</option>
       <option value="4">chikungunya</option>
       <option value="5">virus infection</option>
-      <!--<option value="6">others</option>-->
+      <option value="6">Corona Virus</option>
     </select>
   </div>
 </div>
@@ -312,11 +314,6 @@
     
 
 
-    <!-- <div class="custom-file col-sm-8 " >
-      <input class="form-control" type="file" class="custom-file-input" id="inputGroupFile01"
-        aria-describedby="inputGroupFileAddon01">
-     
-    </div> -->
 
 
   </div>
@@ -332,6 +329,9 @@
       </div>
  
 </div>
+<script >
+	 $('.input-group.date').datepicker({format: "d-m-yyyy"}); 
+</script>
 <script src="../../js/basic.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>

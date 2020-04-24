@@ -41,22 +41,14 @@
       color: white
     }
   </style>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
 
  <script>
   
-    $(document).ready(function(){
-
-      var date_input=$('input[name="date"]'); //our date input has the name "date"
-      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-      var options={
-        format: 'mm/dd/yyyy',
-        container: container,
-        todayHighlight: true,
-        autoclose: true,
-      };
-      date_input.datepicker(options);
-     
-    })
+  
+   
 </script>
   
   <body>
@@ -105,14 +97,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="container-fluid">
 
-           <!-- <button type="button" id="sidebarCollapse" class="btn btn-primary">
-              <i class="fa fa-bars"></i>
-              <span class="sr-only">Toggle Menu</span>
-            </button>
-            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa fa-bars"></i>
-            </button>
-           -->
+          
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               
               <!-- Adding LOGO THERE -->
@@ -169,7 +154,12 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="email">Select Date:</label>
       <div class="col-sm-4">
-        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+        <div class="input-group date" data-date-format="dd.mm.yyyy">
+            <input id="date" type="text" class="form-control" placeholder="DD-MM-YYYY">
+            <div class="input-group-addon" >
+              <span class="glyphicon glyphicon-th"></span>
+            </div>
+          </div>
       </div>
     </div>
 
@@ -202,14 +192,7 @@
   
       </div>
     </div>
-    <!-- <div class="wrap-input100 validate-input" data-validate="Current Password is required">
 
-            <span class="label-input100">Current Password</span>
-
-            <input id="current_pass" class="input100" type="password" name="pass" placeholder="Type your current password">
-            <span class="focus-input100" data-symbol="&#xf190;"></span>
-            
-          </div> -->
 
      <div class="form-group">
       <label class="control-label col-sm-2" for="pwd">Select Time Slot:</label>
@@ -227,12 +210,7 @@
       <option value="7">08:00 am - 10:55 am</option>
       <option value="8">11:45 am - 02:40 pm</option>
     </select>
-    <!-- <select class="browser-default custom-select">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select> -->
+
       </div>
     </div>
   </form>
@@ -244,55 +222,13 @@
      
 
 
+<div id="loader"> </div>
+<br>
+
 
 <div id="table_content">
   
 </div>
-
-<!-- <table class="table table-striped" border="2">
-  <br>
-  <br>
-  <br>
-  <br>
-  <thead class="thead-light">
-    <tr>
-      <th scope="col">Ser No.</th>
-      <th scope="col">Roll No.</th>
-      <th scope="col">Name</th>
-      <th scope="col">Present</th>
-      <th scope="col">Absent</th>
-    
-      <th scope="col">Excused</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>2017140xx</td>
-      <td>Mark</td>
-      <td><div class="checkbox">
-        <label><input type="checkbox" value=""></label>
-      </div>
-      </td>
-
-      <td><div class="checkbox">
-        <label><input type="checkbox" value=""></label>
-      </div>
-      </td>
-
-   
-      
-      <td><div class="checkbox">
-        <label><input type="checkbox" value=""></label>
-      </div>
-      </td>
-
-    </tr>
-    
-  </tbody>
-</table>
- -->
-
 
 
 
@@ -337,7 +273,7 @@
   
   <br>
   <div class="text-right">
-  <a href="#" alignment="right"><button class="btn btn-primary">Upload</button></a>
+ <!--  <a href="#" alignment="right"><button class="btn btn-primary">Upload</button></a> -->
  </div>
  <br>
  <br>
@@ -347,6 +283,9 @@
         
       </div>
     </div>
+    <script >
+       $('.input-group.date').datepicker({format: "d-m-yyyy"}); 
+    </script>
     <script src="js/attendance.js"></script>
 <script src="../../js/basic.js"></script>
     <script src="js/jquery.min.js"></script>

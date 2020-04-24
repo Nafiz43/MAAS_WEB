@@ -31,6 +31,9 @@
     firebase.initializeApp(firebaseConfig);
     //firebase.analytics();
   </script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
 
      <style>
       .body{
@@ -109,9 +112,6 @@
                 </li>
               </ul>
              </li>
-
-          
-         
         </ul>
 
         <div class="footer">
@@ -141,9 +141,6 @@
                 <li class="nav-item">
                    <h3>MIST AUTOMATED ATTENDANCE SYSTEM</h3>
                 </li>
-
-                
-                
               
               </ul>
 
@@ -178,16 +175,19 @@
       
         </div>
 	
-
-
-
           <!-- <h2>Welcome To Student Dashboard of MIST Automated Attendance System</h2> -->
            <h2>Fill up the followings:</h2>
   <form class="form-horizontal" action="apply_application_add.html">
     <div class="form-group">
       <label class="control-label col-sm-2" for="date">Select Date:</label>
       <div class="col-sm-4">
-        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+        <div class="input-group date" data-date-format="dd.mm.yyyy">
+            <input id="date"  type="text" class="form-control" placeholder="DD-MM-YYYY">
+            <div class="input-group-addon" >
+              <span class="glyphicon glyphicon-th"></span>
+            </div>
+          </div>
+
       </div>
     </div>
 
@@ -209,12 +209,7 @@
      
 
     </select>
-    <!-- <select class="browser-default custom-select">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select> -->
+
       </div>
     </div>
 
@@ -230,12 +225,7 @@
       <option value="2">CSE-17B</option>
      
     </select>
-    <!-- <select class="browser-default custom-select">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select> -->
+  
       </div>
     </div>
 
@@ -250,20 +240,10 @@
       <option value="2">CSE-460(HW)</option>
       <option value="3">CSE-401</option>
     </select>
-    <!-- <select class="browser-default custom-select">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select> -->
+  
       </div>
     </div>
 
-
-
-
- 
-    
 
  </form>
 
@@ -273,10 +253,9 @@
         <button onclick="classwise_attendance()" type="submit" class="btn btn-default">Submit</button>
       </div>
     </div>
+<div id="loader"> </div>
+<br>
 
-<br>
-<br>
-<br>
 
        </div>
 
@@ -284,47 +263,6 @@
   
       </div>
 
-
-        <!-- <table class="table table-striped" border="1">
-    <thead class="thead-light">
-      <tr class="bg-success">
-        <th>Course Name</th>
-        <th>Course Code</th>
-        <th>Type</th>
-        <th>Date</th>
-        <th>Time</th>
-        <th>Status</th>
-
-      </tr>
-    
-    </thead>
-    <tbody>
-      <tr >
-        <td>SADD</td>
-        <td>CSE-401</td>
-        <td>THEORY</td>
-        <td>19/02/2020</td>
-        <td>08:00-08:55</td>
-        <td>PRESENT</td>
-      </tr>
-      <tr >
-        <td>SADD</td>
-        <td>CSE-401</td>
-        <td>THEORY</td>
-        <td>19/02/2020</td>
-        <td>09:00-08:55</td>
-        <td>PRESENT</td>
-      </tr>
-      <tr >
-         <td>SADD</td>
-        <td>CSE-401</td>
-        <td>THEORY</td>
-        <td>19/02/2020</td>
-        <td>10:00-10:55</td>
-        <td>ABSENT</td>
-      </tr>
-    </tbody>
-  </table> -->
 
   <div class="container" id="detailed_content">
  
@@ -376,6 +314,9 @@
     </div>
 
     </div>
+    <script>
+       $('.input-group.date').datepicker({format: "d-m-yyyy"}); 
+    </script>
 <script src="js/classwise_attendance.js"></script>
 <script src="../../js/basic.js"></script>
     <script src="js/jquery.min.js"></script>

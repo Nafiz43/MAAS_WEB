@@ -1,6 +1,12 @@
-   
+var load_content='';  
+  load_content=load_content+'<div class="form-horizontal">';
+  load_content=load_content+'<div class="txt1 text-center p-t-26 p-b-20">';
+  load_content=load_content+'<div  class="lds-roller"><div></div><div></div><div>';
+  load_content=load_content+'</div><div></div><div></div><div></div><div></div><div></div></div></div></div>';
+ 
    var userid;
    function check(form) {
+
                     var content='<br>';
                     content=content+'<div class="alert alert-danger" role="alert">';
                     var input = $('.validate-input .input100');
@@ -43,7 +49,7 @@
                   }
                   else
                   {
-                     
+                     document.getElementById("loader").innerHTML=load_content;
                     firebase.database().ref('User/' + userid).once('value').then(function(snapshot) {
                      //alert("hello");
 
@@ -51,7 +57,7 @@
                       var s_username = snapshot.val().username;
 
                      //here to have a soft eye
-                      s_userpass = CryptoJS.AES.decrypt(s_userpass, "CIPHERKEY");
+                     s_userpass = CryptoJS.AES.decrypt(s_userpass, "CIPHERKEY");
                      s_userpass = s_userpass.toString(CryptoJS.enc.Utf8);
 
                       //alert(s_userpass);

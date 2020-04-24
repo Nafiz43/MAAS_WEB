@@ -1,4 +1,10 @@
 	var s_id = localStorage.getItem("value");
+	var load_content='';	
+	load_content=load_content+'<div class="form-horizontal">';
+	load_content=load_content+'<div class="col-sm-offset-5 col-sm-10">';
+	load_content=load_content+'<div  class="lds-roller"><div></div><div></div><div>';
+	load_content=load_content+'</div><div></div><div></div><div></div><div></div><div></div></div></div></div>';
+
 		var absent_count=0;
 		var present_count=0;
 		var excused_count=0;
@@ -30,23 +36,24 @@ function eligibility() {
 	}
 	else
 	{
-	
-		
+		table_content='';
+		 document.getElementById("loader").innerHTML=load_content;
+
 		var label_course=[];
 		var label_percentage=[];
 		basic_content='';
-		basic_content=basic_content+'<table class="table table-striped" border="2">';
+		basic_content=basic_content+'<table class="table table-striped" border="1">';
 	
-		basic_content=basic_content+'<thead class="thead-light">';
+		basic_content=basic_content+'<thead >';
 		basic_content=basic_content+'<tr>';
-		basic_content=basic_content+'<th scope="col">Ser No.</th>';
-		basic_content=basic_content+'<th scope="col">Course Code</th>';
-		basic_content=basic_content+'<th scope="col">Total Class</th>';
-		basic_content=basic_content+'<th scope="col">Total Present</th>';
-		basic_content=basic_content+'<th scope="col">Total Absent</th>';
-		basic_content=basic_content+'<th scope="col">Total Excused</th>';
-		basic_content=basic_content+'<th scope="col">Percentage</th>';
-		basic_content=basic_content+'<th scope="col">Status</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u" >Ser No.</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Course Code</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Total Class</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Total Present</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Total Absent</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Total Excused</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Percentage</th>';
+		basic_content=basic_content+'<th align="center" class="tg-3t0u">Status</th>';
 		basic_content=basic_content+'</tr>';
 		basic_content=basic_content+' </thead>';
 		basic_content=basic_content+'<tbody>';
@@ -56,7 +63,7 @@ function eligibility() {
   			// 		
 		content=content+'<div style="font-size: 16pt" class="alert alert-success" role="alert">';
 		content=content+'<strong>Data </strong>Found! </div> ';
-        document.getElementById("alert_there").innerHTML=content;
+        
 
 
 
@@ -118,24 +125,24 @@ function eligibility() {
 											        	//alert(c+" "+course_text+" "+ present_count+" "+absent_count+" "+excused_count+" "+percentage);
 											        	count=count+1;
 														//alert("res :"+initial_course+" "+ present_count+" "+absent_count+" "+excused_count+" "+percentage);
-														table_content=table_content+'<td>'+count+'</td>';
+														table_content=table_content+'<td align="center">'+count+'</td>';
 														  					
-														  					table_content=table_content+'<td>'+initial_course+'</td>';
-														  					table_content=table_content+'<td>'+c+'</td>';
-														  					table_content=table_content+'<td>'+present_count+'</td>';  //total present
-														  					table_content=table_content+'<td>'+absent_count+'</td>';  //absent
-														  					table_content=table_content+'<td>'+excused_count+'</td>';  //excused
-														  					table_content=table_content+'<td>'+percentage+'% </td>'; 
+														  					table_content=table_content+'<td align="center">'+initial_course+'</td>';
+														  					table_content=table_content+'<td align="center">'+c+'</td>';
+														  					table_content=table_content+'<td align="center">'+present_count+'</td>';  //total present
+														  					table_content=table_content+'<td align="center">'+absent_count+'</td>';  //absent
+														  					table_content=table_content+'<td align="center">'+excused_count+'</td>';  //excused
+														  					table_content=table_content+'<td align="center">'+percentage+'% </td>'; 
 														  					if (percentage>=89) {
-														  						table_content=table_content+'<td>'+'Collegiate'+'</td>';
+														  						table_content=table_content+'<td align="center">'+'Collegiate'+'</td>';
 														  					}
 														  					else if(percentage>74 && percentage<89)
 														  					{
-														  						table_content=table_content+'<td>'+'Non-Collegiate'+'</td>';
+														  						table_content=table_content+'<td align="center">'+'Non-Collegiate'+'</td>';
 														  					}
 														  					else
 														  					{
-														  						table_content=table_content+'<td>'+'Dis-Collegiate'+'</td>';
+														  						table_content=table_content+'<td align="center">'+'Dis-Collegiate'+'</td>';
 														  					}
 														  					//table_content=table_content+'<td>'+'Collegiate'+'</td>'; 
 														  					
@@ -156,6 +163,8 @@ function eligibility() {
 																			present_count=0;
 																			absent_count=0;
 																			excused_count=0;
+																			document.getElementById("loader").innerHTML='';
+																			document.getElementById("alert_there").innerHTML=content;
 																			
 											        }
 											        
