@@ -1,3 +1,8 @@
+var load_content='';	
+	load_content=load_content+'<div class="form-horizontal">';
+	load_content=load_content+'<div class="col-sm-offset-5 col-sm-10">';
+	load_content=load_content+'<div  class="lds-roller"><div></div><div></div><div>';
+	load_content=load_content+'</div><div></div><div></div><div></div><div></div><div></div></div></div></div>';
 
 function apply_application() {
 
@@ -123,7 +128,7 @@ function apply_application() {
 	}
 	else{
 		//alert("hello");
-
+		 document.getElementById("loader").innerHTML=load_content;
 		firebase.database().ref('application/'+faculty_text + '/' +course_text ).push({
 			App_ID : userId,
 			App_name : username,
@@ -161,8 +166,10 @@ function apply_application() {
            .then((url) => {
            console.log(url);
           // UR=url;
-           alert("image saved");
+          // alert("image saved");
            window.location.href = "apply_application_add.html";
+
+			document.getElementById("loader").innerHTML='';
           // document.querySelector('#someImageTagID').src = url;
         })
         .catch(console.error);
