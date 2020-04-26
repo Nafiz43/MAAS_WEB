@@ -1,5 +1,1 @@
-Attendance is not only track also a regulation and scope of learning especially for
-engineering students. As a Military and Engineering institution proper attendance system is
-important. Current system has some loophole which helps students with proxy system, late
-coming and skipping class. So we are presenting an attendance system with biometric
-system so that class attendance is tracked properly.
+The aim of the project is to ensure attendance automatically by using bio-metric (fingerprint) technology. Before entering into a class student will complete fool-proof bio-metric verification which will mark them present in the attendance sheet automatically. So this will save time wasted in calling out names. A web based platform is used on this project where a teacher and students can see the attendance record (percentage, fine, eligibility for exam etc.) from this platform based on accessibility. Proxy, skipping classes & late coming will be handled using sensors so it will keep track of the valid attendance records.properly.
