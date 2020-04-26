@@ -282,7 +282,7 @@ function fine() {
     // Global Options
     Chart.defaults.global.defaultFontFamily = 'Lato';
     Chart.defaults.global.defaultFontSize = 18;
-    Chart.defaults.global.defaultFontColor = '#5f5f5f';
+    Chart.defaults.global.defaultFontColor = '#000000';
 
     let massPopChart = new Chart(myChart, {
       type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea

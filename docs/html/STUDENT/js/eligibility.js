@@ -266,16 +266,10 @@ function eligibility() {
 
 		setTimeout(function(){
 
-		// alert(label_course[0]);
-		// alert(label_course[1]); 
-		 //alert()
-
 		let myChart = document.getElementById('myChart').getContext('2d');
-
-    // Global Options
-    Chart.defaults.global.defaultFontFamily = 'Lato';
+    
     Chart.defaults.global.defaultFontSize = 18;
-    Chart.defaults.global.defaultFontColor = '#5f5f5f';
+    Chart.defaults.global.defaultFontColor = '#000000';
 
     let massPopChart = new Chart(myChart, {
       type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea

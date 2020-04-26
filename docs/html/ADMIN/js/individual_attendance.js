@@ -52,6 +52,9 @@ function individual_attendance() {
 	}
 	else
 	{
+		var data_x=[];
+		var data_y=[];
+
 		 document.getElementById("loader").innerHTML=load_content;
 		basic_content='';
 		basic_content=basic_content+'<table class="table table-striped" border="1">';
@@ -181,6 +184,8 @@ function individual_attendance() {
 					    	content=content+'<div style="font-size: 16pt" class="alert alert-success" role="alert">';
 					 		content=content+'<strong>Data </strong>Found! </div> ';
 					        document.getElementById("alert_there").innerHTML=content;
+					        data_x[c-1]=c;
+					        data_y[c-1]=present_count/(c- excused_count)*100;
 							c=c+1;
 							document.getElementById("loader").innerHTML='';				 
 		  				}
@@ -221,6 +226,74 @@ function individual_attendance() {
     
   });
 });
+setTimeout(function(){
+
+		let myChart = document.getElementById('myChart').getContext('2d');
+    
+    Chart.defaults.global.defaultFontSize = 18;
+    Chart.defaults.global.defaultFontColor = '#000000';
+
+    let massPopChart = new Chart(myChart, {
+      type:'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      data:{
+        labels:data_x,
+        datasets:[{
+          label:'Percentage',
+          data:data_y,
+          //backgroundColor:'green',
+          backgroundColor:[
+            'rgba(255, 99, 132, 0.6)',
+            'rgba(54, 162, 235, 0.6)',
+            'rgba(255, 206, 86, 0.6)',
+            'rgba(75, 192, 192, 0.6)',
+            'rgba(153, 102, 255, 0.6)',
+            'rgba(255, 159, 64, 0.6)',
+            'rgba(255, 99, 132, 0.6)'
+          ],
+          borderWidth:1,
+          borderColor:'#777',
+          hoverBorderWidth:3,
+          hoverBorderColor:'#000'
+        }]
+      },
+      options:{
+      	 scales: {
+        yAxes: [{
+            ticks: {
+                max: 100,
+                min: 0,
+                stepSize: 10
+            }
+        }]
+    },
+        title:{
+          display:true,
+          text:'Summary of Term',
+          fontSize:25
+        },
+        legend:{
+          display:true,
+          position:'right',
+          labels:{
+            fontColor:'#000'
+          }
+        },
+        layout:{
+          padding:{
+            left:50,
+            right:0,
+            bottom:0,
+            top:0
+          }
+        },
+        tooltips:{
+          enabled:true
+        }
+      }
+    });
+        
+
+    	}, 5000);
 
 
 

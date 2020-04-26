@@ -113,6 +113,7 @@ function update_user() {
 
 		var category=document.getElementById("category");
 		var category_text=category.options[category.selectedIndex].text;
+		var s_mail=document.getElementById("email").value;
 
 	
 
@@ -132,6 +133,11 @@ function update_user() {
 		alert("Select Category");
 		document.getElementById("category").style.borderColor = "red";
 	}
+	else if(s_mail=='')
+	{
+		alert("Enter Email");
+		document.getElementById("email").style.borderColor = "red";
+	}
 	else
 	{
 		// alert("Hello "+name);
@@ -141,7 +147,8 @@ function update_user() {
 		firebase.database().ref('User/'+id).set({
 	        username: name,
 	   		userpass : pass,
-	   		usercategory : category_text
+	   		usercategory : category_text,
+	   		useremail    : s_mail
 			    }, function(error) {
 		    if (error) {
 		    	alert("Failed to Save data");

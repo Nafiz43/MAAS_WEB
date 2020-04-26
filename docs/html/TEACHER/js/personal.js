@@ -1,48 +1,57 @@
+document.getElementById("detailed_content").style.visibility = "hidden";
 var load_content='';	
 	load_content=load_content+'<div class="form-horizontal">';
 	load_content=load_content+'<div class="col-sm-offset-5 col-sm-10">';
 	load_content=load_content+'<div  class="lds-roller"><div></div><div></div><div>';
 	load_content=load_content+'</div><div></div><div></div><div></div><div></div><div></div></div></div></div>';
 
-document.getElementById("detailed_content").style.visibility = "hidden";
-function attendance() {
-	var s_id = localStorage.getItem("value");
+function personal() {
+
 	var basic_content=''
     var final_content='';
 	var table_content='';
 	var content='';
 
-	var course=document.getElementById("course");
-	var course_text=course.options[course.selectedIndex].text;
 
 	var level_term=document.getElementById("level_term");
 	var level_term_text=level_term.options[level_term.selectedIndex].text;
-	
+
+	var course=document.getElementById("course");
+	var course_text=course.options[course.selectedIndex].text;
+	var s_id=document.getElementById("s_id").value;
+
+	var content='<br>';
     content=content+'<div style="font-size: 16pt" class="alert alert-danger" role="alert">';
-	 
-	if (course_text=='Choose your option' && level_term_text=='Choose your option') {
-		document.getElementById("course").style.borderColor = "red";
-		document.getElementById("level_term").style.borderColor = "red";
-		content=content+'<strong>Fill Out </strong>The Fields! </div> ';
-        document.getElementById("alert_there").innerHTML=content;
-		
-	}
-	else if(course_text=='Choose your option')
+
+	if(level_term_text=='Choose your option' && course_text=='Choose your option' && s_id=='')
 	{
+		document.getElementById("level_term").style.borderColor = "red";
 		document.getElementById("course").style.borderColor = "red";
-		content=content+'Select <strong> Course </strong></div> ';
+		document.getElementById("s_id").style.borderColor = "red";
+
+		content=content+'<strong>Fill Out </strong>The Fields! </div> ';
         document.getElementById("alert_there").innerHTML=content;
 	}
 	else if(level_term_text=='Choose your option')
 	{
 		document.getElementById("level_term").style.borderColor = "red";
-		content=content+'Select <strong> Level/Term </strong></div> ';
+		content=content+'Select <strong>Level/Term!</strong></div> ';
+        document.getElementById("alert_there").innerHTML=content;
+	}
+	else if(course_text=='Choose your option')
+	{
+		document.getElementById("course").style.borderColor = "red";
+		content=content+'Select<strong> Course! </strong> </div> ';
+        document.getElementById("alert_there").innerHTML=content;
+	}
+	else if(s_id=='')
+	{
+		document.getElementById("s_id").style.borderColor = "red";
+		content=content+'Select <strong>ID! </strong> </div> ';
         document.getElementById("alert_there").innerHTML=content;
 	}
 	else
 	{
-		table_content='';
-		// document.getElementById("mybtn").disabled = true;
 		 document.getElementById("loader").innerHTML=load_content;
 		basic_content='';
 		basic_content=basic_content+'<table class="table table-striped" border="1">';
@@ -63,6 +72,7 @@ function attendance() {
 		basic_content=basic_content+'<tbody>';
 
 
+	
 
 		var c=1;
 		var present_count=0;
@@ -77,10 +87,10 @@ function attendance() {
     	var s_excused;
     	var s_absent;
     	
+    	var data_x=[];
+    	var data_y=[];
 
-
-        var data_x=[];
-        var data_y=[];
+        
 
        
 	var count=0;
@@ -91,8 +101,11 @@ function attendance() {
     snapshot.forEach(function(child) {
     	 
     var faculty=child.key; //teacher name
-    	//alert(faculty);
-   
+    
+   //alert(count+' '+faculty);
+   // alert(m);
+
+//hhh
 	    var rootRef2 = firebase.database().ref();
 	  	var urlRef2 = rootRef2.child('attendance/CSE-17A/'+course_text+'/'+faculty+'/');
 	 	urlRef2.once("value", function(snapshot) {
@@ -154,8 +167,6 @@ function attendance() {
 		  					 {
 		  					 	table_content=table_content+'<td align="center"><label><input type="checkbox" disabled></label> </td>';
 		  					 }
-
-							document.getElementById("loader").innerHTML='';
 		  					 table_content=table_content+'</tr>';
 		  					 final_content=final_content+'</tbody>';
 							final_content=final_content+'</table>';
@@ -166,7 +177,7 @@ function attendance() {
 							document.getElementById("present").innerHTML = '<h4>'+present_count+'</h4>';
 							document.getElementById("absent").innerHTML = '<h4>'+ absent_count +'</h4>';
 							//alert()
-							document.getElementById("percentage").innerHTML = '<h4>'+ parseFloat((present_count/(c- excused_count) )*100)+'% </h4>';
+							document.getElementById("percentage").innerHTML = '<h4>'+ parseFloat((present_count/(c- excused_count) )*100 )+'% </h4>';
 							var content='';
 					    	content=content+'<div style="font-size: 16pt" class="alert alert-success" role="alert">';
 					 		content=content+'<strong>Data </strong>Found! </div> ';
@@ -174,11 +185,7 @@ function attendance() {
 					        data_x[c-1]=c;
 					        data_y[c-1]=(present_count/(c- excused_count) )*100;
 							c=c+1;
-
-
-
-
-		  					 
+							document.getElementById("loader").innerHTML='';				 
 		  				}
 		  				else
 		  				{
@@ -217,11 +224,7 @@ function attendance() {
     
   });
 });
-
-
-
-
-setTimeout(function(){
+		setTimeout(function(){
 
 		let myChart = document.getElementById('myChart').getContext('2d');
     
@@ -237,6 +240,7 @@ setTimeout(function(){
           data:data_y,
           //backgroundColor:'green',
           backgroundColor:[
+            'rgba(255, 99, 132, 0.6)',
             'rgba(54, 162, 235, 0.6)',
             'rgba(255, 206, 86, 0.6)',
             'rgba(75, 192, 192, 0.6)',
@@ -290,6 +294,7 @@ setTimeout(function(){
     	}, 5000);
 
 
-}
+
+	}
 	
 }

@@ -4,8 +4,13 @@ var load_content='';
 	load_content=load_content+'<div  class="lds-roller"><div></div><div></div><div>';
 	load_content=load_content+'</div><div></div><div></div><div></div><div></div><div></div></div></div></div>';
 
+
+		var present_count=0;
+		var absent_count=0;
+		var excused_count=0;
+
 document.getElementById("detailed_content").style.visibility = "hidden";
-function attendance() {
+function stat() {
 	var s_id = localStorage.getItem("value");
 	var basic_content=''
     var final_content='';
@@ -15,7 +20,7 @@ function attendance() {
 	var course=document.getElementById("course");
 	var course_text=course.options[course.selectedIndex].text;
 
-	var level_term=document.getElementById("level_term");
+	var level_term=document.getElementById("batch");
 	var level_term_text=level_term.options[level_term.selectedIndex].text;
 	
     content=content+'<div style="font-size: 16pt" class="alert alert-danger" role="alert">';
@@ -41,6 +46,8 @@ function attendance() {
 	}
 	else
 	{
+		var data_x=[];
+		var data_y=[];
 		table_content='';
 		// document.getElementById("mybtn").disabled = true;
 		 document.getElementById("loader").innerHTML=load_content;
@@ -64,10 +71,8 @@ function attendance() {
 
 
 
-		var c=1;
-		var present_count=0;
-		var absent_count=0;
-		var excused_count=0;
+		var c=0;
+		var initial_count=0;
 		//alert(batch_text+course_text);
 
 
@@ -78,12 +83,13 @@ function attendance() {
     	var s_absent;
     	
 
-
-        var data_x=[];
-        var data_y=[];
+    	var initial_date='';
+    	var initial_time='';
+        
 
        
 	var count=0;
+	var cc=1;
 
   var rootRef = firebase.database().ref();
   var urlRef = rootRef.child('attendance/CSE-17A/'+course_text+'/');
@@ -106,75 +112,150 @@ function attendance() {
 		 	urlRef3.once("value", function(snapshot) {
 		    snapshot.forEach(function(child) {
 		    var m3=child.key; //got the time slot
-		   
 
-		    //alert(m3);
-		    
-			    firebase.database().ref('attendance/CSE-17A/'+course_text+'/'+faculty+'/'+m2+'/'+m3+'/'+s_id).once('value').then(function(snapshot) {
+
+		    var rootRef4 = firebase.database().ref();
+		  	var urlRef4 = rootRef4.child('attendance/CSE-17A/'+course_text+'/'+faculty+'/'+m2+'/'+m3);
+		 	urlRef4.once("value", function(snapshot) {
+		    snapshot.forEach(function(child) {
+		    var m4=child.key;// got s_id
+		    		 firebase.database().ref('attendance/CSE-17A/'+course_text+'/'+faculty+'/'+m2+'/'+m3+'/'+m4).once('value').then(function(snapshot) {
 		  				if (snapshot.exists()) {
+		  						var f=0;
+		  					
+		  					
 		  					 s_present = snapshot.val().p_status;
 		  					 s_excused = snapshot.val().p_excused;
 		  					 s_absent  = 1- s_present;
 		  					// alert(s_present+'  '+s_excused);
-		  					 table_content=table_content+'<tr>';
-					   		 table_content=table_content+'<td align="center">'+c+'</td>';
+		  					
+					   		 
 					  		 
-					  		 table_content=table_content+'<td align="center">'+course_text+'</td>';
-		  					  table_content=table_content+'<td align="center">'+faculty+'</td>';
-		  					  table_content=table_content+'<td align="center">'+m2+'</td>';
-		  					  table_content=table_content+'<td align="center">'+m3+'</td>';
+					  		 
 		  					 if (s_present==1) {
 		  					 	present_count=present_count+1;
-		  					 	table_content=table_content+'<td align="center"><label><input type="checkbox"  disabled checked></label></td>';
+		  					 	//table_content=table_content+'<td align="center"><label><input type="checkbox"  disabled checked></label></td>';
 		  					 }
 		  					 else
 		  					 {
 		  					 	absent_count=absent_count+1;
-		  					 	table_content=table_content+'<td align="center"><label><input type="checkbox" disabled></label></td>';
+		  					 	//table_content=table_content+'<td align="center"><label><input type="checkbox" disabled></label></td>';
 		  					 }
 
 
 
-		  					  if (s_absent==1) {
-
-		  					 	table_content=table_content+'<td align="center"><label><input type="checkbox" onclick="return false" disabled checked></label> </td>';
-		  					 }
-		  					 else
-		  					 {
-		  					 	table_content=table_content+'<td align="center"><label><input type="checkbox" disabled></label> </td>';
-		  					 }
 
 
 
 		  					  if (s_excused==1) {
 		  					  	excused_count=excused_count+1;
-		  					 	table_content=table_content+'<td align="center"><label><input type="checkbox" disabled checked></label> </td>';
+		  					 	//table_content=table_content+'<td align="center"><label><input type="checkbox" disabled checked></label> </td>';
 		  					 }
-		  					 else
-		  					 {
-		  					 	table_content=table_content+'<td align="center"><label><input type="checkbox" disabled></label> </td>';
-		  					 }
+		  					
 
-							document.getElementById("loader").innerHTML='';
-		  					 table_content=table_content+'</tr>';
-		  					 final_content=final_content+'</tbody>';
-							final_content=final_content+'</table>';
-							document.getElementById("table_content").innerHTML=basic_content+table_content+final_content;
-							final_content='';
+							
 							//alert(c);
-							document.getElementById("detailed_content").style.visibility = "visible";
-							document.getElementById("present").innerHTML = '<h4>'+present_count+'</h4>';
-							document.getElementById("absent").innerHTML = '<h4>'+ absent_count +'</h4>';
-							//alert()
-							document.getElementById("percentage").innerHTML = '<h4>'+ parseFloat((present_count/(c- excused_count) )*100)+'% </h4>';
-							var content='';
-					    	content=content+'<div style="font-size: 16pt" class="alert alert-success" role="alert">';
-					 		content=content+'<strong>Data </strong>Found! </div> ';
-					        document.getElementById("alert_there").innerHTML=content;
-					        data_x[c-1]=c;
-					        data_y[c-1]=(present_count/(c- excused_count) )*100;
+							// document.getElementById("detailed_content").style.visibility = "visible";
+							// document.getElementById("present").innerHTML = '<h4>'+present_count+'</h4>';
+							// document.getElementById("absent").innerHTML = '<h4>'+ absent_count +'</h4>';
+							// //alert()
+							// document.getElementById("percentage").innerHTML = '<h4>'+ parseFloat((present_count/(c- excused_count) )*100 )+'% </h4>';
+							// var content='';
+					    	initial_date=m2;
+					    	initial_time=m3;
 							c=c+1;
-
+							if (course_text=='CSE-401' && c==4) {
+								 table_content=table_content+'<tr>';
+		  						table_content=table_content+'<td align="center">'+cc+'</td>';
+		  						table_content=table_content+'<td align="center">'+course_text+'</td>';
+		  					    table_content=table_content+'<td align="center">'+faculty+'</td>';
+		  					    table_content=table_content+'<td align="center">'+initial_date+'</td>';
+		  					    table_content=table_content+'<td align="center">'+initial_time+'</td>';
+		  					    table_content=table_content+'<td align="center">'+present_count+'</td>';
+		  					    table_content=table_content+'<td align="center">'+absent_count+'</td>';
+		  					    table_content=table_content+'<td align="center">'+excused_count+'</td>';
+		  					    cc=cc+1;
+		  					    data_x[cc-1]=cc;
+		  					    data_y[cc-1]=(present_count/(present_count+absent_count))*100;
+		  					    document.getElementById("loader").innerHTML='';
+			  					 table_content=table_content+'</tr>';
+			  					 final_content=final_content+'</tbody>';
+								final_content=final_content+'</table>';
+								document.getElementById("table_content").innerHTML=basic_content+table_content+final_content;
+								final_content='';
+								var content='';
+								content=content+'<div style="font-size: 16pt" class="alert alert-success" role="alert">';
+					 			content=content+'<strong>Data </strong>Found! </div> ';
+					       		 document.getElementById("alert_there").innerHTML=content;
+					       		 present_count=0;
+		  						absent_count=0;
+		  						excused_count=0;
+		  						initial_time=m3;
+		  						initial_date=m2;
+		  						c=0;
+							}
+							else if(course_text=='CSE-402' && c==3)
+							{
+								table_content=table_content+'<tr>';
+		  						table_content=table_content+'<td align="center">'+cc+'</td>';
+		  						table_content=table_content+'<td align="center">'+course_text+'</td>';
+		  					    table_content=table_content+'<td align="center">'+faculty+'</td>';
+		  					    table_content=table_content+'<td align="center">'+initial_date+'</td>';
+		  					    table_content=table_content+'<td align="center">'+initial_time+'</td>';
+		  					    table_content=table_content+'<td align="center">'+present_count+'</td>';
+		  					    table_content=table_content+'<td align="center">'+absent_count+'</td>';
+		  					    table_content=table_content+'<td align="center">'+excused_count+'</td>';
+		  					    cc=cc+1;
+		  					    data_x[cc-1]=cc;
+		  					    data_y[cc-1]=(present_count/(present_count+absent_count))*100;
+		  					    document.getElementById("loader").innerHTML='';
+			  					 table_content=table_content+'</tr>';
+			  					 final_content=final_content+'</tbody>';
+								final_content=final_content+'</table>';
+								document.getElementById("table_content").innerHTML=basic_content+table_content+final_content;
+								final_content='';
+								var content='';
+								content=content+'<div style="font-size: 16pt" class="alert alert-success" role="alert">';
+					 			content=content+'<strong>Data </strong>Found! </div> ';
+					       		 document.getElementById("alert_there").innerHTML=content;
+					       		 present_count=0;
+		  						absent_count=0;
+		  						excused_count=0;
+		  						initial_time=m3;
+		  						initial_date=m2;
+		  						c=0;
+							}
+							else if(course_text=='CSE-460' && c==5)
+							{
+								table_content=table_content+'<tr>';
+		  						table_content=table_content+'<td align="center">'+cc+'</td>';
+		  						table_content=table_content+'<td align="center">'+course_text+'</td>';
+		  					    table_content=table_content+'<td align="center">'+faculty+'</td>';
+		  					    table_content=table_content+'<td align="center">'+initial_date+'</td>';
+		  					    table_content=table_content+'<td align="center">'+initial_time+'</td>';
+		  					    table_content=table_content+'<td align="center">'+present_count+'</td>';
+		  					    table_content=table_content+'<td align="center">'+absent_count+'</td>';
+		  					    table_content=table_content+'<td align="center">'+excused_count+'</td>';
+		  					    cc=cc+1;
+		  					    data_x[cc-1]=cc;
+		  					    data_y[cc-1]=(present_count/(present_count+absent_count))*100;
+		  					    document.getElementById("loader").innerHTML='';
+			  					 table_content=table_content+'</tr>';
+			  					 final_content=final_content+'</tbody>';
+								final_content=final_content+'</table>';
+								document.getElementById("table_content").innerHTML=basic_content+table_content+final_content;
+								final_content='';
+								var content='';
+								content=content+'<div style="font-size: 16pt" class="alert alert-success" role="alert">';
+					 			content=content+'<strong>Data </strong>Found! </div> ';
+					       		 document.getElementById("alert_there").innerHTML=content;
+					       		 present_count=0;
+		  						absent_count=0;
+		  						excused_count=0;
+		  						initial_time=m3;
+		  						initial_date=m2;
+		  						c=0;
+							}
 
 
 
@@ -205,7 +286,26 @@ function attendance() {
 		   				 document.getElementById("alert_there").innerHTML=content;
 				   
 				    }
+				  
+
 				  });
+		    		   //setTimeout(function(){ 
+				    	//alert("Hello"); 
+				    	// alert(present_count+" "+absent_count);
+				    	// present_count=0;
+				    	// absent_count=0;
+
+						//}, 500);
+
+		      });
+			});
+
+
+		   
+
+		    //alert(m3);
+		    
+			   
 
 			  });
 			});
@@ -218,25 +318,22 @@ function attendance() {
   });
 });
 
-
-
-
-setTimeout(function(){
-
+		setTimeout(function(){
 		let myChart = document.getElementById('myChart').getContext('2d');
-    
     Chart.defaults.global.defaultFontSize = 18;
     Chart.defaults.global.defaultFontColor = '#000000';
 
     let massPopChart = new Chart(myChart, {
       type:'line', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
       data:{
+      	label:'class number',
         labels:data_x,
         datasets:[{
           label:'Percentage',
           data:data_y,
           //backgroundColor:'green',
           backgroundColor:[
+            'rgba(255, 99, 132, 0.6)',
             'rgba(54, 162, 235, 0.6)',
             'rgba(255, 206, 86, 0.6)',
             'rgba(75, 192, 192, 0.6)',
@@ -288,6 +385,7 @@ setTimeout(function(){
         
 
     	}, 5000);
+	
 
 
 }
