@@ -174,9 +174,11 @@ function stat() {
 		  					    table_content=table_content+'<td align="center">'+present_count+'</td>';
 		  					    table_content=table_content+'<td align="center">'+absent_count+'</td>';
 		  					    table_content=table_content+'<td align="center">'+excused_count+'</td>';
-		  					    cc=cc+1;
+		  					    
 		  					    data_x[cc-1]=cc;
 		  					    data_y[cc-1]=(present_count/(present_count+absent_count))*100;
+		  					    cc=cc+1;
+		  					    
 		  					    document.getElementById("loader").innerHTML='';
 			  					 table_content=table_content+'</tr>';
 			  					 final_content=final_content+'</tbody>';
